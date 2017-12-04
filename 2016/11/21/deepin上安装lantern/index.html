@@ -1,14 +1,12 @@
-html
-  head
-    meta(http-equiv='content-type', content='text/html; charset=utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
-    meta(name='apple-mobile-web-app-title', content=config.author)
-    meta(name='apple-mobile-web-app-status-bar-style', content='black')
-    meta(name='theme-color', content='#36534e')
-    base(href='/')
-    title= config.title
-    | !{load_css('styles')}
-body
-  app
-  | !{load_js('inline', 'polyfills', 'vendor', 'main')}
-  | !{ga()}
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="just for fun"><title>deepin上安装lantern,fluxgui | little</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">little</a><span class="subtitle">little</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>deepin上安装lantern,fluxgui</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2016-11-21</div><div class="post-tags"><a class="post-tag-link" href="/tags/deepin系统安装/">deepin系统安装</a></div></div></div><article><div class="container post"><h2 id="&#x5B89;&#x88C5;lantern"><a href="#&#x5B89;&#x88C5;lantern" class="headerlink" title="&#x5B89;&#x88C5;lantern"></a>&#x5B89;&#x88C5;lantern</h2><p>&#x4E0B;&#x8F7D;lantern&#x5B89;&#x88C5;&#x5305;&#x540E;&#xFF0C;&#x53CC;&#x51FB;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;&#x65E0;&#x6CD5;&#x8FD0;&#x884C;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x4E2D;&#x8FD0;&#x884C;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">latern</div></pre></td></tr></table></figure>
+<p>&#x51FA;&#x73B0;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error while loading shared libraries&#xFF1A; libappindicator3.so.1&#xFF1A; cannot open shared object file&#xFF1A; No such file or directory</div></pre></td></tr></table></figure>
+<p>&#x8FD0;&#x884C;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install libappindicator3-1</div></pre></td></tr></table></figure>
+<p>&#x5373;&#x53EF;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;</p>
+<h3 id="&#x5B89;&#x88C5;fluxgui"><a href="#&#x5B89;&#x88C5;fluxgui" class="headerlink" title="&#x5B89;&#x88C5;fluxgui"></a>&#x5B89;&#x88C5;fluxgui</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:kilian/f.lux</div><div class="line">sudo apt update</div><div class="line">sudo apt install fluxgui</div></pre></td></tr></table></figure>
+</div><!-- comment system--><div class="container"><hr></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2017 <a href="/" rel="nofollow">Wanazi</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body></html>
