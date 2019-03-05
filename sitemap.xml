@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wanazi.oschina.io/about/index.html</loc>
+    
+    <lastmod>2019-03-05T08:35:55.647Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wanazi.oschina.io/tags/index.html</loc>
     
-    <lastmod>2019-03-05T07:55:29.285Z</lastmod>
+    <lastmod>2019-03-05T08:34:35.035Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wanazi.oschina.io/categories/index.html</loc>
+    
+    <lastmod>2019-03-05T08:34:15.469Z</lastmod>
     
   </url>
   
