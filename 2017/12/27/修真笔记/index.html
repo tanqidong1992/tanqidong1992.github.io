@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="简书,随意," />
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
 
 
 
@@ -76,36 +66,20 @@
 
 
 
-
-
-
-<meta name="description" content="寻找青云友，永与人世绝">
-<meta property="og:type" content="article">
-<meta property="og:title" content="修真笔记">
-<meta property="og:url" content="http://wanazi.oschina.io/2017/12/27/修真笔记/index.html">
-<meta property="og:site_name" content="wanazi">
-<meta property="og:description" content="寻找青云友，永与人世绝">
-<meta property="og:updated_time" content="2019-02-27T12:42:32.542Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="修真笔记">
-<meta name="twitter:description" content="寻找青云友，永与人世绝">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -117,12 +91,38 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://wanazi.oschina.io/2017/12/27/修真笔记/"/>
-
+  
 
 
 
+
+  <meta name="description" content="寻找青云友，永与人世绝">
+<meta name="keywords" content="简书,随意">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修真笔记">
+<meta property="og:url" content="http://wanazi.oschina.io/2017/12/27/修真笔记/index.html">
+<meta property="og:site_name" content="wanazi">
+<meta property="og:description" content="寻找青云友，永与人世绝">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-27T12:42:32.542Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="修真笔记">
+<meta name="twitter:description" content="寻找青云友，永与人世绝">
+
+
+
+
+
+
+  <link rel="canonical" href="http://wanazi.oschina.io/2017/12/27/修真笔记/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>修真笔记 | wanazi</title>
   
@@ -133,6 +133,35 @@
 
 
 
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
@@ -148,23 +177,26 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">wanazi</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <p class="site-subtitle">偶尔记一些东西</p>
       
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Navigationsleiste an/ausschalten">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -172,65 +204,103 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>Über</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Schlagwörter</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Kategorien</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
   
 
   
@@ -238,12 +308,23 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
+          
           <div id="content" class="content">
             
 
@@ -256,6 +337,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -265,7 +348,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="只是为了好玩">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -278,25 +361,51 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">修真笔记</h1>
+          <h1 class="post-title" itemprop="name headline">修真笔记
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-27T20:41:43+08:00">
-                2017-12-27
-              </time>
+
+              
+                
+              
+
+              <time title="Erstellt: 2017-12-27 20:41:43" itemprop="dateCreated datePublished" datetime="2017-12-27T20:41:43+08:00">2017-12-27</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Bearbeitet am</span>
+                
+                <time title="Geändert am: 2019-02-27 20:42:32" itemprop="dateModified" datetime="2019-02-27T20:42:32+08:00">2019-02-27</time>
+              
             
           </span>
 
@@ -304,6 +413,7 @@
 
           
             
+            
           
 
           
@@ -314,9 +424,7 @@
           
 
           
-              <div class="post-description">
-                  寻找青云友，永与人世绝
-              </div>
+            <div class="post-description">寻找青云友，永与人世绝</div>
           
 
         </div>
@@ -332,46 +440,52 @@
       
 
       
-        <p>#&#x4FEE;&#x771F;&#x7B14;&#x8BB0;</p>
-<p>&#x98DF;&#x6C34;&#x8005;&#x5584;&#x6E38;&#x80FD;&#x5BD2;&#xFF0C;&#x98DF;&#x571F;&#x8005;&#x65E0;&#x5FC3;&#x800C;&#x4E0D;&#x606F;&#xFF0C;&#x98DF;&#x6728;&#x8005;&#x591A;&#x529B;&#x800C;&#x62C2;&#xFF0C;&#x98DF;&#x8349;&#x8005;&#x5584;&#x8D70;&#x800C;&#x611A;&#xFF0C;&#x98DF;&#x6851;&#x8005;&#x6709;&#x4E1D;&#x800C;&#x86FE;&#xFF0C;&#x98DF;&#x8089;&#x8005;&#x52C7;&#x6562;&#x800C;&#x608D;&#xFF0C;&#x98DF;&#x8C37;&#x8005;&#x667A;&#x6167;&#x800C;&#x5DE7;&#xFF0C;&#x98DF;&#x6C14;&#x8005;&#x795E;&#x660E;&#x800C;&#x5BFF;&#xFF0C;&#x4E0D;&#x98DF;&#x8005;&#x4E0D;&#x6B7B;&#x800C;&#x795E;&#x3002;&#xFF08;&#x300A;&#x5927;&#x6234;&#x793C;&#x8BB0;&#xB7;&#x6613;&#x672C;&#x547D;&#x300B;&#xFF09;</p>
-<p>&#x517B;&#x6C14;&#x4E4B;&#x9053;</p>
-<p>&#x6216;&#x98DF;&#x5341;&#x4E8C;&#x65F6;&#x6C14;&#xFF0C;&#x4ECE;&#x591C;&#x534A;&#x59CB;&#xFF0C;&#x4ECE;&#x4E5D;&#x4E5D;&#x81F3;&#x516B;&#x516B;&#x4E03;&#x4E03;&#x516D;&#x516D;&#x4E94;&#x4E94;&#x800C;&#x6B62;&#x3002;&#x6216;&#x6625;&#x5411;&#x4E1C;&#x98DF;&#x5C81;&#x661F;&#x9752;&#x6C14;&#xFF0C;&#x4F7F;&#x5165;&#x809D;&#xFF1B;&#x590F;&#x98DF;&#x8367;&#x60D1;&#x8D64;&#x6C14;&#xFF0C;&#x4F7F;&#x5165;&#x5FC3;&#x3002;&#x56DB;&#x5B63;&#x4E4B;&#x65E5;&#x98DF;&#x661F;&#x9547;&#x9EC4;&#x6C14;&#xFF0C;&#x4F7F;&#x5165;&#x813E;&#xFF1B;&#x79CB;&#x98DF;&#x592A;&#x767D;&#x767D;&#x6C14;&#xFF0C;&#x4F7F;&#x5165;&#x80BA;&#xFF1B;&#x51AC;&#x670D;&#x8FB0;&#x661F;&#x9ED1;&#x6C14;&#xFF0C;&#x4F7F;&#x5165;&#x80BE;</p>
-<p>&#x5BFC;&#x5F15;&#x4E4B;&#x9053;</p>
-<p>&#x5439;&#x5474;&#x547C;&#x5438;&#xFF0C;&#x5410;&#x6545;&#x7EB3;&#x65B0;&#xFF0C;&#x718A;&#x7ECF;&#x9E1F;&#x4F38;&#xFF0C;&#x4E3A;&#x5BFF;&#x800C;&#x5DF2;&#x77E3;&#x3002;&#x6B64;&#x5BFC;&#x5F15;&#x4E4B;&#x58EB;&#xFF0C;&#x517B;&#x5F62;&#x4E4B;&#x4EBA;&#xFF0C;&#x5F6D;&#x7956;&#x5BFF;&#x8003;&#x8005;&#x4E4B;&#x6240;&#x597D;&#x8005;&#x4E5F;&#x3002;</p>
-<p>&#x884C;&#x6C14;&#x548C;&#x80CE;&#x606F;</p>
-<p>&#x51E1;&#x884C;&#x6C14;&#x6B32;&#x9664;&#x767E;&#x75C5;&#xFF0C;&#x968F;&#x6240;&#x5728;&#x4F5C;&#x5FF5;&#x4E4B;&#xFF0C;&#x5934;&#x75DB;&#x5FF5;&#x5934;&#xFF0C;&#x8DB3;&#x75DB;&#x5FF5;&#x8DB3;&#xFF0C;&#x548C;&#x6C14;&#x5F80;&#x653B;&#x4E4B;</p>
-<p>&#x5B58;&#x601D;&#x3001;&#x5B88;&#x4E00;&#x3001;&#x5185;&#x89C6;</p>
-<p>&#x4FEE;&#x8EAB;&#x6CBB;&#x7269;&#xFF0C;&#x8981;&#x5728;&#x5B58;&#x601D;&#x3002;&#x5B58;&#x601D;&#x4E0D;&#x7CBE;&#xFF0C;&#x6F2B;&#x6F9C;&#x65E0;&#x611F;&#x3002;&#x611F;&#x5E94;&#x7531;&#x7CBE;&#xFF0C;&#x7CBE;&#x5FC5;&#x6709;&#x89C1;&#x3002;&#x89C1;&#x5999;&#x5982;&#x56FE;&#xFF0C;&#x8BC6;&#x89E3;&#x8D85;&#x8FDB;&#x3002;&#x795E;&#x6C14;&#x575A;&#x660E;&#xFF0C;&#x4E1A;&#x884C;&#x65E0;&#x5026;&#xFF0C;&#x517C;&#x6D4E;&#x53EF;&#x671F;&#xFF0C;&#x5176;&#x4E8E;&#x6709;&#x8BC1;&#xFF0C;&#x8BC1;&#x4E4B;&#x663E;&#x9A8C;&#xFF0C;&#x9006;&#x77E5;&#x5409;&#x51F6;&#x3002;</p>
-<p>&#x51E1;&#x5B58;&#x601D;&#x4E4B;&#x65F6;&#xFF0C;&#x7686;&#x95ED;&#x76EE;&#x5185;&#x89C6;&#x3002;&#x4EBA;&#x4F53;&#x591A;&#x795E;&#xFF0C;&#x5FC5;&#x4EE5;&#x4E94;&#x810F;&#x4E3A;&#x4E3B;&#x3002;&#x4E3B;&#x5404;&#x6599;&#x5176;&#x4E8B;&#xFF0C;&#x4E8B;&#x5404;&#x5F97;&#x5176;&#x6210;&#xFF0C;&#x6210;&#x6B63;&#x5219;&#x4E00;&#x800C;&#x4E0D;&#x4E8C;&#xFF0C;&#x5219;&#x9690;&#x663E;&#x65E0;&#x90AA;&#xFF0C;&#x65E0;&#x90AA;&#x5219;&#x4F17;&#x5982;&#x53EF;&#x89C1;&#xFF0C;&#x89C1;&#x5219;&#x4E0E;&#x5723;&#x7B26;&#x540C;&#xFF0C;&#x540C;&#x5723;&#x5373;&#x53EF;&#x5F18;&#xFF0C;&#x79EF;&#x5B66;&#x81EA;&#x7136;&#x611F;&#x4F1A;&#x3002;&#x662F;&#x4EE5;&#x671D;&#x5915;&#x5B58;&#x601D;&#xFF0C;&#x4E0D;&#x53EF;&#x61C8;&#x6020;&#x3002;</p>
-<p>&#x53E4;&#x4ECA;&#x8981;&#x9053;&#xFF0C;&#x7686;&#x8A00;&#x5B88;&#x4E00;&#xFF0C;&#x53EF;&#x957F;&#x5B58;&#x800C;&#x4E0D;&#x8001;&#xFF0C;&#x4EBA;&#x77E5;&#x5B88;&#x4E00;&#xFF0C;&#x540D;&#x4E3A;&#x65E0;&#x6781;&#x4E4B;&#x9053;&#x3002;&#x4EBA;&#x5B58;&#x4E00;&#x8EAB;&#xFF0C;&#x4E0E;&#x7CBE;&#x795E;&#x5E38;&#x5408;&#x5E76;&#x4E5F;&#x3002;&#x5F62;&#x8005;&#x4E43;&#x4E3B;&#x6B7B;&#xFF0C;&#x7CBE;&#x795E;&#x8005;&#x4E43;&#x4E3B;&#x751F;&#xFF0C;&#x5E38;&#x5408;&#x5219;&#x5409;&#xFF0C;&#x53BB;&#x5219;&#x51F6;&#x2026;&#x2026;&#x6545;&#x5723;&#x4EBA;&#x6559;&#x5176;&#x5B88;&#x4E00;&#xFF0C;&#x8A00;&#x5F53;&#x5B88;&#x4E00;&#x8EAB;&#x4E5F;&#xFF0C;&#x5FF5;&#x800C;&#x4E0D;&#x4F11;&#xFF0C;&#x7CBE;&#x795E;&#x81EA;&#x6765;&#x3002;&#x83AB;&#x4E0D;&#x76F8;&#x5E94;&#xFF0C;&#x767E;&#x75C5;&#x81EA;&#x9664;&#xFF0C;&#x6B64;&#x5373;&#x957F;&#x751F;&#x4E45;&#x89C6;&#x4E4B;&#x7B26;&#x4E5F;&#x3002;</p>
-<p>&#x592B;&#x81EA;&#x7136;&#x672C;&#x4E00;&#xFF0C;&#x5927;&#x9053;&#x672C;&#x4E00;&#xFF0C;&#x5143;&#x6C14;&#x672C;&#x4E00;&#x3002;&#x4E00;&#x8005;&#xFF0C;&#x771F;&#x6B63;&#x7EAF;&#x9633;&#x4E00;&#x6C14;&#xFF0C;&#x4E0E;&#x592A;&#x65E0;&#x5408;&#x4F53;&#xFF0C;&#x4E0E;&#x5927;&#x9053;&#x540C;&#x5FC3;&#xFF0C;&#x81EA;&#x7136;&#x540C;&#x6027;&#x3002;&#x2026;&#x2026;&#x5143;&#x6C14;&#x672C;&#x4E00;&#xFF0C;&#x5316;&#x751F;&#x6709;&#x4E07;&#xFF0C;&#x5F97;&#x4E00;&#xFF0C;&#x4E43;&#x9042;&#x751F;&#x6210;&#xFF0C;&#x4E07;&#x82E5;&#x5931;&#x4E00;&#xFF0C;&#x7ACB;&#x5F52;&#x6B7B;&#x5730;&#xFF0C;&#x6545;&#x4E00;&#x4E0D;&#x53EF;&#x5931;&#x4E5F;&#x3002;</p>
-<p>&#x623F;&#x4E2D;&#x672F;</p>
-<p>&#x623F;&#x4E2D;&#x8005;&#xFF0C;&#x6027;&#x60C5;&#x4E4B;&#x6781;&#xFF0C;&#x81F3;&#x9053;&#x4E4B;&#x9645;&#x3002;&#x662F;&#x4EE5;&#x5723;&#x738B;&#x5236;&#x5916;&#x4E50;&#x4EE5;&#x7981;&#x5185;&#x60C5;&#xFF0C;&#x800C;&#x4E3A;&#x4E4B;&#x8282;&#x6587;&#x3002;&#x300A;&#x4F20;&#x300B;&#x66F0;&#xFF1A;&#x201C;&#x5148;&#x738B;&#x4E4B;&#x4F5C;&#x4E50;&#xFF0C;&#x6240;&#x4EE5;&#x8282;&#x767E;&#x4E8B;&#x4E5F;&#x3002;&#x201D;&#x4E50;&#x800C;&#x6709;&#x8282;&#xFF0C;&#x5219;&#x548C;&#x5E73;&#x5BFF;&#x8003;&#x3002;&#x53CA;&#x8FF7;&#x800C;&#x5F17;&#x987E;&#xFF0C;&#x4EE5;&#x751F;&#x75BE;&#x800C;&#x635F;&#x6027;&#x547D;&#x3002;</p>
-<p>&#x4EBA;&#x4E4B;&#x6240;&#x4E0A;&#xFF0C;&#x83AB;&#x8FC7;&#x623F;&#x6B32;&#x3002;&#x6CD5;&#x5929;&#x8C61;&#x5730;&#xFF0C;&#x89C4;&#x9634;&#x77E9;&#x9633;&#x3002;&#x609F;&#x5176;&#x7406;&#x8005;&#xFF0C;&#x5219;&#x517B;&#x6027;&#x8FD4;&#x9F84;&#xFF1B;&#x6162;&#x5176;&#x771F;&#x8005;&#xFF0C;&#x5219;&#x4F24;&#x795E;&#x592D;&#x5BFF;</p>
-<p>&#x592B;&#x9634;&#x9633;&#x4E4B;&#x672F;&#xFF0C;&#x9AD8;&#x53EF;&#x4EE5;&#x6CBB;&#x5C0F;&#x75BE;&#xFF0C;&#x6B21;&#x53EF;&#x4EE5;&#x514D;&#x865A;&#x8017;&#x800C;&#x5DF2;&#x3002;&#x5176;&#x7406;&#x81EA;&#x6709;&#x6781;&#xFF0C;&#x5B89;&#x80FD;&#x81F4;&#x795E;&#x4ED9;&#x800C;&#x5374;&#x7978;&#x798F;&#x4E4E;&#xFF1F;&#x4EBA;&#x4E0D;&#x53EF;&#x4EE5;&#x9634;&#x9633;&#x4E0D;&#x4EA4;&#xFF0C;&#x5750;&#x81F4;&#x75BE;&#x60A3;&#x3002;&#x82E5;&#x7EB5;&#x60C5;&#x6063;&#x6B32;&#xFF0C;&#x4E0D;&#x80FD;&#x8282;&#x5BA3;&#xFF0C;&#x5219;&#x4F10;&#x5E74;&#x547D;&#x3002;&#x5176;&#x5584;&#x672F;&#x8005;&#xFF0C;&#x5219;&#x80FD;&#x5374;&#x8D70;&#x9A6C;&#x4EE5;&#x8865;&#x8111;&#xFF0C;&#x8FD8;&#x9634;&#x4E39;&#x4EE5;&#x6731;&#x80A0;&#xFF0C;&#x91C7;&#x7389;&#x6DB2;&#x4E8E;&#x91D1;&#x6C60;&#xFF0C;&#x5F15;&#x4E09;&#x4E94;&#x4E8E;&#x534E;&#x6881;&#xFF0C;&#x4EE4;&#x4EBA;&#x8001;&#x6709;&#x7F8E;&#x8272;&#xFF0C;&#x7EC8;&#x5176;&#x6240;&#x7980;&#x4E4B;&#x5929;&#x5E74;&#x3002;&#xFF08;&#x300A;&#x62B1;&#x6734;&#x5B50;&#x5185;&#x7BC7;&#xB7;&#x5FAE;&#x65E8;&#x300B;&#xFF09;</p>
-<p>&#x9634;&#x9633;&#x4E0D;&#x4EA4;&#xFF0C;&#x5219;&#x5750;&#x81F4;&#x58C5;&#x960F;&#x4E4B;&#x75C5;&#x3002;&#x6545;&#x5E7D;&#x95ED;&#x6028;&#x65F7;&#xFF0C;&#x591A;&#x75C5;&#x800C;&#x4E0D;&#x5BFF;&#x4E5F;&#x3002;&#x4EFB;&#x610F;&#x8086;&#x610F;&#xFF0C;&#x53C8;&#x635F;&#x5E74;&#x547D;&#x3002;&#xFF08;&#x300A;&#x62B1;&#x6734;&#x5B50;&#x5185;&#x7BC7;&#xB7;&#x91CA;&#x6EDE;&#x300B;&#xFF09;</p>
-<p>&#x7537;&#x4E0D;&#x53EF;&#x65E0;&#x5973;&#xFF0C;&#x5973;&#x4E0D;&#x53EF;&#x65E0;&#x7537;&#x3002;&#x82E5;&#x5B64;&#x72EC;&#x800C;&#x601D;&#x4EA4;&#x63A5;&#x8005;&#xFF0C;&#x635F;&#x4EBA;&#x5BFF;&#xFF0C;&#x751F;&#x767E;&#x75C5;&#x3002;</p>
-<p>&#x5916;&#x4E39;</p>
-<p>&#x79E6;&#x6C49;&#x4EE5;&#x6765;&#xFF0C;&#x4F01;&#x56FE;&#x6210;&#x4E3A;&#x795E;&#x4ED9;&#x7684;&#x4EBA;&#x4EE5;&#x4E94;&#x91D1;&#x3001;&#x516B;&#x77F3;&#x4E3A;&#x836F;&#x7269;&#x70BC;&#x5236;&#x957F;&#x751F;&#x4E0D;&#x8001;&#x7684;&#x4ED9;&#x4E39;&#x7684;&#x65B9;&#x672F;&#xFF0C;&#x79F0;&#x4E3A;&#x70BC;&#x4E39;&#x672F;&#x3002;&#x968F;&#x7740;&#x4FEE;&#x70BC;&#x7684;&#x91CD;&#x5FC3;&#x7531;&#x70BC;&#x5F62;&#x5411;&#x70BC;&#x795E;&#x7684;&#x8F6C;&#x5316;&#xFF0C;&#x9053;&#x58EB;&#x4EEC;&#x5C06;&#x4EE5;&#x4EBA;&#x4F53;&#x7684;&#x7CBE;&#x3001;&#x6C14;&#x3001;&#x795E;&#x4E3A;&#x836F;&#x7269;&#x70BC;&#x5236;&#x4ED9;&#x4E39;&#x7684;&#x65B9;&#x672F;&#x4E5F;&#x79F0;&#x4E3A;&#x70BC;&#x4E39;&#x672F;&#x3002;&#x4E8E;&#x662F;&#x8FD9;&#x79CD;&#x4EBA;&#x4F53;&#x5185;&#x7684;&#x70BC;&#x4E39;&#x672F;&#x79F0;&#x4E4B;&#x4E3A;&#x201C;&#x5185;&#x4E39;&#x201D;&#xFF0C;&#x4EE5;&#x77FF;&#x7269;&#x8D28;&#x4E3A;&#x539F;&#x6599;&#x7684;&#x70BC;&#x4E39;&#x672F;&#x79F0;&#x4E3A;&#x5916;&#x4E39;&#x3002;</p>
-<p>&#x670D;&#x91D1;&#x8005;&#x5BFF;&#x5982;&#x91D1;&#xFF0C;&#x670D;&#x7389;&#x884C;&#x5982;&#x7389;</p>
-<p>&#x5185;&#x4E39;</p>
-<p>&#x5929;&#x5730;&#x4E45;&#x5927;&#xFF0C;&#x5723;&#x4EBA;&#x8C61;&#x4E4B;&#x3002;&#x7CBE;&#x534E;&#x5728;&#x4E4E;&#x65E5;&#x6708;&#xFF0C;&#x8FDB;&#x9000;&#x8FD0;&#x4E4E;&#x6C34;&#x706B;&#x3002;&#x662F;&#x6545;&#x6027;&#x547D;&#x53CC;&#x4FEE;&#xFF0C;&#x5185;&#x5916;&#x4E00;&#x9053;&#x3002;&#x9F99;&#x864E;&#x5B9D;&#x9F0E;&#x5373;&#x8EAB;&#x5FC3;&#x4E5F;&#x3002;&#x8EAB;&#x4E3A;&#x7089;&#x9F0E;&#xFF0C;&#x5FC3;&#x4E3A;&#x795E;&#x5BA4;&#xFF0C;&#x6D25;&#x4E3A;&#x534E;&#x6C60;&#x3002;&#x4E94;&#x91D1;&#x4E4B;&#x4E2D;&#xFF0C;&#x60DF;&#x7528;&#x5929;&#x94C5;&#x3002;&#x9634;&#x4E2D;&#x6709;&#x9633;&#xFF0C;&#x662F;&#x4E3A;&#x5A74;&#x513F;&#xFF0C;&#x5373;&#x8EAB;&#x4E2D;&#x574E;&#x4E5F;&#x3002;&#x516B;&#x77F3;&#x4E4B;&#x4E2D;&#xFF0C;&#x60DF;&#x7528;&#x7802;&#x6C5E;&#x3002;&#x9633;&#x4E2D;&#x6709;&#x9634;&#xFF0C;&#x662F;&#x4E3A;&#x59F9;&#x5973;&#xFF0C;&#x5373;&#x8EAB;&#x4E2D;&#x79BB;&#x4E5F;&#x3002;&#x94C5;&#x7ED3;&#x91D1;&#x4F53;&#xFF0C;&#x4E43;&#x80FD;&#x751F;&#x6C5E;&#x4E4B;&#x767D;&#xFF1B;&#x6C5E;&#x53D7;&#x91D1;&#x7081;&#xFF0C;&#x7136;&#x540E;&#x5BA1;&#x7802;&#x4E4B;&#x65B9;&#x3002;&#x4E2D;&#x592E;&#x620A;&#x5DF3;&#x662F;&#x4E3A;&#x9EC4;&#x5A46;&#xFF0C;&#x5373;&#x5FC3;&#x4E2D;&#x610F;&#x4E5F;&#x3002;&#x706B;&#x4E4B;&#x5C45;&#x6728;&#xFF0C;&#x6C34;&#x4E4B;&#x5904;&#x91D1;&#xFF0C;&#x7686;&#x672C;&#x5FC3;&#x795E;&#x3002;&#x813E;&#x4E0A;&#x72B9;&#x9EC4;&#x82BD;&#x4E5F;&#xFF0C;&#x4FEE;&#x6CBB;&#x5185;&#x5916;&#xFF0C;&#x4E24;&#x5F26;&#x5747;&#x5E73;&#xFF0C;&#x60DF;&#x5B58;&#x4E4E;&#x771F;&#x571F;&#x4E4B;&#x52A8;&#x9759;&#x800C;&#x5DF2;&#x3002;&#x771F;&#x571F;&#x8005;&#xFF0C;&#x836F;&#x7269;&#x4E4B;&#x4E3B;&#xFF1B;&#x6597;&#x67C4;&#x8005;&#xFF0C;&#x706B;&#x5019;&#x4E4B;&#x67A2;&#xFF1B;&#x767D;&#x864E;&#x8005;&#xFF0C;&#x94C5;&#x4E2D;&#x4E4B;&#x7CBE;&#x534E;&#xFF1B;&#x9752;&#x9F99;&#x8005;&#xFF0C;&#x7802;&#x4E2D;&#x4E4B;&#x5143;&#x6C14;&#x3002;&#x9E4A;&#x6865;&#x6CB3;&#x8F66;&#xFF0C;&#x767E;&#x523B;&#x4E0A;&#x8FD0;&#xFF0C;&#x534E;&#x6C60;&#x795E;&#x6C34;&#xFF0C;&#x56DB;&#x65F6;&#x9006;&#x6D41;&#x3002;&#x6709;&#x7269;&#x4E4B;&#x65F6;&#xFF0C;&#x65E0;&#x4E3A;&#x4E3A;&#x672C;&#xFF0C;&#x81EA;&#x5F62;&#x4E2D;&#x4E4B;&#x795E;&#x5165;&#x795E;&#x4E2D;&#x4E4B;&#x6027;&#x3002;&#x6B64;&#x8C13;&#x5F52;&#x6839;&#x590D;&#x547D;&#xFF0C;&#x72B9;&#x91D1;&#x5F52;&#x6027;&#x521D;&#xFF0C;&#x800C;&#x79F0;&#x8FD8;&#x4E39;&#x4E5F;&#x3002;</p>
-<p>&#x5185;&#x4E39;&#x5B66;&#x7406;&#x8BBA;&#x8BA4;&#x4E3A;&#xFF1A;&#x4EBA;&#x4F53;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x800C;&#x5FAE;&#x7684;&#x5C0F;&#x5B87;&#x5B99;&#xFF0C;&#x5728;&#x5929;&#x5730;&#x672A;&#x5224;&#xFF0C;&#x672A;&#x6709;&#x4EBA;&#x8EAB;&#x4E4B;&#x524D;&#xFF0C;&#x6574;&#x4E2A;&#x5B87;&#x5B99;&#x5904;&#x4E8E;&#x865A;&#x65E0;&#x72B6;&#x6001;&#xFF0C;&#x800C;&#x540E;&#x5728;&#x865A;&#x65E0;&#x4E2D;&#x6709;&#x4E00;&#x4EA7;&#x751F;&#xFF0C;&#x79F0;&#x4E3A;&#x5148;&#x5929;&#x4E4B;&#xFF0C;&#x5148;&#x5929;&#x4E4B;&#x7531;&#x9759;&#x751F;&#x52A8;&#xFF0C;&#x5316;&#x751F;&#x9634;&#x9633;&#xFF0C;&#x4EA7;&#x751F;&#x4E07;&#x7269;&#x548C;&#x4EBA;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x795E;&#x5206;&#x79BB;&#xFF0C;&#x4EA7;&#x751F;&#x60C5;&#x6B32;&#x548C;&#x53E3;&#x9F3B;&#x547C;&#x5438;&#xFF0C;&#x5148;&#x5929;&#x81F3;&#x7CBE;&#x5316;&#x4E3A;&#x4EBA;&#x7C7B;&#x7684;&#x7CBE;&#x6DB2;&#xFF0C;&#x5230;&#x5341;&#x516D;&#x5C81;&#x7CBE;&#x3001;&#x6C14;&#x3001;&#x795E;&#x8FBE;&#x5230;&#x5168;&#x76DB;&#x671F;&#x3002;&#x795E;&#x4ED9;&#x5BB6;&#x4EEC;&#x4ECE;&#x8FD9;&#x4E2A;&#x5B87;&#x5B99;&#x4EBA;&#x7C7B;&#x751F;&#x6210;&#x6A21;&#x5F0F;&#x53D1;&#x73B0;&#xFF0C;&#x5B87;&#x5B99;&#x95F4;&#x552F;&#x4E00;&#x6C38;&#x6052;&#x7684;&#x4E1C;&#x897F;&#x5C31;&#x662F;&#x865A;&#xFF0C;&#x56E0;&#x6B64;&#x8981;&#x8FBE;&#x5230;&#x957F;&#x751F;&#x548C;&#x6C38;&#x6052;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x4ECE;&#x201C;&#x9006;&#x201D;&#x7684;&#x65B9;&#x5411;&#x5411;&#x672C;&#x539F;&#x8FD4;&#x56DE;&#x3002;&#x7531;&#x540E;&#x5929;&#x7684;&#x5177;&#x6709;&#x4E03;&#x60C5;&#x516D;&#x6B32;&#x7684;&#x4EBA;&#x8FD4;&#x56DE;&#x5148;&#x5929;&#x7684;&#x65E0;&#x60C5;&#x65E0;&#x6B32;&#x7684;&#x865A;&#xFF0C;&#x7136;&#x540E;&#x4E0E;&#x9053;&#x5408;&#x771F;&#x3002;&#x8FD9;&#x4E5F;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x201C;&#x987A;&#x5219;&#x6210;&#x4EBA;&#xFF0C;&#x9006;&#x5219;&#x6210;&#x4ED9;&#x201D;&#x3002;&#x56E0;&#x6B64;&#x5185;&#x4E39;&#x5B66;&#x7684;&#x57FA;&#x672C;&#x70B9;&#x5C31;&#x5728;&#x4E8E;&#x5C06;&#x8001;&#x5B50;&#x7684;&#x201C;&#x9053;&#x751F;&#x4E00;&#xFF0C;&#x4E00;&#x751F;&#x4E8C;&#xFF0C;&#x4E8C;&#x751F;&#x4E09;&#xFF0C;&#x4E09;&#x751F;&#x4E07;&#x7269;&#x201D;&#x7684;&#x5B87;&#x5B99;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x53CD;&#x6F14;&#xFF0C;&#x7531;&#x4E09;&#x5F52;&#x4E8C;&#xFF0C;&#x4E8C;&#x5F52;&#x4E00;&#xFF0C;&#x5373;&#x7531;&#x7CBE;&#x3001;&#x6C14;&#x3001;&#x795E;&#x8FD4;&#x5F52;&#x5148;&#x5929;&#x4E4B;&#xFF0C;&#x6700;&#x540E;&#x5F52;&#x4E8E;&#x865A;&#x65E0;&#x3002;</p>
-<p>&#x5185;&#x4E39;&#x529F;&#x7684;&#x5173;&#x952E;&#x5728;&#x4E8E;&#x8FD0;&#x8F6C;&#x5C0F;&#x5468;&#x5929;&#xFF0C;&#x5C31;&#x662F;&#x6307;&#x5728;&#x7CBE;&#x795E;&#x610F;&#x5FD7;&#x7684;&#x5BFC;&#x5F15;&#x4E0B;&#xFF0C;&#x8FD0;&#x836F;&#x6CBF;&#x4EFB;&#x7763;&#x4E8C;&#x8109;&#x5FAA;&#x73AF;&#x3002;&#x5148;&#x4ECE;&#x80CC;&#x9762;&#x7ECF;&#x8FC7;&#x7763;&#x8109;&#x4E0A;&#x5347;&#xFF0C;&#x79F0;&#x4E3A;&#x901A;&#x4E09;&#x5173;&#xFF0C;&#x5373;&#x901A;&#x8FC7;&#x5C3E;&#x95FE;&#x3001;&#x5939;&#x810A;&#x3001;&#x7389;&#x6795;&#x4E09;&#x4E2A;&#x90E8;&#x4F4D;&#xFF0C;&#x7136;&#x540E;&#x6CBF;&#x7740;&#x524D;&#x9762;&#x7684;&#x4E09;&#x4E39;&#x7530;&#x4E0B;&#x964D;&#x3002;&#x4E09;&#x4E39;&#x7530;&#x6307;&#x8111;&#x90E8;&#x6CE5;&#x4E38;&#xFF08;&#x4E0A;&#x4E39;&#x7530;&#xFF09;&#xFF0C;&#x80F8;&#x90E8;&#x9EC4;&#x5EAD;&#xFF08;&#x4E2D;&#x4E39;&#x7530;&#xFF09;&#x548C;&#x8179;&#x90E8;&#x8110;&#x5185;&#xFF08;&#x6B63;&#x4E39;&#x7530;&#xFF09;&#x3002;&#x901A;&#x4E09;&#x5173;&#x5185;&#x4E39;&#x672F;&#x8BED;&#x79F0;&#x4E3A;&#x201C;&#x8FDB;&#x706B;&#x201D;&#xFF0C;&#x964D;&#x4E09;&#x5173;&#x5185;&#x4E39;&#x672F;&#x8BED;&#x79F0;&#x4E3A;&#x201C;&#x9000;&#x7B26;&#x201D;&#x3002;&#x795E;&#x4ED9;&#x5BB6;&#x8BA4;&#x4E3A;&#x4EBA;&#x8EAB;&#x662F;&#x5C0F;&#x5929;&#x5730;&#xFF0C;&#x5929;&#x884C;360&#x5EA6;&#xFF0C;&#x56E0;&#x6B64;&#x4F7F;&#x5148;&#x5929;&#x4E4B;&#x5728;&#x4F53;&#x5185;&#x8FD0;&#x8F6C;360&#x5EA6;&#xFF0C;&#x4FBF;&#x79F0;&#x4E3A;&#x5468;&#x5929;&#x529F;&#x6CD5;&#x3002;</p>
-<p>  &#x5185;&#x4E39;&#x672F;&#x4E3B;&#x8981;&#x5206;&#x56DB;&#x4E2A;&#x9636;&#x6BB5;&#xFF1A;</p>
-<p>&#x9996;&#x5148;&#x662F;&#x7B51;&#x57FA;&#xFF0C;&#x5373;&#x5065;&#x8EAB;&#x58EE;&#x4F53;&#xFF0C;&#x5C31;&#x5982;&#x5916;&#x4E39;&#x672F;&#x51C6;&#x5907;&#x4E39;&#x7089;&#x4E00;&#x6837;&#xFF0C;&#x6CA1;&#x6709;&#x5F3A;&#x5065;&#x7684;&#x8EAB;&#x4F53;&#xFF0C;&#x6839;&#x672C;&#x8C08;&#x4E0D;&#x4E0A;&#x70BC;&#x4E39;&#x3002;&#x7B51;&#x57FA;&#x7684;&#x57FA;&#x672C;&#x529F;&#x662F;&#x91C7;&#x7528;&#x6C14;&#x529F;&#xFF0C;&#x4EE5;&#x795E;&#x8FD0;&#x6C14;&#xFF0C;&#x7528;&#x610F;&#x5FF5;&#x8C03;&#x52A8;&#x7CBE;&#x3001;&#x6C14;&#x6CBF;&#x4EFB;&#x7763;&#x4E8C;&#x8109;&#x8FD0;&#x884C;&#x3002;&#x505A;&#x5230;&#x6C14;&#x901A;&#x3001;&#x70ED;&#x901A;&#x3001;&#x5168;&#x8EAB;&#x901A;&#x3002;</p>
-<p>  &#x5176;&#x6B21;&#x662F;&#x70BC;&#x7CBE;&#x5316;&#x6C14;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4EE5;&#x5148;&#x5929;&#x4E4B;&#x4E3A;&#x4E39;&#x836F;&#xFF0C;&#x7528;&#x610F;&#x8BC6;&#x53BB;&#x5BFC;&#x5F15;&#x63A8;&#x52A8;&#xFF0C;&#x4F7F;&#x5B83;&#x5728;&#x4F53;&#x5185;&#x521D;&#x6B65;&#x51DD;&#x7ED3;&#x3002;</p>
-<p>  &#x7B2C;&#x4E09;&#x662F;&#x70BC;&#x6C14;&#x5316;&#x795E;&#x3002;&#x662F;&#x6307;&#x628A;&#x4EBA;&#x4F53;&#x4E4B;&#x201C;&#x4E09;&#x5B9D;&#x201D;&#x5373;&#x7CBE;&#x3001;&#x6C14;&#x3001;&#x795E;&#x51DD;&#x7ED3;&#x4E3A;&#x5723;&#x80CE;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4F53;&#x5185;&#x5FAA;&#x73AF;&#x3002;</p>
-<p>  &#x7B2C;&#x56DB;&#x662F;&#x70BC;&#x795E;&#x8FD8;&#x865A;&#x3002;&#x795E;&#x4ED9;&#x5BB6;&#x8BA4;&#x4E3A;&#x4E39;&#x836F;&#x5F62;&#x6210;&#x540E;&#xFF0C;&#x53EF;&#x4ECE;&#x8111;&#x6237;&#x51FA;&#x5165;&#xFF0C;&#x5316;&#x4E3A;&#x8EAB;&#x5916;&#x4E4B;&#x8EAB;&#xFF0C;&#x4EBA;&#x4F53;&#x5373;&#x53EF;&#x6C38;&#x4E16;&#x957F;&#x751F;&#x3002;&#x5185;&#x4E39;&#x5BB6;&#x63A5;&#x53D7;&#x4E86;&#x9053;&#x5BB6;&#x865A;&#x65E0;&#x4E3A;&#x4E07;&#x7269;&#x4E4B;&#x672C;&#x7684;&#x89C2;&#x70B9;&#xFF0C;&#x8BA4;&#x4E3A;&#x9053;&#x5373;&#x662F;&#x865A;&#xFF0C;&#x5B87;&#x5B99;&#x4E2D;&#x53EA;&#x6709;&#x865A;&#x624D;&#x662F;&#x6C38;&#x6052;&#x5B58;&#x5728;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x70BC;&#x795E;&#x8FD8;&#x865A;&#xFF0C;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x7531;&#x4E09;&#x5230;&#x4E8C;&#xFF0C;&#x7531;&#x4E8C;&#x5230;&#x4E00;&#xFF0C;&#x5E76;&#x5F52;&#x5230;&#x865A;&#x7684;&#x8FC7;&#x7A0B;&#xFF08;&#x8001;&#x5B50;&#x4E66;&#x4E2D;&#x8BF4;&#x9053;&#x751F;&#x4E00;&#xFF0C;&#x4E00;&#x751F;&#x4E8C;&#xFF0C;&#x4E8C;&#x751F;&#x4E09;&#xFF0C;&#x4E09;&#x751F;&#x4E07;&#x7269;&#xFF0C;&#x6309;&#x7167;&#x987A;&#x5219;&#x6210;&#x4EBA;&#xFF0C;&#x9006;&#x5219;&#x6210;&#x4ED9;&#x7406;&#x8BBA;&#xFF0C;&#x7531;&#x4E07;&#x7269;&#x5F52;&#x5165;&#x865A;&#x7A7A;&#x4FBF;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x7531;&#x6709;&#x9650;&#x4E0A;&#x5347;&#x5230;&#x65E0;&#x9650;&#x7684;&#x8FC7;&#x7A0B;&#xFF09;&#x3002;</p>
+        <p>#修真笔记</p>
+<p>食水者善游能寒，食土者无心而不息，食木者多力而拂，食草者善走而愚，食桑者有丝而蛾，食肉者勇敢而悍，食谷者智慧而巧，食气者神明而寿，不食者不死而神。（《大戴礼记·易本命》）</p>
+<p>养气之道</p>
+<p>或食十二时气，从夜半始，从九九至八八七七六六五五而止。或春向东食岁星青气，使入肝；夏食荧惑赤气，使入心。四季之日食星镇黄气，使入脾；秋食太白白气，使入肺；冬服辰星黑气，使入肾</p>
+<p>导引之道</p>
+<p>吹呴呼吸，吐故纳新，熊经鸟伸，为寿而已矣。此导引之士，养形之人，彭祖寿考者之所好者也。</p>
+<p>行气和胎息</p>
+<p>凡行气欲除百病，随所在作念之，头痛念头，足痛念足，和气往攻之</p>
+<p>存思、守一、内视</p>
+<p>修身治物，要在存思。存思不精，漫澜无感。感应由精，精必有见。见妙如图，识解超进。神气坚明，业行无倦，兼济可期，其于有证，证之显验，逆知吉凶。</p>
+<p>凡存思之时，皆闭目内视。人体多神，必以五脏为主。主各料其事，事各得其成，成正则一而不二，则隐显无邪，无邪则众如可见，见则与圣符同，同圣即可弘，积学自然感会。是以朝夕存思，不可懈怠。</p>
+<p>古今要道，皆言守一，可长存而不老，人知守一，名为无极之道。人存一身，与精神常合并也。形者乃主死，精神者乃主生，常合则吉，去则凶……故圣人教其守一，言当守一身也，念而不休，精神自来。莫不相应，百病自除，此即长生久视之符也。</p>
+<p>夫自然本一，大道本一，元气本一。一者，真正纯阳一气，与太无合体，与大道同心，自然同性。……元气本一，化生有万，得一，乃遂生成，万若失一，立归死地，故一不可失也。</p>
+<p>房中术</p>
+<p>房中者，性情之极，至道之际。是以圣王制外乐以禁内情，而为之节文。《传》曰：“先王之作乐，所以节百事也。”乐而有节，则和平寿考。及迷而弗顾，以生疾而损性命。</p>
+<p>人之所上，莫过房欲。法天象地，规阴矩阳。悟其理者，则养性返龄；慢其真者，则伤神夭寿</p>
+<p>夫阴阳之术，高可以治小疾，次可以免虚耗而已。其理自有极，安能致神仙而却祸福乎？人不可以阴阳不交，坐致疾患。若纵情恣欲，不能节宣，则伐年命。其善术者，则能却走马以补脑，还阴丹以朱肠，采玉液于金池，引三五于华梁，令人老有美色，终其所禀之天年。（《抱朴子内篇·微旨》）</p>
+<p>阴阳不交，则坐致壅阏之病。故幽闭怨旷，多病而不寿也。任意肆意，又损年命。（《抱朴子内篇·释滞》）</p>
+<p>男不可无女，女不可无男。若孤独而思交接者，损人寿，生百病。</p>
+<p>外丹</p>
+<p>秦汉以来，企图成为神仙的人以五金、八石为药物炼制长生不老的仙丹的方术，称为炼丹术。随着修炼的重心由炼形向炼神的转化，道士们将以人体的精、气、神为药物炼制仙丹的方术也称为炼丹术。于是这种人体内的炼丹术称之为“内丹”，以矿物质为原料的炼丹术称为外丹。</p>
+<p>服金者寿如金，服玉行如玉</p>
+<p>内丹</p>
+<p>天地久大，圣人象之。精华在乎日月，进退运乎水火。是故性命双修，内外一道。龙虎宝鼎即身心也。身为炉鼎，心为神室，津为华池。五金之中，惟用天铅。阴中有阳，是为婴儿，即身中坎也。八石之中，惟用砂汞。阳中有阴，是为姹女，即身中离也。铅结金体，乃能生汞之白；汞受金炁，然后审砂之方。中央戊巳是为黄婆，即心中意也。火之居木，水之处金，皆本心神。脾上犹黄芽也，修治内外，两弦均平，惟存乎真土之动静而已。真土者，药物之主；斗柄者，火候之枢；白虎者，铅中之精华；青龙者，砂中之元气。鹊桥河车，百刻上运，华池神水，四时逆流。有物之时，无为为本，自形中之神入神中之性。此谓归根复命，犹金归性初，而称还丹也。</p>
+<p>内丹学理论认为：人体是一个具体而微的小宇宙，在天地未判，未有人身之前，整个宇宙处于虚无状态，而后在虚无中有一产生，称为先天之，先天之由静生动，化生阴阳，产生万物和人类，然后神分离，产生情欲和口鼻呼吸，先天至精化为人类的精液，到十六岁精、气、神达到全盛期。神仙家们从这个宇宙人类生成模式发现，宇宙间唯一永恒的东西就是虚，因此要达到长生和永恒，就必须从“逆”的方向向本原返回。由后天的具有七情六欲的人返回先天的无情无欲的虚，然后与道合真。这也就是所谓“顺则成人，逆则成仙”。因此内丹学的基本点就在于将老子的“道生一，一生二，二生三，三生万物”的宇宙模式进行反演，由三归二，二归一，即由精、气、神返归先天之，最后归于虚无。</p>
+<p>内丹功的关键在于运转小周天，就是指在精神意志的导引下，运药沿任督二脉循环。先从背面经过督脉上升，称为通三关，即通过尾闾、夹脊、玉枕三个部位，然后沿着前面的三丹田下降。三丹田指脑部泥丸（上丹田），胸部黄庭（中丹田）和腹部脐内（正丹田）。通三关内丹术语称为“进火”，降三关内丹术语称为“退符”。神仙家认为人身是小天地，天行360度，因此使先天之在体内运转360度，便称为周天功法。</p>
+<p>  内丹术主要分四个阶段：</p>
+<p>首先是筑基，即健身壮体，就如外丹术准备丹炉一样，没有强健的身体，根本谈不上炼丹。筑基的基本功是采用气功，以神运气，用意念调动精、气沿任督二脉运行。做到气通、热通、全身通。</p>
+<p>  其次是炼精化气，主要是以先天之为丹药，用意识去导引推动，使它在体内初步凝结。</p>
+<p>  第三是炼气化神。是指把人体之“三宝”即精、气、神凝结为圣胎，可以在体内循环。</p>
+<p>  第四是炼神还虚。神仙家认为丹药形成后，可从脑户出入，化为身外之身，人体即可永世长生。内丹家接受了道家虚无为万物之本的观点，认为道即是虚，宇宙中只有虚才是永恒存在的，所以炼神还虚，就完成了由三到二，由二到一，并归到虚的过程（老子书中说道生一，一生二，二生三，三生万物，按照顺则成人，逆则成仙理论，由万物归入虚空便完成了一个由有限上升到无限的过程）。</p>
 
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -423,17 +537,10 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
-          
-
-
           
 
   
@@ -453,63 +560,126 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">tqd</p>
-              <p class="site-description motion-element" itemprop="description">只是为了好玩</p>
+              <div class="site-description motion-element" itemprop="description">只是为了好玩</div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">19</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
-
-            
               
+
               
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">28</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">schlagwörter</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
             
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -517,6 +687,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -526,16 +697,18 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">tqd</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
 
 
 
@@ -543,12 +716,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.1</div>
 
 
 
 
         
+
 
 
 
@@ -569,11 +743,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -587,103 +764,11 @@
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -697,7 +782,60 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
 
 
 
@@ -709,6 +847,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
