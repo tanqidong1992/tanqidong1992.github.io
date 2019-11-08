@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="一些Bash Shell函数的使用">
+<meta name="keywords" content="Base,Shell,Linux,函数,阅读笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell函数">
+<meta property="og:url" content="http://tanqidong1992.github.io/2019/11/08/shell函数/index.html">
+<meta property="og:site_name" content="tqd">
+<meta property="og:description" content="一些Bash Shell函数的使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-08T16:21:01.940Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shell函数">
+<meta name="twitter:description" content="一些Bash Shell函数的使用">
+  <link rel="canonical" href="http://tanqidong1992.github.io/2019/11/08/shell函数/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>shell函数 | tqd</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">tqd</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">偶尔记一些东西</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/11/08/shell函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tqd">
+      <meta itemprop="description" content="只是为了好玩">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tqd">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">shell函数
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-08 22:54:38" itemprop="dateCreated datePublished" datetime="2019-11-08T22:54:38+08:00">2019-11-08</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-09 00:21:01" itemprop="dateModified" datetime="2019-11-09T00:21:01+08:00">2019-11-09</time>
+              </span>
+            
+          
+
+          
+            <div class="post-description">一些Bash Shell函数的使用</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Shell函数的定义"><a href="#Shell函数的定义" class="headerlink" title="Shell函数的定义"></a>Shell函数的定义</h2><p>函数组成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function [函数名]()</span><br><span class="line">&#123;</span><br><span class="line">    #函数体</span><br><span class="line">    commands...</span><br><span class="line">    #返回语句,返回值的取值范围0-255</span><br><span class="line">    return int</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关键字<strong>function</strong>可以省略.</li>
+<li>使用关键字<strong>function</strong>时,可以将括号省略.</li>
+<li><strong>return</strong>语句可以省略,如果没有返回语句,那么最后一行命令执行的返回值作为函数的返回值.</li>
+<li>返回值的取值范围为<strong>0-255</strong></li>
+</ul>
+<p>函数定义示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>计算两数之和</span><br><span class="line"><span class="meta">#</span> 参数1 数字</span><br><span class="line"><span class="meta">#</span> 参数2 数字</span><br><span class="line">function sum()&#123;</span><br><span class="line">    arg1=$1</span><br><span class="line">    arg2=$2</span><br><span class="line">    let c=arg1+arg2</span><br><span class="line">    echo $c</span><br><span class="line">    return 0</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span>省略了function关键字</span><br><span class="line">add()&#123;</span><br><span class="line"><span class="meta">   #</span>此函数的返回值为sum函数的返回值</span><br><span class="line">   sum 1 2</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span>省略了()</span><br><span class="line">function add1</span><br><span class="line">&#123;</span><br><span class="line">    sum 1 2</span><br><span class="line">    return 1</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span>单行函数,每行命令都需要以';'分割</span><br><span class="line">add2() &#123; c=$(sum 1 2) ; echo "sum is:$&#123;c&#125;"; &#125;</span><br><span class="line"></span><br><span class="line">function add3 &#123; c=$(sum 1 2) ; echo "sum is:$&#123;c&#125;"; &#125;</span><br><span class="line"></span><br><span class="line">a=1</span><br><span class="line">b=2</span><br><span class="line">let c=$(sum $&#123;a&#125; $&#123;b&#125;)</span><br><span class="line">echo "sum of a and b is:$c"</span><br><span class="line">echo "exit value is:$?"</span><br><span class="line">echo "invoke add:$(add)"</span><br><span class="line">echo "invoke add exit value:$?"</span><br><span class="line">add1</span><br><span class="line">echo "invoke add1 exit value:$?"</span><br><span class="line">echo "invoke add2:$(add2)"</span><br><span class="line">echo "invoke add2 exit value:$?"</span><br><span class="line">add3</span><br></pre></td></tr></table></figure>
+<h2 id="函数的参数-变量-返回值"><a href="#函数的参数-变量-返回值" class="headerlink" title="函数的参数,变量,返回值"></a>函数的参数,变量,返回值</h2><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>Shell函数有自己的命令行参数.函数使用特殊变量\$1，\$2，…$n来访问传递给它的参数。函数中使用参数的示例如下.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">name()&#123;</span><br><span class="line">    #参数个数</span><br><span class="line">    argSize=$#</span><br><span class="line">    echo "arg size:$&#123;argSize&#125;"</span><br><span class="line">    #所有参数</span><br><span class="line">    allArgs=$@</span><br><span class="line">    echo "all args[\$@]:$&#123;allArgs&#125;"</span><br><span class="line">    allArgs=$*</span><br><span class="line">    echo "all args[\$*]:$&#123;allArgs&#125;"</span><br><span class="line">    #读取第一个参数,如果是第n个则用$&#123;n&#125;</span><br><span class="line">    arg1=$1</span><br><span class="line">    echo "first arg:$arg1"</span><br><span class="line">    #第0个参数,是当前脚本名</span><br><span class="line">    arg0=$0</span><br><span class="line">    echo "arg0:$arg0"</span><br><span class="line">    #循环遍历所有参数</span><br><span class="line">    echo "循环遍历所有参数"</span><br><span class="line">    for ((i=1;i&lt;=argSize;i++))</span><br><span class="line">    do</span><br><span class="line">       t=$&#123;!i&#125;</span><br><span class="line">       echo "arg$&#123;i&#125;:$&#123;t&#125;"</span><br><span class="line">    done</span><br><span class="line">&#125;</span><br><span class="line">name p1 p2 p3</span><br></pre></td></tr></table></figure>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>默认情况下shell中定义的变量都是全局的.在函数中使用的变量,为了不影响全局变量,可以使用local命令来声明一个局部变量,局部变量将会屏蔽掉同名的全局变量.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">global_a=-1</span><br><span class="line">global_b=-1</span><br><span class="line"><span class="function"><span class="title">sum</span></span>()&#123;</span><br><span class="line">    a=<span class="variable">$1</span></span><br><span class="line">    b=<span class="variable">$2</span></span><br><span class="line">    <span class="comment">#定义全局变量c</span></span><br><span class="line">    <span class="built_in">let</span> c=a+b</span><br><span class="line">    <span class="comment">#定义局部变量d,函数外无法访问</span></span><br><span class="line">    <span class="built_in">local</span> d</span><br><span class="line">    <span class="built_in">let</span> d=a+b</span><br><span class="line">    <span class="comment">#使用全局变量global_b</span></span><br><span class="line">    global_b=<span class="variable">$d</span></span><br><span class="line">    <span class="comment">#定义局部变量global_a,屏蔽了已定义的全局变量global_a</span></span><br><span class="line">    <span class="built_in">local</span> global_a</span><br><span class="line">    global_a=<span class="variable">$d</span></span><br><span class="line">&#125;</span><br><span class="line">sum 1 2</span><br><span class="line"><span class="comment"># 此处c为3</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"c:<span class="variable">$c</span>"</span></span><br><span class="line"><span class="comment"># 此处 d为空</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"d:<span class="variable">$d</span>"</span></span><br><span class="line"><span class="comment"># 此处global_a为-1</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"global_a:<span class="variable">$global_a</span>"</span></span><br><span class="line"><span class="comment">#此处global_b为3</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"global_b:<span class="variable">$global_b</span>"</span></span><br></pre></td></tr></table></figure>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>函数通过return指令返回返回值</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">判断进程是否存在</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 参数1 进程号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 返回值 1表示进程不存在,0表示进程存在</span></span><br><span class="line">function isProcessExist()&#123;</span><br><span class="line">    local pid=$1</span><br><span class="line">    if [ -z $pid ]; then</span><br><span class="line">        return 1</span><br><span class="line">    fi</span><br><span class="line">    if [ -e "/proc/$&#123;pid&#125;" ]; then</span><br><span class="line">        return 0</span><br><span class="line">    else</span><br><span class="line">        return 1</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pid='1'</span><br><span class="line">isProcessExist $pid</span><br><span class="line"></span><br><span class="line">if [ $? -eq 0 ]; then</span><br><span class="line">    echo "Process[$&#123;pid&#125;] is exists!"</span><br><span class="line">else</span><br><span class="line">    echo "Process[$&#123;pid&#125;] is not exists!"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><p>函数调用语法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名 参数1 参数2 .. 参数n</span><br></pre></td></tr></table></figure>
+<p>备注:通过’.’,source指令可以引入外部脚本文件,调用外部的脚本文件中的函数</p>
+<h2 id="后台运行函数"><a href="#后台运行函数" class="headerlink" title="后台运行函数"></a>后台运行函数</h2><p>在调用的末尾加上&amp;,即可将函数置于后台运行,语法如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名 参数1 参数2 .. 参数n &amp;</span><br></pre></td></tr></table></figure>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">判断进程是否存在</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 参数1 进程号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 返回值 1表示存在,0表示不存在</span></span><br><span class="line">function isProcessExist()&#123;</span><br><span class="line">    pid=$1</span><br><span class="line">    if [ -f "proc/$&#123;pid&#125;"]; then</span><br><span class="line">        return 1</span><br><span class="line">    else</span><br><span class="line">        return 0</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function longTask()&#123;</span><br><span class="line">    times=$1</span><br><span class="line">    for ((i=0;i&lt;$&#123;times&#125;;i++))</span><br><span class="line">    do</span><br><span class="line">        #echo "do sub task $&#123;i&#125;..."</span><br><span class="line">        sleep 1</span><br><span class="line">    done</span><br><span class="line">    return 2</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">在后台执行长时间运行的函数</span></span><br><span class="line">longTask 12 &amp;</span><br><span class="line">pid=$!</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">echo</span> <span class="string">"pid:<span class="variable">$&#123;pid&#125;</span>"</span></span></span><br><span class="line">wait_loop_times=0</span><br><span class="line">until [ ! -e "/proc/$&#123;pid&#125;" ]</span><br><span class="line">do</span><br><span class="line">    dots=""</span><br><span class="line">    for ((i=0;i&lt;wait_loop_times;i++))</span><br><span class="line">    do</span><br><span class="line">        dots+="."</span><br><span class="line">    done</span><br><span class="line">    printf "%-100s\r" "等待$&#123;dots&#125;"</span><br><span class="line">    let wait_loop_times++</span><br><span class="line">    sleep 1</span><br><span class="line">done</span><br><span class="line">printf "\n"</span><br><span class="line">wait $pid</span><br><span class="line">echo "进程:$&#123;pid&#125;已经结束,退出值:$?"</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Base/" rel="tag"># Base</a>
+            
+              <a href="/tags/Shell/" rel="tag"># Shell</a>
+            
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+            
+              <a href="/tags/函数/" rel="tag"># 函数</a>
+            
+              <a href="/tags/阅读笔记/" rel="tag"># 阅读笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/06/10月6日/" rel="next" title="10月6日途遇一骗子">
+                  <i class="fa fa-chevron-left"></i> 10月6日途遇一骗子
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell函数的定义"><span class="nav-number">1.</span> <span class="nav-text">Shell函数的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的参数-变量-返回值"><span class="nav-number">2.</span> <span class="nav-text">函数的参数,变量,返回值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">2.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">2.2.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回值"><span class="nav-number">2.3.</span> <span class="nav-text">返回值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数调用"><span class="nav-number">3.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台运行函数"><span class="nav-number">4.</span> <span class="nav-text">后台运行函数</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">tqd</p>
+  <div class="site-description" itemprop="description">只是为了好玩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tqd</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.1</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
