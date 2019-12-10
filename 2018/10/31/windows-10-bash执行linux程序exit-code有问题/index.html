@@ -51,7 +51,7 @@
 </script>
 
   <meta name="description" content="在windows 10下,使用bash执行linux程序exit-code存在问题">
-<meta name="keywords" content="window,bash,linux">
+<meta name="keywords" content="linux,window,bash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows-10-bash执行linux程序exit-code有问题">
 <meta property="og:url" content="http://tanqidong1992.github.io/2018/10/31/windows-10-bash执行linux程序exit-code有问题/index.html">
@@ -242,8 +242,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.section .data</span><br><span class="line">.section .text</span><br><span class="line">.global _start</span><br><span class="line">_start:</span><br><span class="line">movq $1,%rax</span><br><span class="line">movq $2,%rbx</span><br><span class="line">int $0x80</span><br></pre></td></tr></table></figure></p>
-<p>终端执行命令如下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">as exit.s -o exit.o</span><br><span class="line">ld exit.o -o exit</span><br><span class="line">./exit</span><br><span class="line">echo $?</span><br></pre></td></tr></table></figure></p>
+        <p>代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.section .data</span><br><span class="line">.section .text</span><br><span class="line">.global _start</span><br><span class="line">_start:</span><br><span class="line">movq $1,%rax</span><br><span class="line">movq $2,%rbx</span><br><span class="line">int $0x80</span><br></pre></td></tr></table></figure>
+
+<p>终端执行命令如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">as exit.s -o exit.o</span><br><span class="line">ld exit.o -o exit</span><br><span class="line">./exit</span><br><span class="line">echo $?</span><br></pre></td></tr></table></figure>
+
 <p>结果为1,截图如下<br><img src="/2018/10/31/windows-10-bash执行linux程序exit-code有问题/code.png" alt="TIM截图20171115173852.png"></p>
 
     </div>
@@ -254,9 +258,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
               <a href="/tags/window/" rel="tag"># window</a>
               <a href="/tags/bash/" rel="tag"># bash</a>
-              <a href="/tags/linux/" rel="tag"># linux</a>
           </div>
 
         
@@ -332,7 +336,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

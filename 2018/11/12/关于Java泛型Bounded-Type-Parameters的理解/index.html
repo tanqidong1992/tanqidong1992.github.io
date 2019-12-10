@@ -240,19 +240,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>有界的类型参数，这个有界限定的是这个类型参数是有界的。<br>举例说明：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends Number&gt; numbers=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure></p>
+        <p>有界的类型参数，这个有界限定的是这个类型参数是有界的。<br>举例说明：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends Number&gt; numbers=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
 <p>这里的？ extends Number限定的是泛化类List的类型参数必须是 Number或者Number的子类,List&lt;? extends Number&gt;可以是:</p>
 <ul>
 <li>List<integer></integer></li>
 <li>List<float></float></li>
 <li>List<double><br>中的一种，所以集合中元素的类型我们是不知道的，假定我们调用List&lt;? extends Number&gt;类型的add方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends Number&gt; numbers=new ArrayList&lt;&gt;();</span><br><span class="line">Integer a=1;</span><br><span class="line">numbers.add(a);//如果此时numbers的实际类型是List&lt;Float&gt;,那么就会报错，因为Integer类型不能强制转化为Float类型</span><br></pre></td></tr></table></figure>
+
 </double></li>
 </ul>
-<p>所以我们不能使用Add方法添加任何类型的对象（null除外，null可以赋值给任何引用类型（reference type）的变量）。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? <span class="keyword">super</span> Number&gt; numbers=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure></p>
+<p>所以我们不能使用Add方法添加任何类型的对象（null除外，null可以赋值给任何引用类型（reference type）的变量）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? <span class="keyword">super</span> Number&gt; numbers=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
 <p>这里的 ？ super Number 限定的是泛化类List的类型参数必须是Number或者Number的父类.List&lt;? super Number&gt;可以是</p>
 <ul>
 <li>List<number></number></li>
 <li>List<object><br>中的一种，假定我们调用List&lt;? super Number&gt;类型的add方法<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? <span class="keyword">super</span> Number&gt; numbers=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">Integer a=<span class="number">1</span>;</span><br><span class="line">numbers.add(a);<span class="comment">//不管此时numbers的类型是哪种，Number或者Object,都可以将Integer类型直接赋值给它们，子类对象可以直接转化为父类对象</span></span><br><span class="line">Object c=<span class="keyword">new</span> Object();</span><br><span class="line">numbers1.add(c);<span class="comment">//假定此时numbers的类型为List&lt;Number&gt;,那么就会报错，因为Object类型不能强制转化为Number类型</span></span><br></pre></td></tr></table></figure>
+
 </object></li>
 </ul>
 <p>所以尽管集合中的元素类型我们是不知道的，但是我们可以添加Number以及Number子类的对象。</p>
@@ -343,7 +349,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
