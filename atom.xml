@@ -77,11 +77,11 @@
     
     
     
+      <category term="Bash" scheme="http://tanqidong1992.github.io/tags/Bash/"/>
+    
       <category term="Shell" scheme="http://tanqidong1992.github.io/tags/Shell/"/>
     
       <category term="Linux" scheme="http://tanqidong1992.github.io/tags/Linux/"/>
-    
-      <category term="Bash" scheme="http://tanqidong1992.github.io/tags/Bash/"/>
     
       <category term="函数" scheme="http://tanqidong1992.github.io/tags/%E5%87%BD%E6%95%B0/"/>
     
@@ -173,15 +173,15 @@
     
     
     
+      <category term="Shell" scheme="http://tanqidong1992.github.io/tags/Shell/"/>
+    
+      <category term="Linux" scheme="http://tanqidong1992.github.io/tags/Linux/"/>
+    
       <category term="FastDFS" scheme="http://tanqidong1992.github.io/tags/FastDFS/"/>
     
       <category term="Docker" scheme="http://tanqidong1992.github.io/tags/Docker/"/>
     
       <category term="Nginx" scheme="http://tanqidong1992.github.io/tags/Nginx/"/>
-    
-      <category term="Shell" scheme="http://tanqidong1992.github.io/tags/Shell/"/>
-    
-      <category term="Linux" scheme="http://tanqidong1992.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -190,9 +190,9 @@
     <link href="http://tanqidong1992.github.io/2019/03/27/Windows%E4%B8%8BRust%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>http://tanqidong1992.github.io/2019/03/27/Windows%E4%B8%8BRust%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2019-03-27T10:58:49.000Z</published>
-    <updated>2019-03-27T11:30:16.132Z</updated>
+    <updated>2019-12-10T11:11:37.642Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="下载rustup-init-exe"><a href="#下载rustup-init-exe" class="headerlink" title="下载rustup-init.exe"></a>下载rustup-init.exe</h2><p>前往<a href="https://www.rust-lang.org/tools/install" target="_blank" rel="noopener">官网</a>下载rustup-init.exe</p><h2 id="配置rustup安装代理"><a href="#配置rustup安装代理" class="headerlink" title="配置rustup安装代理"></a>配置rustup安装代理</h2><p>window下配置环境变量</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static</span><br><span class="line">RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup</span><br></pre></td></tr></table></figure><h2 id="运行rustup-init-exe"><a href="#运行rustup-init-exe" class="headerlink" title="运行rustup-init.exe"></a>运行rustup-init.exe</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\hnoe-dev-tqd\Downloads&gt; .\rustup-init.exe</span><br></pre></td></tr></table></figure><p>出现以下选择后,输入2,修改默认安装配置</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>) Proceed with installation (default)</span><br><span class="line"><span class="number">2</span>) Customize installation</span><br><span class="line"><span class="number">3</span>) Cancel installation</span><br><span class="line">&gt;<span class="number">2</span></span><br></pre></td></tr></table></figure><p>修改默认配置后,输入1继续安装</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Current installation options:</span><br><span class="line"></span><br><span class="line">   default host triple: x86_64-pc-windows-gnu</span><br><span class="line">     default toolchain: stable</span><br><span class="line">  modify PATH variable: yes</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>) Proceed with installation (default)</span><br><span class="line"><span class="number">2</span>) Customize installation</span><br><span class="line"><span class="number">3</span>) Cancel installation</span><br><span class="line">&gt;<span class="number">1</span></span><br></pre></td></tr></table></figure><p><strong>注意修改其中的x86_64-pc-windows-msvc为x86_64-pc-windows-gnu</strong></p><h2 id="安装开发组件"><a href="#安装开发组件" class="headerlink" title="安装开发组件"></a>安装开发组件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rustup update</span><br><span class="line">rustup component add rls rust-analysis rust-src</span><br></pre></td></tr></table></figure><h2 id="安装TMD-GCC"><a href="#安装TMD-GCC" class="headerlink" title="安装TMD-GCC"></a>安装TMD-GCC</h2><p>前往<a href="http://tdm-gcc.tdragon.net/" target="_blank" rel="noopener">官网</a>下载tmd-gcc安装包,安装即可</p><h2 id="配置gdb"><a href="#配置gdb" class="headerlink" title="配置gdb"></a>配置gdb</h2><p>修改gdbinit文件,在文件后追加如下内容</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">print</span> <span class="string">"-- loading rust pretty-printers --"</span></span><br><span class="line">sys.path.insert(<span class="number">0</span>,<span class="string">'C:\\Users\\wanazi\\.rustup\\toolchains\\stable-x86_64-pc-windows-gnu\\lib\\rustlib\\etc'</span>)</span><br><span class="line"><span class="keyword">import</span> gdb_rust_pretty_printing</span><br><span class="line">gdb_rust_pretty_printing.register_printers(gdb)</span><br><span class="line">end</span><br></pre></td></tr></table></figure><p>注意将<strong>‘C:\Users\wanazi\.rustup\toolchains\stable-x86_64-pc-windows-gnu\lib\rustlib\etc’</strong>替换为实际值.</p><h2 id="安装Eclipse"><a href="#安装Eclipse" class="headerlink" title="安装Eclipse"></a>安装Eclipse</h2><p>前往eclipse官网下载[<a href="https://www.eclipse.org/downloads/packages/release/2019-03/r/eclipse-ide-rust-developers-includes-incubating-components" target="_blank" rel="noopener">Eclipse IDE for Rust Developers (includes Incubating components)</a>],下载后解压即可.</p><h2 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h2><p>使用eclipse创建间隔Cargo Project</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> a=<span class="number">12</span>;</span><br><span class="line">    <span class="keyword">let</span> b=<span class="number">13</span>;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">"the sum of a,b is:&#123;&#125;"</span>,sum(a,b));</span><br><span class="line">    <span class="keyword">let</span> c=a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">sum</span></span>(a:<span class="built_in">i32</span>,b:<span class="built_in">i32</span>)-&gt;<span class="built_in">i32</span>&#123;</span><br><span class="line">a+b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用gdb调试需做如下修改,不然会报错</p><p><img src="/2019/03/27/Windows下Rust开发环境配置/modify-gdb.png" alt></p><h2 id="配置Rust-Crates-镜像"><a href="#配置Rust-Crates-镜像" class="headerlink" title="配置Rust Crates 镜像"></a>配置Rust Crates 镜像</h2><p>在用户主目录/.cargo,创建文件config ,加入以下内容</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[source.crates-io]</span></span><br><span class="line"><span class="attr">registry</span> = <span class="string">"https://github.com/rust-lang/crates.io-index"</span></span><br><span class="line"><span class="attr">replace-with</span> = <span class="string">'ustc'</span></span><br><span class="line"><span class="section">[source.ustc]</span></span><br><span class="line"><span class="attr">registry</span> = <span class="string">"git://mirrors.ustc.edu.cn/crates.io-index"</span></span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.rust-lang.org/" target="_blank" rel="noopener">Rust官网</a></p><p><a href="http://mirrors.ustc.edu.cn/help/rust-static.html" target="_blank" rel="noopener">Rust Toolchain反向代理使用帮助</a></p><p><a href="https://lug.ustc.edu.cn/wiki/mirrors/help/rust-crates#rust_crates_%E9%95%9C%E5%83%8F%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9" target="_blank" rel="noopener">Rust Crates 镜像</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="下载rustup-init-exe"><a href="#下载rustup-init-exe" class="headerlink" title="下载rustup-init.exe"></a>下载rustup-init.exe</h2><p>前往<a href="https://www.rust-lang.org/tools/install" target="_blank" rel="noopener">官网</a>下载rustup-init.exe</p><h2 id="配置rustup安装代理"><a href="#配置rustup安装代理" class="headerlink" title="配置rustup安装代理"></a>配置rustup安装代理</h2><p>window下配置环境变量</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static</span><br><span class="line">RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup</span><br><span class="line"><span class="meta">#</span><span class="bash">指定rust的安装目录</span></span><br><span class="line">RUSTUP_HOME=A:\rust\home</span><br><span class="line">CARGO_HOME=A:\rust\cargo</span><br></pre></td></tr></table></figure><h2 id="运行rustup-init-exe"><a href="#运行rustup-init-exe" class="headerlink" title="运行rustup-init.exe"></a>运行rustup-init.exe</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\hnoe-dev-tqd\Downloads&gt; .\rustup-init.exe</span><br></pre></td></tr></table></figure><p>出现以下选择后,输入2,修改默认安装配置</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>) Proceed with installation (default)</span><br><span class="line"><span class="number">2</span>) Customize installation</span><br><span class="line"><span class="number">3</span>) Cancel installation</span><br><span class="line">&gt;<span class="number">2</span></span><br></pre></td></tr></table></figure><p>修改默认配置后,输入1继续安装</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Current installation options:</span><br><span class="line"></span><br><span class="line">   default host triple: x86_64-pc-windows-gnu</span><br><span class="line">     default toolchain: stable</span><br><span class="line">  modify PATH variable: yes</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>) Proceed with installation (default)</span><br><span class="line"><span class="number">2</span>) Customize installation</span><br><span class="line"><span class="number">3</span>) Cancel installation</span><br><span class="line">&gt;<span class="number">1</span></span><br></pre></td></tr></table></figure><p><strong>注意修改其中的x86_64-pc-windows-msvc为x86_64-pc-windows-gnu</strong></p><h2 id="安装开发组件"><a href="#安装开发组件" class="headerlink" title="安装开发组件"></a>安装开发组件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rustup update</span><br><span class="line">rustup component add rls rust-analysis rust-src</span><br></pre></td></tr></table></figure><h2 id="安装TMD-GCC"><a href="#安装TMD-GCC" class="headerlink" title="安装TMD-GCC"></a>安装TMD-GCC</h2><p>前往<a href="http://tdm-gcc.tdragon.net/" target="_blank" rel="noopener">官网</a>下载tmd-gcc安装包,安装即可</p><h2 id="配置gdb"><a href="#配置gdb" class="headerlink" title="配置gdb"></a>配置gdb</h2><p>修改gdbinit文件,在文件后追加如下内容</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">print</span> <span class="string">"-- loading rust pretty-printers --"</span></span><br><span class="line">sys.path.insert(<span class="number">0</span>,<span class="string">'C:\\Users\\wanazi\\.rustup\\toolchains\\stable-x86_64-pc-windows-gnu\\lib\\rustlib\\etc'</span>)</span><br><span class="line"><span class="keyword">import</span> gdb_rust_pretty_printing</span><br><span class="line">gdb_rust_pretty_printing.register_printers(gdb)</span><br><span class="line">end</span><br></pre></td></tr></table></figure><p>注意将<strong>‘C:\Users\wanazi\.rustup\toolchains\stable-x86_64-pc-windows-gnu\lib\rustlib\etc’</strong>替换为实际值.</p><h2 id="安装Eclipse"><a href="#安装Eclipse" class="headerlink" title="安装Eclipse"></a>安装Eclipse</h2><p>前往eclipse官网下载[<a href="https://www.eclipse.org/downloads/packages/release/2019-03/r/eclipse-ide-rust-developers-includes-incubating-components" target="_blank" rel="noopener">Eclipse IDE for Rust Developers (includes Incubating components)</a>],下载后解压即可.</p><h2 id="编写Hello-World"><a href="#编写Hello-World" class="headerlink" title="编写Hello World"></a>编写Hello World</h2><p>使用eclipse创建Cargo Project</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> a=<span class="number">12</span>;</span><br><span class="line">    <span class="keyword">let</span> b=<span class="number">13</span>;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">"the sum of a,b is:&#123;&#125;"</span>,sum(a,b));</span><br><span class="line">    <span class="keyword">let</span> c=a+b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">sum</span></span>(a:<span class="built_in">i32</span>,b:<span class="built_in">i32</span>)-&gt;<span class="built_in">i32</span>&#123;</span><br><span class="line">a+b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>使用gdb调试需做如下修改,不然会报错</p><p><img src="/2019/03/27/Windows下Rust开发环境配置/modify-gdb.png" alt></p><h2 id="配置Rust-Crates-镜像"><a href="#配置Rust-Crates-镜像" class="headerlink" title="配置Rust Crates 镜像"></a>配置Rust Crates 镜像</h2><p>在用户主目录/.cargo,创建文件config ,加入以下内容</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[source.crates-io]</span></span><br><span class="line"><span class="attr">registry</span> = <span class="string">"https://github.com/rust-lang/crates.io-index"</span></span><br><span class="line"><span class="attr">replace-with</span> = <span class="string">'ustc'</span></span><br><span class="line"><span class="section">[source.ustc]</span></span><br><span class="line"><span class="attr">registry</span> = <span class="string">"git://mirrors.ustc.edu.cn/crates.io-index"</span></span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.rust-lang.org/" target="_blank" rel="noopener">Rust官网</a></p><p><a href="http://mirrors.ustc.edu.cn/help/rust-static.html" target="_blank" rel="noopener">Rust Toolchain反向代理使用帮助</a></p><p><a href="https://lug.ustc.edu.cn/wiki/mirrors/help/rust-crates#rust_crates_%E9%95%9C%E5%83%8F%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9" target="_blank" rel="noopener">Rust Crates 镜像</a></p>]]></content>
     
     <summary type="html">
     
@@ -252,11 +252,11 @@
     
     
     
-      <category term="linux" scheme="http://tanqidong1992.github.io/tags/linux/"/>
-    
       <category term="window" scheme="http://tanqidong1992.github.io/tags/window/"/>
     
       <category term="bash" scheme="http://tanqidong1992.github.io/tags/bash/"/>
+    
+      <category term="linux" scheme="http://tanqidong1992.github.io/tags/linux/"/>
     
   </entry>
   
@@ -332,15 +332,17 @@
   </entry>
   
   <entry>
-    <title>妖艳盛开...</title>
-    <link href="http://tanqidong1992.github.io/2018/03/11/2018-03-11/"/>
-    <id>http://tanqidong1992.github.io/2018/03/11/2018-03-11/</id>
+    <title>自惊疑，相呼厮呼两相回...</title>
+    <link href="http://tanqidong1992.github.io/2018/03/11/2018-03-11-1/"/>
+    <id>http://tanqidong1992.github.io/2018/03/11/2018-03-11-1/</id>
     <published>2018-03-11T12:33:52.000Z</published>
-    <updated>2019-03-27T11:30:45.031Z</updated>
+    <updated>2019-03-27T11:30:06.064Z</updated>
+    
+    <content type="html"><![CDATA[<p>【古轮台】(旦)自惊疑，相呼厮呼两相回。瑞兰和先辈不曾相识。(生)瑞莲名儿本是卑人亲妹。不知娘子因甚到此？(旦)妾因兵火急，离乡故。(生)娘子如何独行？(旦)母子随迁往南避，中途相失。秀才在何处不见了令妹？(生)喊杀声，各各逃生，电奔星驰。中途里差池，因循寻至。应声错，偶逢伊。娘子不见了母亲，小生不见了妹子。正是两人俱错意，一般烦恼两心知。</p>]]></content>
     
     <summary type="html">
     
-      妖艳盛开之日,衰败零落之时.
+      正是两人俱错意，一般烦恼两心知。
     
     </summary>
     
@@ -353,17 +355,15 @@
   </entry>
   
   <entry>
-    <title>自惊疑，相呼厮呼两相回...</title>
-    <link href="http://tanqidong1992.github.io/2018/03/11/2018-03-11-1/"/>
-    <id>http://tanqidong1992.github.io/2018/03/11/2018-03-11-1/</id>
+    <title>妖艳盛开...</title>
+    <link href="http://tanqidong1992.github.io/2018/03/11/2018-03-11/"/>
+    <id>http://tanqidong1992.github.io/2018/03/11/2018-03-11/</id>
     <published>2018-03-11T12:33:52.000Z</published>
-    <updated>2019-03-27T11:30:06.064Z</updated>
-    
-    <content type="html"><![CDATA[<p>【古轮台】(旦)自惊疑，相呼厮呼两相回。瑞兰和先辈不曾相识。(生)瑞莲名儿本是卑人亲妹。不知娘子因甚到此？(旦)妾因兵火急，离乡故。(生)娘子如何独行？(旦)母子随迁往南避，中途相失。秀才在何处不见了令妹？(生)喊杀声，各各逃生，电奔星驰。中途里差池，因循寻至。应声错，偶逢伊。娘子不见了母亲，小生不见了妹子。正是两人俱错意，一般烦恼两心知。</p>]]></content>
+    <updated>2019-03-27T11:30:45.031Z</updated>
     
     <summary type="html">
     
-      正是两人俱错意，一般烦恼两心知。
+      妖艳盛开之日,衰败零落之时.
     
     </summary>
     
@@ -459,11 +459,11 @@
     
     
     
+      <category term="linux" scheme="http://tanqidong1992.github.io/tags/linux/"/>
+    
       <category term="opensuse" scheme="http://tanqidong1992.github.io/tags/opensuse/"/>
     
       <category term="nexus" scheme="http://tanqidong1992.github.io/tags/nexus/"/>
-    
-      <category term="linux" scheme="http://tanqidong1992.github.io/tags/linux/"/>
     
   </entry>
   
