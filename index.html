@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,53 +13,22 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.5.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tanqidong1992.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="只是为了好玩">
 <meta property="og:type" content="website">
-<meta property="og:title" content="tqd">
+<meta property="og:title" content="芷兰旧梦">
 <meta property="og:url" content="http://tanqidong1992.github.io/index.html">
-<meta property="og:site_name" content="tqd">
+<meta property="og:site_name" content="芷兰旧梦">
 <meta property="og:description" content="只是为了好玩">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
+<meta property="article:author" content="QidongTan">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tqd">
-<meta name="twitter:description" content="只是为了好玩">
 
 <link rel="canonical" href="http://tanqidong1992.github.io/">
 
@@ -68,14 +37,13 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
-    isPage: false,
-    isArchive: false
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-Hans'
   };
 </script>
 
-  <title>tqd</title>
+  <title>芷兰旧梦</title>
   
 
 
@@ -106,7 +74,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="tqd" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="芷兰旧梦" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -115,18 +83,6 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">tqd</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">偶尔记一些东西</p>
-  </div>
-
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
@@ -134,40 +90,59 @@
       <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">芷兰旧梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">偶尔记一些东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
 
   </li>
   </ul>
-
 </nav>
+
+
+
+
 </div>
     </header>
 
@@ -185,112 +160,44 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content index posts-expand">
             
-
-  <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/11/19/Y9000X-Ubuntu系统-安装WIFI驱动/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/07/02/2021/07/02/introduction-of-ffmpeg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/19/Y9000X-Ubuntu系统-安装WIFI驱动/" class="post-title-link" itemprop="url">Y9000X(Ubuntu 18.04系统)安装Wi-Fi驱动</a>
-        </h1>
+            <a href="/2021/07/02/2021/07/02/introduction-of-ffmpeg/" class="post-title-link" itemprop="url">FFmpeg入门学习</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-19 00:12:44 / 修改时间：00:55:14" itemprop="dateCreated datePublished" datetime="2019-11-19T00:12:44+08:00">2019-11-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          记录下Ubuntu 18.04(Y9000X)安装Wi-Fi驱动步骤
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/19/Y9000X-Ubuntu系统-安装WIFI驱动/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/11/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="只是为了好玩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/19/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-11-19 00:07:24" itemprop="dateCreated datePublished" datetime="2019-11-19T00:07:24+08:00">2019-11-19</time>
+              <time title="创建时间：2021-07-02 23:23:12" itemprop="dateCreated datePublished" datetime="2021-07-02T23:23:12+08:00">2021-07-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:25:31" itemprop="dateModified" datetime="2019-02-27T20:25:31+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -304,10 +211,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          Hello World
+          <p>FFmpeg简介.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/11/19/hello-world/">
+              <a class="btn" href="/2021/07/02/2021/07/02/introduction-of-ffmpeg/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -327,31 +234,1327 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/11/08/shell函数/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/06/15/2021/06/15/algorithms-of-garbage-collector/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/08/shell函数/" class="post-title-link" itemprop="url">shell函数</a>
-        </h1>
+            <a href="/2021/06/15/2021/06/15/algorithms-of-garbage-collector/" class="post-title-link" itemprop="url">垃圾收集算法</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-15 00:23:12" itemprop="dateCreated datePublished" datetime="2021-06-15T00:23:12+08:00">2021-06-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>垃圾收集算法.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/15/2021/06/15/algorithms-of-garbage-collector/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/06/12/2021/06/12/base-of-gc-tuning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/12/2021/06/12/base-of-gc-tuning/" class="post-title-link" itemprop="url">GC调优基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-12 21:39:31" itemprop="dateCreated datePublished" datetime="2021-06-12T21:39:31+08:00">2021-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>GC调优基础.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/12/2021/06/12/base-of-gc-tuning/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/05/29/2021/05/29/harmonyOS_architecture/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/29/2021/05/29/harmonyOS_architecture/" class="post-title-link" itemprop="url">HarmonyOS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-29 01:35:11" itemprop="dateCreated datePublished" datetime="2021-05-29T01:35:11+08:00">2021-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:14" itemprop="dateModified" datetime="2021-08-18T23:34:14+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>HarmonyOS概念以及架构.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/29/2021/05/29/harmonyOS_architecture/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/05/24/2021/05/24/introduction-to-garbage-collection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/24/2021/05/24/introduction-to-garbage-collection/" class="post-title-link" itemprop="url">垃圾收集入门</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-24 21:55:11" itemprop="dateCreated datePublished" datetime="2021-05-24T21:55:11+08:00">2021-05-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>垃圾收集入门.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/24/2021/05/24/introduction-to-garbage-collection/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/03/12/2021/03/12/make-vagrant-base-box/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/12/2021/03/12/make-vagrant-base-box/" class="post-title-link" itemprop="url">基于CentOS7制作带Docker的Vagrant基础Box</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-12 21:33:45" itemprop="dateCreated datePublished" datetime="2021-03-12T21:33:45+08:00">2021-03-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>基于CentOS7制作带Docker的Vagrant基础Box</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/12/2021/03/12/make-vagrant-base-box/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/01/26/2021/01/26/category-of-cryptography/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/26/2021/01/26/category-of-cryptography/" class="post-title-link" itemprop="url">密码学的分类</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-26 00:50:11" itemprop="dateCreated datePublished" datetime="2021-01-26T00:50:11+08:00">2021-01-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>密码学的分类</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/26/2021/01/26/category-of-cryptography/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/01/25/2021/01/25/terms-of-cryptography/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/25/2021/01/25/terms-of-cryptography/" class="post-title-link" itemprop="url">密码学定义与术语</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-25 00:20:01" itemprop="dateCreated datePublished" datetime="2021-01-25T00:20:01+08:00">2021-01-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>密码学定义与术语</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/25/2021/01/25/terms-of-cryptography/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/01/24/2021/01/24/history-of-cryptography/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/24/2021/01/24/history-of-cryptography/" class="post-title-link" itemprop="url">密码学发展历史</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-24 23:47:01" itemprop="dateCreated datePublished" datetime="2021-01-24T23:47:01+08:00">2021-01-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>密码学发展历史</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/24/2021/01/24/history-of-cryptography/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/01/04/2021/01/04/base-of-rust/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/2021/01/04/base-of-rust/" class="post-title-link" itemprop="url">Rust基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-04 10:28:47" itemprop="dateCreated datePublished" datetime="2021-01-04T10:28:47+08:00">2021-01-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Rust基础语法</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/04/2021/01/04/base-of-rust/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/12/21/2020/12/21/process-momory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/21/2020/12/21/process-momory/" class="post-title-link" itemprop="url">进程内存</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-21 07:20:17" itemprop="dateCreated datePublished" datetime="2020-12-21T07:20:17+08:00">2020-12-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>进程内存说明</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/21/2020/12/21/process-momory/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/12/12/2020/12/Shell%E5%8F%98%E9%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/12/2020/12/Shell%E5%8F%98%E9%87%8F/" class="post-title-link" itemprop="url">Shell变量</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-12 13:22:47" itemprop="dateCreated datePublished" datetime="2020-12-12T13:22:47+08:00">2020-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Shell变量</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/12/12/2020/12/Shell%E5%8F%98%E9%87%8F/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/11/18/2020/11/07/JVM%E7%BC%96%E8%AF%91%E5%99%A8%E8%B0%83%E4%BC%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/18/2020/11/07/JVM%E7%BC%96%E8%AF%91%E5%99%A8%E8%B0%83%E4%BC%98/" class="post-title-link" itemprop="url">JVM编译器调优</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-18 23:11:47" itemprop="dateCreated datePublished" datetime="2020-11-18T23:11:47+08:00">2020-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>JVM编译器调优</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/18/2020/11/07/JVM%E7%BC%96%E8%AF%91%E5%99%A8%E8%B0%83%E4%BC%98/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/10/12/2020/10/12/GraalVM%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/10/12/2020/10/12/GraalVM%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">GraalVM安装与Native-Image体验</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-12 23:11:47" itemprop="dateCreated datePublished" datetime="2020-10-12T23:11:47+08:00">2020-10-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>GraalVM安装与Native-Image体验</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/12/2020/10/12/GraalVM%E5%AE%89%E8%A3%85/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/08/10/2020/08/10/JVM%E8%B0%83%E4%BC%98%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/10/2020/08/10/JVM%E8%B0%83%E4%BC%98%E6%A6%82%E8%BF%B0/" class="post-title-link" itemprop="url">JVM调优概述</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-10 23:11:47" itemprop="dateCreated datePublished" datetime="2020-08-10T23:11:47+08:00">2020-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>JVM调优概述</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/10/2020/08/10/JVM%E8%B0%83%E4%BC%98%E6%A6%82%E8%BF%B0/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/08/01/2020/08/01/Spring%E4%B8%8EMybatis%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90%E5%8F%82%E6%95%B0%E5%90%8D%E7%A7%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/01/2020/08/01/Spring%E4%B8%8EMybatis%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90%E5%8F%82%E6%95%B0%E5%90%8D%E7%A7%B0/" class="post-title-link" itemprop="url">Spring与Mybatis是如何获取参数名称</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-01 14:11:47" itemprop="dateCreated datePublished" datetime="2020-08-01T14:11:47+08:00">2020-08-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Spring Controller类接口参数名称,Mybatis Mapper接口类,参数名称的获取</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/01/2020/08/01/Spring%E4%B8%8EMybatis%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90%E5%8F%82%E6%95%B0%E5%90%8D%E7%A7%B0/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/07/07/2020/07/SpringFramework%E5%A4%A7%E7%BA%B2%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/07/2020/07/SpringFramework%E5%A4%A7%E7%BA%B2%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Spring Framework概述</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-07 20:29:47" itemprop="dateCreated datePublished" datetime="2020-07-07T20:29:47+08:00">2020-07-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Spring核心模块Spring Framework的概述</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/07/2020/07/SpringFramework%E5%A4%A7%E7%BA%B2%E5%AD%A6%E4%B9%A0/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/05/21/2020/05/%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/21/2020/05/%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/" class="post-title-link" itemprop="url">代码提交流程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-21 23:29:47" itemprop="dateCreated datePublished" datetime="2020-05-21T23:29:47+08:00">2020-05-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>代码提交流程</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/21/2020/05/%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/11/19/2019/11/Y9000X-Ubuntu%E7%B3%BB%E7%BB%9F-%E5%AE%89%E8%A3%85WIFI%E9%A9%B1%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/19/2019/11/Y9000X-Ubuntu%E7%B3%BB%E7%BB%9F-%E5%AE%89%E8%A3%85WIFI%E9%A9%B1%E5%8A%A8/" class="post-title-link" itemprop="url">Y9000X(Ubuntu 18.04系统)安装Wi-Fi驱动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-19 00:12:44" itemprop="dateCreated datePublished" datetime="2019-11-19T00:12:44+08:00">2019-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>记录下Ubuntu 18.04(Y9000X)安装Wi-Fi驱动步骤</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/19/2019/11/Y9000X-Ubuntu%E7%B3%BB%E7%BB%9F-%E5%AE%89%E8%A3%85WIFI%E9%A9%B1%E5%8A%A8/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/11/08/2019/11/shell%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/08/2019/11/shell%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">Shell函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -359,10 +1562,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-10 09:28:48" itemprop="dateModified" datetime="2019-11-10T09:28:48+08:00">2019-11-10</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -376,10 +1579,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          介绍Shell函数的定义,一些示例脚本.
+          <p>介绍Shell函数的定义,一些示例脚本.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/11/08/shell函数/">
+              <a class="btn" href="/2019/11/08/2019/11/shell%E5%87%BD%E6%95%B0/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -399,241 +1602,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/10/06/10月6日/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/07/20/2019/07/%E5%9F%BA%E4%BA%8EFastDFS%E5%92%8CNginx%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/06/10月6日/" class="post-title-link" itemprop="url">10月6日途遇一骗子</a>
-        </h1>
+            <a href="/2019/07/20/2019/07/%E5%9F%BA%E4%BA%8EFastDFS%E5%92%8CNginx%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">基于Docker,FastDFS和Nginx的分布式文件系统的搭建</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-06 15:45:54" itemprop="dateCreated datePublished" datetime="2019-10-06T15:45:54+08:00">2019-10-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-07 20:15:00" itemprop="dateModified" datetime="2019-10-07T20:15:00+08:00">2019-10-07</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          对陌生人再无恻隐之心.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/10/06/10月6日/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/09/21/再读黔之驴/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="只是为了好玩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/21/再读黔之驴/" class="post-title-link" itemprop="url">再读<<黔之驴>></a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-09-21 20:08:10" itemprop="dateCreated datePublished" datetime="2019-09-21T20:08:10+08:00">2019-09-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-10 19:18:52" itemprop="dateModified" datetime="2019-12-10T19:18:52+08:00">2019-12-10</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          对于<<黔之驴>>这篇课文,以前自己只知道驴,忘了老虎的形象.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/09/21/再读黔之驴/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/08/13/武学在于心/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="只是为了好玩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/13/武学在于心/" class="post-title-link" itemprop="url">武学在于心</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-08-13 19:24:28 / 修改时间：19:28:40" itemprop="dateCreated datePublished" datetime="2019-08-13T19:24:28+08:00">2019-08-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          武学在于心，既不在于兵刃，又不在于四肢
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/13/武学在于心/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/07/20/基于FastDFS和Nginx的分布式文件服务的搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="只是为了好玩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/07/20/基于FastDFS和Nginx的分布式文件服务的搭建/" class="post-title-link" itemprop="url">基于Docker,FastDFS和Nginx的分布式文件系统的搭建</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -641,10 +1634,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-07-23 00:01:33" itemprop="dateModified" datetime="2019-07-23T00:01:33+08:00">2019-07-23</time>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
               </span>
 
           
@@ -658,10 +1651,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在Docker环境下配置基于FastDFS和Nginx的分布式文件系统
+          <p>在Docker环境下配置基于FastDFS和Nginx的分布式文件系统</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/07/20/基于FastDFS和Nginx的分布式文件服务的搭建/">
+              <a class="btn" href="/2019/07/20/2019/07/%E5%9F%BA%E4%BA%8EFastDFS%E5%92%8CNginx%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E7%9A%84%E6%90%AD%E5%BB%BA/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -681,31 +1674,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/03/27/Windows下Rust开发环境配置/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2019/03/27/2019/03/Windows%E4%B8%8BRust%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/03/27/Windows下Rust开发环境配置/" class="post-title-link" itemprop="url">Windows下Rust开发环境配置</a>
-        </h1>
+            <a href="/2019/03/27/2019/03/Windows%E4%B8%8BRust%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">Windows下Rust开发环境配置</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -713,10 +1706,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-10 19:11:37" itemprop="dateModified" datetime="2019-12-10T19:11:37+08:00">2019-12-10</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -730,10 +1723,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在Windows下配置Rust的开发环境
+          <p>在Windows下配置Rust的开发环境</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/03/27/Windows下Rust开发环境配置/">
+              <a class="btn" href="/2019/03/27/2019/03/Windows%E4%B8%8BRust%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -753,31 +1746,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/11/12/关于Java泛型Bounded-Type-Parameters的理解/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/11/12/2018/11/%E5%85%B3%E4%BA%8EJava%E6%B3%9B%E5%9E%8BBounded-Type-Parameters%E7%9A%84%E7%90%86%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/11/12/关于Java泛型Bounded-Type-Parameters的理解/" class="post-title-link" itemprop="url">关于Java泛型Bounded-Type-Parameters的理解</a>
-        </h1>
+            <a href="/2018/11/12/2018/11/%E5%85%B3%E4%BA%8EJava%E6%B3%9B%E5%9E%8BBounded-Type-Parameters%E7%9A%84%E7%90%86%E8%A7%A3/" class="post-title-link" itemprop="url">关于Java泛型Bounded-Type-Parameters的理解</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -785,10 +1778,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:55:14" itemprop="dateModified" datetime="2019-02-27T20:55:14+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
               </span>
 
           
@@ -802,10 +1795,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          关于Java泛型Bounded-Type-Parameters的理解
+          <p>关于Java泛型Bounded-Type-Parameters的理解</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/11/12/关于Java泛型Bounded-Type-Parameters的理解/">
+              <a class="btn" href="/2018/11/12/2018/11/%E5%85%B3%E4%BA%8EJava%E6%B3%9B%E5%9E%8BBounded-Type-Parameters%E7%9A%84%E7%90%86%E8%A7%A3/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -825,31 +1818,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/10/31/windows-10-bash执行linux程序exit-code有问题/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/10/31/2018/10/windows-10-bash%E6%89%A7%E8%A1%8Clinux%E7%A8%8B%E5%BA%8Fexit-code%E6%9C%89%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/10/31/windows-10-bash执行linux程序exit-code有问题/" class="post-title-link" itemprop="url">windows-10-bash执行linux程序exit-code有问题</a>
-        </h1>
+            <a href="/2018/10/31/2018/10/windows-10-bash%E6%89%A7%E8%A1%8Clinux%E7%A8%8B%E5%BA%8Fexit-code%E6%9C%89%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Windows-10-bash执行linux程序exit-code有问题</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -857,10 +1850,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:21:54" itemprop="dateModified" datetime="2019-02-27T20:21:54+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -874,10 +1867,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在windows 10下,使用bash执行linux程序exit-code存在问题
+          <p>在windows 10下,使用bash执行linux程序exit-code存在问题</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/10/31/windows-10-bash执行linux程序exit-code有问题/">
+              <a class="btn" href="/2018/10/31/2018/10/windows-10-bash%E6%89%A7%E8%A1%8Clinux%E7%A8%8B%E5%BA%8Fexit-code%E6%9C%89%E9%97%AE%E9%A2%98/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -897,103 +1890,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/10/19/2018-10-19/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/05/27/2018/05/%E5%86%99%E4%BA%86%E4%B8%AA%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/10/19/2018-10-19/" class="post-title-link" itemprop="url">唐·柳宗元《读韩愈所著毛颖传后题》</a>
-        </h1>
+            <a href="/2018/05/27/2018/05/%E5%86%99%E4%BA%86%E4%B8%AA%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F/" class="post-title-link" itemprop="url">写了个引导程序</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-10-19 20:33:52" itemprop="dateCreated datePublished" datetime="2018-10-19T20:33:52+08:00">2018-10-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 19:30:59" itemprop="dateModified" datetime="2019-03-27T19:30:59+08:00">2019-03-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          世之模拟窜窃,取青媲白肥皮厚肉,柔筋脆骨,而以为辞者之读之也,其大笑固宜.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/10/19/2018-10-19/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/05/27/写了个引导程序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="只是为了好玩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/05/27/写了个引导程序/" class="post-title-link" itemprop="url">写了个引导程序</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1001,10 +1922,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:39:26" itemprop="dateModified" datetime="2019-02-27T20:39:26+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -1018,10 +1939,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          第一次写一个引导程序，还是记下来吧
+          <p>第一次写一个引导程序，还是记下来吧</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/05/27/写了个引导程序/">
+              <a class="btn" href="/2018/05/27/2018/05/%E5%86%99%E4%BA%86%E4%B8%AA%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1041,31 +1962,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/04/29/我们歪着说话/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/04/29/2018/04/%E6%88%91%E4%BB%AC%E6%AD%AA%E7%9D%80%E8%AF%B4%E8%AF%9D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/04/29/我们歪着说话/" class="post-title-link" itemprop="url">我们歪着说话</a>
-        </h1>
+            <a href="/2018/04/29/2018/04/%E6%88%91%E4%BB%AC%E6%AD%AA%E7%9D%80%E8%AF%B4%E8%AF%9D/" class="post-title-link" itemprop="url">我们歪着说话</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1073,10 +1994,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:42:46" itemprop="dateModified" datetime="2019-02-27T20:42:46+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-02 22:35:48" itemprop="dateModified" datetime="2021-08-02T22:35:48+08:00">2021-08-02</time>
               </span>
 
           
@@ -1090,10 +2011,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          歪着写代码,歪着睡觉,歪着玩游戏,歪着...
+          <p>歪着写代码,歪着睡觉,歪着玩游戏,歪着...</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/04/29/我们歪着说话/">
+              <a class="btn" href="/2018/04/29/2018/04/%E6%88%91%E4%BB%AC%E6%AD%AA%E7%9D%80%E8%AF%B4%E8%AF%9D/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1113,247 +2034,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/03/11/2018-03-11-1/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/02/15/2018/02/2018-02-15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2018/03/11/2018-03-11-1/" class="post-title-link" itemprop="url">自惊疑，相呼厮呼两相回...</a>
-        </h1>
+            <a href="/2018/02/15/2018/02/2018-02-15/" class="post-title-link" itemprop="url">同妹静山夜话</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-03-11 20:33:52" itemprop="dateCreated datePublished" datetime="2018-03-11T20:33:52+08:00">2018-03-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 19:30:06" itemprop="dateModified" datetime="2019-03-27T19:30:06+08:00">2019-03-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          正是两人俱错意，一般烦恼两心知。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/03/11/2018-03-11-1/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/03/11/2018-03-11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="只是为了好玩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/03/11/2018-03-11/" class="post-title-link" itemprop="url">妖艳盛开...</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-03-11 20:33:52" itemprop="dateCreated datePublished" datetime="2018-03-11T20:33:52+08:00">2018-03-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 19:30:45" itemprop="dateModified" datetime="2019-03-27T19:30:45+08:00">2019-03-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          妖艳盛开之日,衰败零落之时.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/03/11/2018-03-11/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/02/28/2018-02-28/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="只是为了好玩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/02/28/2018-02-28/" class="post-title-link" itemprop="url">凡遇,合也...</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-02-28 20:33:52" itemprop="dateCreated datePublished" datetime="2018-02-28T20:33:52+08:00">2018-02-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-03-27 19:30:30" itemprop="dateModified" datetime="2019-03-27T19:30:30+08:00">2019-03-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          凡遇,合也.时不合,必待合而后行.故比翼之鸟死乎木,比目之鱼死乎海.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/02/28/2018-02-28/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2018/02/15/2018-02-15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
-      <meta itemprop="description" content="只是为了好玩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/02/15/2018-02-15/" class="post-title-link" itemprop="url">同妹静山夜话</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1361,10 +2066,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:47:16" itemprop="dateModified" datetime="2019-02-27T20:47:16+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -1378,10 +2083,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          琼楼吟稿 长洲女子陶善庆余著
+          <p>琼楼吟稿 长洲女子陶善庆余著</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2018/02/15/2018-02-15/">
+              <a class="btn" href="/2018/02/15/2018/02/2018-02-15/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1401,42 +2106,42 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2017/12/27/修真笔记/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2017/05/04/2017/05/04/zuul-and-subservice-design/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2017/12/27/修真笔记/" class="post-title-link" itemprop="url">修真笔记</a>
-        </h1>
+            <a href="/2017/05/04/2017/05/04/zuul-and-subservice-design/" class="post-title-link" itemprop="url">Zuul网关以及子服务设计</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2017-12-27 20:41:43" itemprop="dateCreated datePublished" datetime="2017-12-27T20:41:43+08:00">2017-12-27</time>
+              <time title="创建时间：2017-05-04 15:38:43" itemprop="dateCreated datePublished" datetime="2017-05-04T15:38:43+08:00">2017-05-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:42:32" itemprop="dateModified" datetime="2019-02-27T20:42:32+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
               </span>
 
           
@@ -1450,10 +2155,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          寻找青云友，永与人世绝
+          <p>Zuul网关以及子服务设计</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2017/12/27/修真笔记/">
+              <a class="btn" href="/2017/05/04/2017/05/04/zuul-and-subservice-design/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1473,31 +2178,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/30/opensuse安装nexus服务/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/30/2016/11/opensuse%E5%AE%89%E8%A3%85nexus%E6%9C%8D%E5%8A%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2016/11/30/opensuse安装nexus服务/" class="post-title-link" itemprop="url">opensuse42.2安装nexus服务</a>
-        </h1>
+            <a href="/2016/11/30/2016/11/opensuse%E5%AE%89%E8%A3%85nexus%E6%9C%8D%E5%8A%A1/" class="post-title-link" itemprop="url">opensuse42.2安装nexus服务</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1505,10 +2210,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:22:46" itemprop="dateModified" datetime="2019-02-27T20:22:46+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -1522,10 +2227,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在opensuse 42.2下安装nexus服务的步骤
+          <p>在opensuse 42.2下安装nexus服务的步骤</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2016/11/30/opensuse安装nexus服务/">
+              <a class="btn" href="/2016/11/30/2016/11/opensuse%E5%AE%89%E8%A3%85nexus%E6%9C%8D%E5%8A%A1/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1545,31 +2250,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/21/deepin上安装lantern/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/21/2016/11/deepin%E4%B8%8A%E5%AE%89%E8%A3%85lantern/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2016/11/21/deepin上安装lantern/" class="post-title-link" itemprop="url">deepin上安装lantern,fluxgui</a>
-        </h1>
+            <a href="/2016/11/21/2016/11/deepin%E4%B8%8A%E5%AE%89%E8%A3%85lantern/" class="post-title-link" itemprop="url">Deepin上安装Lantern,Fluxgui</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1577,10 +2282,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:23:25" itemprop="dateModified" datetime="2019-02-27T20:23:25+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -1594,10 +2299,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          在deepin下,安装lantern,fluxgui
+          <p>在Deepin下,安装Lantern,Fluxgui</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2016/11/21/deepin上安装lantern/">
+              <a class="btn" href="/2016/11/21/2016/11/deepin%E4%B8%8A%E5%AE%89%E8%A3%85lantern/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1617,31 +2322,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/18/Window10安装Xming/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/18/2016/11/Window10%E5%AE%89%E8%A3%85Xming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2016/11/18/Window10安装Xming/" class="post-title-link" itemprop="url">Window10安装Xming</a>
-        </h1>
+            <a href="/2016/11/18/2016/11/Window10%E5%AE%89%E8%A3%85Xming/" class="post-title-link" itemprop="url">Window10安装Xming</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1649,10 +2354,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:17:57" itemprop="dateModified" datetime="2019-02-27T20:17:57+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -1666,10 +2371,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          为windows subsystem for linux安装 xming,显示linux gui程序
+          <p>为windows subsystem for linux安装 xming,显示linux gui程序</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2016/11/18/Window10安装Xming/">
+              <a class="btn" href="/2016/11/18/2016/11/Window10%E5%AE%89%E8%A3%85Xming/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1689,31 +2394,31 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/16/生成二维码/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/16/2016/11/%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2016/11/16/生成二维码/" class="post-title-link" itemprop="url">生成二维码</a>
-        </h1>
+            <a href="/2016/11/16/2016/11/%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/" class="post-title-link" itemprop="url">生成二维码</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -1721,10 +2426,10 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-02-27 20:20:15" itemprop="dateModified" datetime="2019-02-27T20:20:15+08:00">2019-02-27</time>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
               </span>
 
           
@@ -1738,10 +2443,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          生成带背景图片的二维码
+          <p>生成带背景图片的二维码</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2016/11/16/生成二维码/">
+              <a class="btn" href="/2016/11/16/2016/11/%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1761,37 +2466,43 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/11/10/First-Blog/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2016/06/02/2016/06/RxJava%E6%93%8D%E4%BD%9C%E7%AC%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="QidongTan">
       <meta itemprop="description" content="只是为了好玩">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tqd">
+      <meta itemprop="name" content="芷兰旧梦">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2016/11/10/First-Blog/" class="post-title-link" itemprop="url">First Blog</a>
-        </h1>
+            <a href="/2016/06/02/2016/06/RxJava%E6%93%8D%E4%BD%9C%E7%AC%A6/" class="post-title-link" itemprop="url">RxJava操作符</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2016-11-10 19:23:11 / 修改时间：20:58:09" itemprop="dateCreated datePublished" datetime="2016-11-10T19:23:11+08:00">2016-11-10</time>
+              <time title="创建时间：2016-06-02 10:29:00" itemprop="dateCreated datePublished" datetime="2016-06-02T10:29:00+08:00">2016-06-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
 
           
 
@@ -1804,8 +2515,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><p>没有什么东西</p>
-
+          <p>RxJava操作符</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/06/02/2016/06/RxJava%E6%93%8D%E4%BD%9C%E7%AC%A6/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1820,7 +2538,438 @@
   
   
 
-  </div>
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2015/03/31/2018/04/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/03/31/2018/04/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">页面置换算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-03-31 21:15:00" itemprop="dateCreated datePublished" datetime="2015-03-31T21:15:00+08:00">2015-03-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>页面置换算法</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/31/2018/04/%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2015/03/30/2018/04/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/03/30/2018/04/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">内存管理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-03-30 19:23:00" itemprop="dateCreated datePublished" datetime="2015-03-30T19:23:00+08:00">2015-03-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>内存管理</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/30/2018/04/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2015/03/17/2015/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/03/17/2015/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="post-title-link" itemprop="url">面向对象的基本概念</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-03-17 09:52:00" itemprop="dateCreated datePublished" datetime="2015-03-17T09:52:00+08:00">2015-03-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>面向对象的基本概念</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/17/2015/04/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2015/03/04/2015/03/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E5%AE%9A%E4%BD%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/03/04/2015/03/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E5%AE%9A%E4%BD%8D/" class="post-title-link" itemprop="url">Java对象的访问定位</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-03-04 22:24:00" itemprop="dateCreated datePublished" datetime="2015-03-04T22:24:00+08:00">2015-03-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Java对象的访问定位</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/04/2015/03/Java%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E5%AE%9A%E4%BD%8D/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2015/03/04/2015/03/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/03/04/2015/03/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">Java对象的内存布局</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-03-04 21:45:00" itemprop="dateCreated datePublished" datetime="2015-03-04T21:45:00+08:00">2015-03-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Java对象的内存布局</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/04/2015/03/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2015/03/04/2015/03/Java%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/03/04/2015/03/Java%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA/" class="post-title-link" itemprop="url">Java对象创建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-03-04 20:23:00" itemprop="dateCreated datePublished" datetime="2015-03-04T20:23:00+08:00">2015-03-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Java对象创建</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/04/2015/03/Java%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
 
@@ -1828,6 +2977,28 @@
 
           </div>
           
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
@@ -1857,7 +3028,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">tqd</p>
+  <p class="site-author-name" itemprop="name">QidongTan</p>
   <div class="site-description" itemprop="description">只是为了好玩</div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -1865,14 +3036,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1880,13 +3051,12 @@
 
 
   <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://forrestsu.github.io/" title="https://forrestsu.github.io/" rel="noopener" target="_blank">程序员的冷浪漫</a>
+          <a href="https://forrestsu.github.io/" title="https:&#x2F;&#x2F;forrestsu.github.io&#x2F;" rel="noopener" target="_blank">程序员的冷浪漫</a>
         </li>
     </ul>
   </div>
@@ -1905,19 +3075,18 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">tqd</span>
+  <span class="author" itemprop="copyrightHolder">QidongTan</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -1929,11 +3098,6 @@
 
 
 
-
-
-
-
-        
       </div>
     </footer>
   </div>
@@ -1942,14 +3106,21 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
 
 
 
-  
 
+  
 
 
 

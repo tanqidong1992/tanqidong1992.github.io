@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tanqidong1992.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="JVM调优概述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM调优概述">
+<meta property="og:url" content="http://tanqidong1992.github.io/2020/08/10/2020/08/10/JVM%E8%B0%83%E4%BC%98%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:site_name" content="芷兰旧梦">
+<meta property="og:description" content="JVM调优概述">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-08-10T15:11:47.000Z">
+<meta property="article:modified_time" content="2021-08-18T05:06:12.906Z">
+<meta property="article:author" content="QidongTan">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JVM">
+<meta property="article:tag" content="性能优化">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://tanqidong1992.github.io/2020/08/10/2020/08/10/JVM%E8%B0%83%E4%BC%98%E6%A6%82%E8%BF%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>JVM调优概述 | 芷兰旧梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="芷兰旧梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">芷兰旧梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">偶尔记一些东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/tanqidong1992" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/08/10/2020/08/10/JVM%E8%B0%83%E4%BC%98%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JVM调优概述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-10 23:11:47" itemprop="dateCreated datePublished" datetime="2020-08-10T23:11:47+08:00">2020-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+            <div class="post-description">JVM调优概述</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="JVM调优概述"><a href="#JVM调优概述" class="headerlink" title="JVM调优概述"></a>JVM调优概述</h1><h2 id="JVM调优标志"><a href="#JVM调优标志" class="headerlink" title="JVM调优标志"></a>JVM调优标志</h2><p>除极少数外，JVM主要接受两类调优标志：布尔标志，附带参数标志；</p>
+<ul>
+<li>布尔参数的语法为-XX:+FlagName表示开启，-XX:-FlagName表示关闭。</li>
+<li>附带参数的语法为-XX:FlagName=something,将FlagName的值设置为something。</li>
+</ul>
+<p>每个标志都有它的默认值，我们可以执行以下命令查看。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -XX:+PrintFlagsFinal</span><br></pre></td></tr></table></figure>
+
+<p>这些标志在Client以及Server类虚拟机上具有不同的默认值，现在讨论这个已经没有意义了，从JDK 9开始Oracle不再提供32位的JDK下载了。<br>备注：在Microsoft Windows上运行的任意32位JVM（无论cpu的核心数）以及单cpu的（不论是什么操作系统）运行的32位，都是Client类虚拟机。所有其他机器(包括64位虚拟机)都被认为是Server类虚拟机。</p>
+<h2 id="全面的性能调优"><a href="#全面的性能调优" class="headerlink" title="全面的性能调优"></a>全面的性能调优</h2><h3 id="编写更好的算法"><a href="#编写更好的算法" class="headerlink" title="编写更好的算法"></a>编写更好的算法</h3><p>不言而喻.</p>
+<h3 id="编写更少的代码"><a href="#编写更少的代码" class="headerlink" title="编写更少的代码"></a>编写更少的代码</h3><ul>
+<li>要编译的代码越多，等待程序启动所消耗的时间越长。</li>
+<li>要创建的对象越多，垃圾收集的工作量越大。</li>
+<li>要分配的对象越多，GC的周期越长。</li>
+<li>要从磁盘装载到JVM的类越多，程序启动所花费的时间越长。</li>
+<li>要执行的代码越多，机器硬件缓存的效率越低。</li>
+<li>执行的代码越多，花费的时间越长。</li>
+</ul>
+<h4 id="无法取胜的战争"><a href="#无法取胜的战争" class="headerlink" title="无法取胜的战争"></a>无法取胜的战争</h4><p>所有应用程序的性能随着时间,即新版本的发布而降低.但由于硬件的改善使得新程序的运行速度可以接受，所以不会有人注意到性能上的差异。</p>
+<p>随着新特性的添加和新要求的采纳，程序会越来越大，越来越慢.这种现象我们总结为“积少成多”原则。随着功能的增加，性能测试很快就会检测到资源瓶颈。而性能调优小组可以修正主要的性能衰减。</p>
+<h3 id="过早优化"><a href="#过早优化" class="headerlink" title="过早优化"></a>过早优化</h3><p>我们不能把大量的时间都耗费在那些小的性能改进上。最终我们应该编写清晰，直接，易读和易理解的代码，不能为了性能而过早的编写复杂的程序结构（算法和设计带来的）。那些真正的优化最好留到最后，等到性能分析表明这些措施有巨大收益的时候才进行。<br>备注：过早优化不包括已知的对性能不好的代码结构。</p>
+<h3 id="其他：数据库很有可能是瓶颈"><a href="#其他：数据库很有可能是瓶颈" class="headerlink" title="其他：数据库很有可能是瓶颈"></a>其他：数据库很有可能是瓶颈</h3><p>如果我们开发的是独立运行的Java程序，性能就只与应用本身相关。一旦添加了外部资源（例如数据库），那么这两者的性能都很重要。在分布式环境中，比如Java EE服务器，负载均衡器，数据库，Java应用服务器的性能问题可能只是其中的很小一部分。</p>
+<p>对于整个系统，我们需要采用结构化的方法针对系统的所有方面分析性能。CPU使用率，I/O延迟，系统整体的吞吐量都必须测量和分析。只有到那时，我们才能确定是那个组件导致了性能瓶颈。</p>
+<h4 id="不只JVM有BUG和性能问题"><a href="#不只JVM有BUG和性能问题" class="headerlink" title="不只JVM有BUG和性能问题"></a>不只JVM有BUG和性能问题</h4><ul>
+<li>运行环境中的任何部分都可能会引起性能问题，包括测试框架。</li>
+<li>不要忽略初步分析，如果数据库是瓶颈，那么无论如何优化访问数据库的Java程序，都无助于整体性能，实际上可能适得其反。作为一般性原则，系统负载越大，系统性能越糟糕。如果更改Java应用使得它更有效，这只会增加已经过载的数据库的负载 ，整体性能实际反而会下降。导致的风险是，可能会得出错误的结论，即认为不应该改进JVM。</li>
+</ul>
+<p>增加系统某个组件的负载导致整个系统性能变慢，这一原则不仅适用于数据库.CPU密集型应用，或者越来越多的线程试图获取已经有线程等待的锁，还有一些其他的场景都适用这一原则</p>
+<h3 id="常见的优化"><a href="#常见的优化" class="headerlink" title="常见的优化"></a>常见的优化</h3><p>一般而言，常用的用例场景才是性能优化真正应该关注的重点.</p>
+<ul>
+<li>借助性能分析来优化代码，重点关注性能分析中最耗时的操作。</li>
+<li>利用奥卡姆剃刀原则诊断性能问题，性能问题最有可能的原因应该是最容易解释的：新代码比机器配置更可能引入性能问题，机器配置比JVM或者操作系统的bug更容易引入性能问题。</li>
+<li>为应用中最常用的操作编写简单的算法。</li>
+</ul>
+<h2 id="总而言之"><a href="#总而言之" class="headerlink" title="总而言之"></a>总而言之</h2><p>多数情况下，JVM只占整体性能的一小部分。你需要对Java所在系统的环境进行整体系统调优，数据库和其他后台运行系统的性能的重要性不亚于JVM。此外，JVM与系统其他部分的交互对系统的影响也同样重要。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/oracle-java-archive-downloads.html">Oracale JDK下载地址汇总</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/JVM/" rel="tag"># JVM</a>
+              <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag"># 性能优化</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/01/2020/08/01/Spring%E4%B8%8EMybatis%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90%E5%8F%82%E6%95%B0%E5%90%8D%E7%A7%B0/" rel="prev" title="Spring与Mybatis是如何获取参数名称">
+      <i class="fa fa-chevron-left"></i> Spring与Mybatis是如何获取参数名称
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/12/2020/10/12/GraalVM%E5%AE%89%E8%A3%85/" rel="next" title="GraalVM安装与Native-Image体验">
+      GraalVM安装与Native-Image体验 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM%E8%B0%83%E4%BC%98%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">JVM调优概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM%E8%B0%83%E4%BC%98%E6%A0%87%E5%BF%97"><span class="nav-number">1.1.</span> <span class="nav-text">JVM调优标志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E9%9D%A2%E7%9A%84%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98"><span class="nav-number">1.2.</span> <span class="nav-text">全面的性能调优</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">编写更好的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%9B%B4%E5%B0%91%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">1.2.2.</span> <span class="nav-text">编写更少的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E6%B3%95%E5%8F%96%E8%83%9C%E7%9A%84%E6%88%98%E4%BA%89"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">无法取胜的战争</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%97%A9%E4%BC%98%E5%8C%96"><span class="nav-number">1.2.3.</span> <span class="nav-text">过早优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BE%88%E6%9C%89%E5%8F%AF%E8%83%BD%E6%98%AF%E7%93%B6%E9%A2%88"><span class="nav-number">1.2.4.</span> <span class="nav-text">其他：数据库很有可能是瓶颈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AAJVM%E6%9C%89BUG%E5%92%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">不只JVM有BUG和性能问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BC%98%E5%8C%96"><span class="nav-number">1.2.5.</span> <span class="nav-text">常见的优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E8%80%8C%E8%A8%80%E4%B9%8B"><span class="nav-number">1.3.</span> <span class="nav-text">总而言之</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">QidongTan</p>
+  <div class="site-description" itemprop="description">只是为了好玩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://forrestsu.github.io/" title="https:&#x2F;&#x2F;forrestsu.github.io&#x2F;" rel="noopener" target="_blank">程序员的冷浪漫</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">QidongTan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

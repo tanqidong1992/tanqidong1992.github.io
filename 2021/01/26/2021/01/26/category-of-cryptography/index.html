@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tanqidong1992.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="密码学的分类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="密码学的分类">
+<meta property="og:url" content="http://tanqidong1992.github.io/2021/01/26/2021/01/26/category-of-cryptography/index.html">
+<meta property="og:site_name" content="芷兰旧梦">
+<meta property="og:description" content="密码学的分类">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-01-25T16:50:11.000Z">
+<meta property="article:modified_time" content="2021-08-18T15:34:13.333Z">
+<meta property="article:author" content="QidongTan">
+<meta property="article:tag" content="阅读笔记">
+<meta property="article:tag" content="密码学">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://tanqidong1992.github.io/2021/01/26/2021/01/26/category-of-cryptography/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>密码学的分类 | 芷兰旧梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="芷兰旧梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">芷兰旧梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">偶尔记一些东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/tanqidong1992" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/01/26/2021/01/26/category-of-cryptography/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          密码学的分类
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-26 00:50:11" itemprop="dateCreated datePublished" datetime="2021-01-26T00:50:11+08:00">2021-01-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+              </span>
+
+          
+            <div class="post-description">密码学的分类</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="密码学的分类"><a href="#密码学的分类" class="headerlink" title="密码学的分类"></a>密码学的分类</h1><p>密码学起源于古代,发展于现代,随时间推移,密码学不断完善,拥有众多分支,可以从时间上,保密内容,密码体制等方面进行划分.</p>
+<h2 id="分类的划分"><a href="#分类的划分" class="headerlink" title="分类的划分"></a>分类的划分</h2><h3 id="按时间划分"><a href="#按时间划分" class="headerlink" title="按时间划分"></a>按时间划分</h3><ul>
+<li>古典密码:以字符为基本加密单元</li>
+<li>现代密码:以信息块为加密单元</li>
+</ul>
+<h3 id="按保密内容的算法划分"><a href="#按保密内容的算法划分" class="headerlink" title="按保密内容的算法划分"></a>按保密内容的算法划分</h3><ul>
+<li>受限(Restricted)算法:算法的保密性基于保持算法的秘密,一般不赞成使用这种算法,除非用于军事一类的应用,算法由专业机构开发,验证,确保其算法的安全性,这是古典密码学的主要特征.</li>
+<li>基于密钥(Key-Based)算法:算法的保密性基于对密钥的保密.这是基于柯克霍夫原则设计的算法,算法的公开有助于算法安全性的验证,算法的漏洞得以及时修正,避免算法的设计者在算法上留下后门等.这是现代密码学的主要特征.</li>
+</ul>
+<h3 id="按密码体制划分"><a href="#按密码体制划分" class="headerlink" title="按密码体制划分"></a>按密码体制划分</h3><ul>
+<li>对称密码体制:也称为单钥密码体制或私钥密码体制.指该密码体制中的加密密钥与解密密钥相同.</li>
+<li>非对称密码体制:也称为双钥密码体制或者公钥密码体制.指该密码体制的加密密钥与解密密钥不同,密钥分公钥与私钥,公钥对外开放,私钥对外保密.</li>
+</ul>
+<p>备注:与上述密码体制对应的算法有对称密码算法和非对称密码算法.</p>
+<ul>
+<li>对称密码算法:也称为单钥密码算法或私钥密码算法,指对应于对称密码体制的加密,解密算法,常见的有DES,AES.</li>
+<li>非对称密码算法:也称为双钥密码算法或公钥密码算法,指对于非对称密码体制的加密,解密算法,常见的算法有RSA,DSA,常用于数字签名,身份认证.</li>
+</ul>
+<p>非对称加密对于对称加密算法有着更高的安全性,却同时有着不可回避的加密解密耗时时长.</p>
+<h3 id="按明文的处理方法划分"><a href="#按明文的处理方法划分" class="headerlink" title="按明文的处理方法划分"></a>按明文的处理方法划分</h3><ul>
+<li>分组密码(Block Cipher):指加密时,将明文划分成固定长度的组,用同一个密钥和算法对每一块加密,输出也是固定长度的密码,分组加密多用于网络.</li>
+<li>流密码(Stream Cipher):也称为序列密码,指加密时每次加密一位或一个字节的明文.手机平台对应用使用的系统资源有着极为苛刻的要求,流密码对于系统资源要求极低.RC4是相当有名的流密码算法.</li>
+</ul>
+<p>备注:手工加密阶段和机械加密阶段,流密码曾是当时的主流.现代密码学研究的主要关注点时分组密码和流密码及其应用,在对称密码体制中,大部分加密算法属于分组密码.</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="古典密码"><a href="#古典密码" class="headerlink" title="古典密码"></a>古典密码</h3><p>古典密码起始于古代终止于19世纪末,是现代密码学的基础.古典密码受限于当时的环境,以语言学为基础对文字进行字符变化(对字符加密),以达到信息加密的目的.古典密码加密算法最常用,最核心的两种加密技巧是位移和替代,这同样是对称加密算法最常用的方法.</p>
+<ul>
+<li>位移密码(Transposition Cipher):错位密码,将字符重新排序,例如”123456” 变成 “321654”.</li>
+<li>替代密码(Substitution Cipher):也称置换密码,将明文中的一组字符替代为其他的字符,形成密文,例如”hello” 变成 “ifmmp”(每个字母使用下一个字母替代).著名的凯撒密码就应用了替代法.</li>
+</ul>
+<p>在古典加密时期,替代密码发展迅速,拥有众多分支,又分为以下几种:</p>
+<ul>
+<li>单表替代密码:也称为简单替代密码,明文的一个字符用相应的一个密文字符代替.加密过程是从明文字母表到密文字母表的一一映射.主要包括位移(shift)密码,乘数(multiplicative)密码,仿射(affine)密码,多项式(Polynomial)密码,密钥短语(Key Word)密码.</li>
+<li>同音替代密码:也称多名替代密码.与单表替代系统相似,唯一不同的是单个字符明文可以映射成密文的几个字符之一.</li>
+<li>多表替代密码(Polyalphabetic Substitution Cipher):明文中的字符映射到密文空间还依赖与它在上下文中的位置,由多个简单的替代密码构成.例如,可能有五个被使用的不同的简单替代密码,单独的一个字符用来改变明文的每个字符的位置.弗吉尼亚密码,博福特密码,滚动密钥密码,弗纳姆密码,转子机密码均为多表替代密码.第二次世界大战中,德军用的转子加密机Enigma,正是多表替代密码应用的典范.</li>
+<li>多字母替代密码(Polygram Substitution Cipher):明文中的字符被成组加密,例如’ABA’可能对应于’RTQ’.希尔密码,Playfair密码均为多字母替代密码.第一次世界大战中英国人就采用这种密码.</li>
+</ul>
+<p>备注: 不管是位移密码还是替代密码,终究脱离不了人类的语言.针对该特点,通过对密文进行语义分析使得古典密码在破译上有章可循.例如凯撒密码是单表替代密码,要破解凯撒密码,只要以语言学为基础,找出使用频度最高的字符,例如’’和e’,用ascii码表示就是32和101,差值69,如果明文中两个出现最高的字符的ascii码相差69,那么对应加密后密文中相应出现频度最高的字符的ascii相差也一定是69,很显然,通过这样的分析方法,只要找出密文中与之对应的字符,计算偏移量(密钥),就可以破解密文,这就是著名的频度分析法.</p>
+<h3 id="对称密码体制"><a href="#对称密码体制" class="headerlink" title="对称密码体制"></a>对称密码体制</h3><p>对称密码体制并不是现代密码学的新生事物,它是古典密码学的进一步延续.古典密码学常用的两种技巧替代和位移,仍然是对称加密体制中最重要的加密技巧.</p>
+<p>对称密码体制要求加密和解密使用同一个密钥,解密时加密的逆运算,由于双方需要共享同一个密钥,这就要求双方必须在通信前商定该密钥,并妥善保存该密钥,该密钥称为秘密密钥,秘密密钥的存在使得对称加密体制开放性变差.</p>
+<p>对称密码体制分为两种:一种是对明文的单个位(或字节)进行运算,称为流密码,也称为序列密码;另一种是把明文信息划分为不同的组(块)结构,分别对每个组(或块)进行加密和解密,称为分组密码.</p>
+<h4 id="流密码"><a href="#流密码" class="headerlink" title="流密码"></a>流密码</h4><p>流密码是军事,外交等机要部门中应用最广泛的对称密码体制,同时,它也是手机上应用平台最常用的加密手段.流密码实现较为简单,加密时将明文按字符(或字节)逐位进行加密,解密时将密文按字符(字节)逐位解密.加密和解密都是简单的位运算.明文加密后,生成的密文几乎和明文保持相同的长度.</p>
+<p>流密码分为同步流密码和自同步流密码</p>
+<h5 id="同步流密码"><a href="#同步流密码" class="headerlink" title="同步流密码"></a>同步流密码</h5><p>信息发送方与接收方在传递信息时,同步进行加密和解密操作,明文与密文一一对应.密文如果在传播过程中被篡改,删除或插入,可导致同步失效,以致密文解密失败,必须重新同步来实现解析,恢复密文.在密文传输过程中,如果某个位发生改变,那么该位的变化只影响该位的恢复,对后续密文位不受影响,这是同步流密码的一个重要特点.但是,根据该特性主动攻击者可以有选择地对密文字符进行改动,并准确知道这些改动对明文的影响.因此,同步流密码具有同步性,无错误传递及主动攻击性三种特性.同步流密码适用于为音频和视频数据提供版权保护.</p>
+<h5 id="自同步流密码"><a href="#自同步流密码" class="headerlink" title="自同步流密码"></a>自同步流密码</h5><p>与同步流密码相比,自同步流密码是一种有记忆变换的密码.每一个密钥与已产生的固定数量的密文位有关,密钥由已生成的密文决定.在密文传输过程中,如果一个密文位发生改变,那么该位的变化会影响到后续有限位(如n位)的密文位的正确解密.所以自同步流密码具有错误传递现象,但是在接受n位正确密文字符后,密码会自身实现重新同步.基于这一特点,如果主动攻击者对密文做了修改,接收方仍然不能检测出密文的完整性.与同步流密码相比,自同步流密码的密码分析更加困难,安全性更高.因此自同步流具有自同步性,错误传递有限性,主动攻击性及明文统计扩散四种特征.</p>
+<p>流密码实现简单,便于硬件计算,加密与解密处理速度快,错误传播率低等优点.但是,流密码对错误的产生不够敏感,这是流密码的缺点.流密码通常配合其他技术验证消息的完整性.流密码涉及大量的理论知识,受限于应用场景(目前主要运用与军事和外交等机要部门),许多研究成果并未完全公开.目前使用较多的流密码是自同步流密码.流密码的常用算法有RC4和SEAL.</p>
+<p>流密码的安全强度依赖于密钥流生成器所产生的密钥流序列的特征,关键在与密钥生成器的设计以及消息收发两端密钥流产生的同步技术.</p>
+<h4 id="分组密码"><a href="#分组密码" class="headerlink" title="分组密码"></a>分组密码</h4><p>分组密码多应用于网络加密,是对称密码体制中发展最为完善的密码体制.分组密码对固定长度的一组明文进行加密,这一固定长度称为分组长度.分组长度是分组密码的一个参数,它与算法的安全性成正比,其取值范围取决于实际应用的环境.</p>
+<p>为保证分组算法的安全性,分组长度越长越好,分组长度越长,则密码分析越困难;为保证分组密码的实用性,分组长度越短越好,分组长度越短,则越便于操作和运算.分组长度的设定需要权衡分组算法的安全性与实用性,一般设置为56.随着密码学的发展,分组长度只有56位的分组密码已不能确保算法的安全性,目前,分组密码多选择128位作为算法的分组长度.</p>
+<p>分组密码的加密过程是对一个分组长度为n位的明文进行加密操作,相应地产生一个n位的密文分组,由此可见不同的n位密文共有2^n个,考虑到加密算法的可逆性,每一个不同的n位明文都应该产生一个唯一的密文分组,加密过程对于的变换称为可逆变换或非奇异变换.所以,分组密码从本质上来说是定义了一种从分组的明文到相应密文的可逆变换.</p>
+<p>分组密码是现代密码学的重要组成部分,具有代表的分组加密算法有DES,AES.</p>
+<h5 id="分组密码设计原则"><a href="#分组密码设计原则" class="headerlink" title="分组密码设计原则"></a>分组密码设计原则</h5><p>分组密码的设计原则包括安全性和实现性两个方面.前者主要研究如何设计安全算法,分组长度和密钥长度;后者主要讨论如何提供算法的执行速度.</p>
+<ol>
+<li>针对于安全的一般设计原则</li>
+</ol>
+<blockquote>
+<blockquote>
+<p>安全性原则,也称为不可破译原则,它包含理论上不可破译和实际上不可破译两重含义.香农认为:在理想密码系统中,密文的所有统计特性都与所使用的密钥独立.关于实用密码的两个一般原则是香农提出的混乱原则和扩散原则.</p>
+<ul>
+<li>扩散(Diffusion)原则:人们所设计的密码应使得密钥的每一位数字影响到密文的多位数字,以防止对密钥进行逐段破译,而且明文的每一位数字也影响密文的多位数字以便隐藏明文数字的统计性.</li>
+<li>混乱(Confusion)原则:人们所设计的密码应使得密钥和明文之间的信赖关系相当复杂以至于这种信赖对密码分析者来说是无法利用的.<br>衡量密码体制的安全性,主要提现在以下几个方面:</li>
+<li>密码体制的破译所需要的时间和费用超过了现有的资源和能力.</li>
+<li>密码体制的破译所需要的时间超过了该体制保护的信息的有效时间.</li>
+<li>密码体制的破译所需要的费用超过了该体制所保护信息的价值.</li>
+</ul>
+<ol start="2">
+<li>针对实现的设计原则<br>分组密码可以用软件和硬件来实现.硬件实现的优点是可获得高效率,而软件实现的优点是灵活性高,代价低.</li>
+</ol>
+<ul>
+<li>软件设计原则:使用子块和简单的运算,密码运算在子块上进行,要求子块的长度能自然地适应软件编程,如8,16,32位等.应避免按位置换,在子块所进行的密码运算尽量采用易于软件实现的运算.最好是使用处理器的基本运算,如加法,乘法,移位.</li>
+<li>硬件设计原则:加密和解密的相似性,即加密和解密的过程的不同应局限于密钥使用方式上,以便采用同样的器件来实现加密和解密,以节省费用和体积.尽量采用标准组件结构,以便适应于在超大规模集成电路中实现.</li>
+</ul>
+<h5 id="分组密码的工作模式"><a href="#分组密码的工作模式" class="headerlink" title="分组密码的工作模式"></a>分组密码的工作模式</h5><p>我们以DES算法工作模式为例,DES算法根据其加密算法所定义的明文分组长度(56位),将数据分为若干56位的加密区块,再以区块为单位,分别进行加密处理.如果最后剩下不足一个区块的大小,我们称之为短块,短块的处理方法有填充法,流密码加密法,密文挪用技术.</p>
+</blockquote>
+</blockquote>
+<p>1980年12月,DES算法工作模式被美国联邦信息处理标准组织(FIPS)标准化.加密算法应用的复杂性,有的强调效率,有的强调安全,有的强调容错性.根据数据加密时每个加密区块间的关联方式来区别,可以分为四种工作模式:电子密码本模式(Electronic Code Book,ECB),密文链接模式(Cipher Book Chaining,CBC),密文反馈模式(Cipher Feed Back,CFB),输出反馈模式(Output Feed Back,OFB),AES标准除了推荐上述四种工作模式外,还推荐一种新的工作模式:计数器模式(Counter,CTR).这些工作模式可适用于各种分组密码算法.</p>
+<ul>
+<li>电子密码本模式(ECB)</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>电子密码本模式,它是最基本,最简单的工作模式.每次加密均产生独立的密文分组,每组的加密结果不会对其他分组产生影响,相同的明文加密后对应产生相同的密文,无初始化向量(也称为加密向量).可以认为有一个非常大的电码本,对任意一个可能的明文分组,电码本都有一项对应它的密文,这也是该模式名称的由来.</p>
+<p>优点:易于理解且简单易行;便于实现并行操作;没有误差传播;</p>
+<p>缺点:不能隐藏明文的模式,如果明文重复,对应的密文也会重复,密文内容很容易被替换,重排,剔除,重放,对明文进行主动攻击的可能性较高.</p>
+<p>用途:适合加密密钥,随机数等短数据.例如安全传递DES密钥,ECB模式是最合适的.</p>
+<ul>
+<li>密文链接模式(CBC)<br>密文链接模式,它是目前应用最广泛的工作模式.明文加密前先需先与前面的密文进行异或(XOR)运算然后再加密,因此只要选择不同的初始向量,相同的明文加密后产生不同的密文.</li>
+</ul>
+<p>优点: 密文链接模式加密后的密文上下文关联,即使明文中出现重复的信息也不会产生相同的明文;密文内容如果被替换,重排,删除,重放或者网络传输过程中发生错误,后续密文即被破坏,无法完成解密还原;对明文的主动攻击性较低.</p>
+<p>缺点: 不利于并行计算,目前没有已知的并行运算算法;误差传递,如果在加密过程中发生错误,则错误将被无限放大,导致加密失败;需要初始化向量.</p>
+<p>用途: 可加密任意长度消息;适用于计算产生检测数据完整性的消息认证码MAC</p>
+<ul>
+<li>密文反馈模式(CFB)<br>密文反馈模式,它类似于自同步流密码,分组加密后,按8位分组将密文和明文进行移位异或后得到输出同时反馈回移位寄存器.它的有点是可以按字节逐个进行加密解密,也可以按n位字节处理.CFB是上下文关联的,明文的一个错误会影响后面的密文(错误扩散).CFB需要一个初始化向量,加密后与第一个分组进行异或运算产生第一组密文;然后对第一组密文进行加密后在与第二组进行异或运算取得第二组密文,以此类推,直到加密完成.<br>优点: 隐藏了明文的模式,每一个分组的加密结果必受其前面所有分组内容的影响,即使出现多次相同的明文,均产生不同的密文;分组密码转化为流模式,可产生密钥流;可以及时加密传送小于分组的数据</li>
+</ul>
+<p>缺点: 与CBC类似.不利于并行计算,目前没有已知的并行运算算法;存在误差传播,一个单元的损坏影响多个单元;需要初始化向量.</p>
+<p>用途: 因错误传播无解,可用于检查发现明文密文的篡改.</p>
+<ul>
+<li>输出反馈模式(OFB)<br>输出反馈模式,它将分组密码作为同步流密码运行,和CFB相似,不过OFB用的是前一个n位密文输出分组反馈回移位寄存器,OFB没有错误扩散问题.该模式产生与明文异或运算的密钥流,从而产生密文,这一点与CFB相似,唯一不同的差异是与明文分组进行异或的输入那部分是反复加密后得到的.<br>优点: 隐藏明文的模式;分组密码转化为流模式;无误差传递问题;可以及时加密传送小于分组的数据.</li>
+</ul>
+<p>缺点: 不利于并行计算;对明文的主动攻击是可能的,安全性较CFB差.</p>
+<p>用途: 适用于加密冗余性较大的数据,比如语言和图像数据.</p>
+<ul>
+<li>计数器模式(CTR)<br>计数器模式,它的特点是将计数器从初始值开始计数所得到的值发送给分组密码算法.随着计数器的增加,分组密码算法输出连续的分组来构成一个位串,该位串被用来与分组明文进行异或操作.计数器模式是用来提取分组密码的最大能效以实现保密性.在AES的实际应用中,经常会选择CBC和CTR模式,但更多的是选择CTR模式.<br>优点: 可并行计算;安全性至少和CBC一样好;加密和解密仅涉及密码算法的加密</li>
+</ul>
+<p>缺点: 没有错误传播,因此不易确保数据完整性.</p>
+<p>用途: 适用于各种加密.</p>
+<h3 id="非对称密码体制"><a href="#非对称密码体制" class="headerlink" title="非对称密码体制"></a>非对称密码体制</h3><p>1976年,密码学专家diffie和hellman在&lt;&lt;密码学的新方向&gt;&gt;一文中提出公开密钥体制的思想,开创了现代密码学的新领域,非对称密码体制的篇章由此揭开.</p>
+</blockquote>
+</blockquote>
+<p>非对称密码体制与对称密码体制相对;其主要区别是:非对称密码体制的加密密钥与解密密钥不相同,分为两个密钥,一个公开,一个保密.公开的密钥称为公钥,保密的密钥称为私钥.因此,非对称密码体制也称为公钥密码体制.非对称密码体制使得发送者与接受者无密钥传输的保密通信成为可能,弥补了对称密码体制的缺陷.</p>
+<p>非对称密码体制的主要优点是可以适应开发性的使用环境,密钥管理问题相对简单,可以方便,安全地实现数字签名和验证.RSA是非对称密码体制的典范,它不仅可以完成一般的数据保密操作,同时它也支持数字签名与验证.</p>
+<p>非对称密码算法的安全性完全依赖于基于计算复杂度上的难题,通常来自于数论.例如RSA源于整数因子分解问题;DSA数字签名算法,源于离散对数问题;ECC椭圆曲线加密算法,源于离散对数问题.由于这些数学难题的实现涉及底层模数乘法或指数运算,相对于分组密码需要使用更多的计算,为了弥补这一缺陷,非对称密码系统通常是复合式的:用高效率的对称密码算法对信息进行加密解密处理;用非对称密钥加密对称密码系统所使用的密钥.通过这种复合方式增进效率.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" rel="tag"># 阅读笔记</a>
+              <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag"># 密码学</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/25/2021/01/25/terms-of-cryptography/" rel="prev" title="密码学定义与术语">
+      <i class="fa fa-chevron-left"></i> 密码学定义与术语
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/12/2021/03/12/make-vagrant-base-box/" rel="next" title="基于CentOS7制作带Docker的Vagrant基础Box">
+      基于CentOS7制作带Docker的Vagrant基础Box <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">密码学的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E7%9A%84%E5%88%92%E5%88%86"><span class="nav-number">1.1.</span> <span class="nav-text">分类的划分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E6%97%B6%E9%97%B4%E5%88%92%E5%88%86"><span class="nav-number">1.1.1.</span> <span class="nav-text">按时间划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E4%BF%9D%E5%AF%86%E5%86%85%E5%AE%B9%E7%9A%84%E7%AE%97%E6%B3%95%E5%88%92%E5%88%86"><span class="nav-number">1.1.2.</span> <span class="nav-text">按保密内容的算法划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E5%88%92%E5%88%86"><span class="nav-number">1.1.3.</span> <span class="nav-text">按密码体制划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E6%98%8E%E6%96%87%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E5%88%92%E5%88%86"><span class="nav-number">1.1.4.</span> <span class="nav-text">按明文的处理方法划分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81"><span class="nav-number">1.2.1.</span> <span class="nav-text">古典密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="nav-number">1.2.2.</span> <span class="nav-text">对称密码体制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%81%E5%AF%86%E7%A0%81"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">流密码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%B5%81%E5%AF%86%E7%A0%81"><span class="nav-number">1.2.2.1.1.</span> <span class="nav-text">同步流密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%87%AA%E5%90%8C%E6%AD%A5%E6%B5%81%E5%AF%86%E7%A0%81"><span class="nav-number">1.2.2.1.2.</span> <span class="nav-text">自同步流密码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">分组密码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.2.2.1.</span> <span class="nav-text">分组密码设计原则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.2.2.2.2.</span> <span class="nav-text">分组密码的工作模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6"><span class="nav-number">1.2.3.</span> <span class="nav-text">非对称密码体制</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">QidongTan</p>
+  <div class="site-description" itemprop="description">只是为了好玩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://forrestsu.github.io/" title="https:&#x2F;&#x2F;forrestsu.github.io&#x2F;" rel="noopener" target="_blank">程序员的冷浪漫</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">QidongTan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
