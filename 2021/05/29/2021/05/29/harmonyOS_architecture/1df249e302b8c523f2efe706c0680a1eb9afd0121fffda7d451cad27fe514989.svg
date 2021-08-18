@@ -1,0 +1,314 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="2432px" preserveAspectRatio="none" style="width:1957px;height:2432px;background:#FFFFFF;" version="1.1" viewBox="0 0 1957 2432" width="1957px" zoomAndPan="magnify">
+  <defs>
+    <filter height="300%" id="ffe1n7boy5g47" width="300%" x="-1" y="-1">
+      <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+      <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+      <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+      <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+    </filter>
+  </defs>
+  <g>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="98" x="10" y="1195.3023"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="20" y="1221.5422">HarmonyOS</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="76" x="158" y="20"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="168" y="46.2399">系统功能</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="691" x="284" y="20"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="671" x="294" y="46.2399">(系统,子系统,功能/模块)逐级展开,在多设备部署场景下支持根据实际需求裁剪某些非必要的子系统或功能模块</text>
+    <path d="M234,40.136 L244,40.136 C259,40.136 259,40.136 274,40.136 L284,40.136 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M108,1215.4382 L118,1215.4382 C133,1215.4382 133,40.136 148,40.136 L158,40.136 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="76" x="158" y="1225.4382"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="168" y="1251.6782">分层架构</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="62" x="284" y="230.9517"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="294" y="257.1916">内核层</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="90" x="396" y="200.8157"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="406" y="227.0557">内核子系统</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="600" x="536" y="80.2719"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="580" x="546" y="106.5118">采用多内核设计,支持针对不同资源受限设备,选用合适的OS内核,为上层提供基础操作系统能力.</text>
+    <path d="M486,220.9517 L496,220.9517 C511,220.9517 511,100.4079 526,100.4079 L536,100.4079 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="270" x="536" y="140.5438"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="250" x="546" y="166.7838">内核抽象层(KAL,Kernel Abstract Layer)</text>
+    <path d="M486,220.9517 L496,220.9517 C511,220.9517 511,160.6798 526,160.6798 L536,160.6798 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="103" x="536" y="200.8157"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="546" y="227.0557">Linux Kernel</text>
+    <path d="M486,220.9517 L496,220.9517 C511,220.9517 511,220.9517 526,220.9517 L536,220.9517 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="63" x="536" y="261.0876"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="546" y="287.3276">LiteOS</text>
+    <path d="M486,220.9517 L496,220.9517 C511,220.9517 511,281.2236 526,281.2236 L536,281.2236 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="76" x="536" y="321.3596"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="546" y="347.5995">其他内核</text>
+    <path d="M486,220.9517 L496,220.9517 C511,220.9517 511,341.4955 526,341.4955 L536,341.4955 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M346,251.0876 L356,251.0876 C371,251.0876 371,220.9517 386,220.9517 L396,220.9517 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="90" x="396" y="381.6315"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="406" y="407.8714">驱动子系统</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="329" x="536" y="381.6315"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="309" x="546" y="407.8714">硬件驱动框架(HDF,Hardware Driver Framework)</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="416" x="915" y="381.6315"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="396" x="925" y="407.8714">硬件生态开放的基础:提供统一外设访问能力和驱动开发管理框架</text>
+    <path d="M865,401.7674 L875,401.7674 C890,401.7674 890,401.7674 905,401.7674 L915,401.7674 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M486,401.7674 L496,401.7674 C511,401.7674 511,401.7674 526,401.7674 L536,401.7674 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M346,251.0876 L356,251.0876 C371,251.0876 371,401.7674 386,401.7674 L396,401.7674 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M234,1245.5742 L244,1245.5742 C259,1245.5742 259,251.0876 274,251.0876 L284,251.0876 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="90" x="284" y="1074.7585"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="294" y="1100.9984">系统服务层</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="118" x="424" y="1074.7585"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="434" y="1100.9984">系统基础服务层</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="1346" x="592" y="441.9034"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="1326" x="602" y="468.1433">HarmonyOS的核心能力集合:包括面向各类设备的基础能力以及面向特定设备的专有能力,根据不同设备形态的部署环境,基础软件/增强软件/硬件服务子系统集内部,可按子系统粒度裁剪,子系统内部支持按功能粒度裁剪</text>
+    <path d="M542,1094.8944 L552,1094.8944 C567,1094.8944 567,462.0393 582,462.0393 L592,462.0393 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="160" x="592" y="743.2629"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="602" y="769.5029">系统基本能力子系统集</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="174" x="802" y="502.1753"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="812" y="528.4152">方舟多语言运行时子系统</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,522.3112 792,522.3112 L802,522.3112 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="104" x="802" y="562.4472"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="812" y="588.6871">分布式软总线</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,582.5832 792,582.5832 L802,582.5832 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="118" x="802" y="622.7191"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="812" y="648.959">分布式数据管理</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,642.8551 792,642.8551 L802,642.8551 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="118" x="802" y="682.991"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="812" y="709.231">分布式任务调度</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,703.127 792,703.127 L802,703.127 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="132" x="802" y="743.2629"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="812" y="769.5029">公共基础库子系统</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,763.3989 792,763.3989 L802,763.3989 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="121" x="802" y="803.5349"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="812" y="829.7748">多模输入子系统</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,823.6708 792,823.6708 L802,823.6708 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="90" x="802" y="863.8068"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="812" y="890.0467">图形子系统</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,883.9427 792,883.9427 L802,883.9427 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="90" x="802" y="924.0787"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="812" y="950.3186">安全子系统</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,944.2146 792,944.2146 L802,944.2146 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="75" x="802" y="984.3506"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="812" y="1010.5905">AI子系统</text>
+    <path d="M752,763.3989 L762,763.3989 C777,763.3989 777,1004.4865 792,1004.4865 L802,1004.4865 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M542,1094.8944 L552,1094.8944 C567,1094.8944 567,763.3989 582,763.3989 L592,763.3989 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="160" x="592" y="1165.1663"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="602" y="1191.4063">基础软件服务子系统集</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="118" x="802" y="1044.6225"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="812" y="1070.8624">事件通知子系统</text>
+    <path d="M752,1185.3023 L762,1185.3023 C777,1185.3023 777,1064.7585 792,1064.7585 L802,1064.7585 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="90" x="802" y="1104.8944"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="812" y="1131.1343">电话子系统</text>
+    <path d="M752,1185.3023 L762,1185.3023 C777,1185.3023 777,1125.0304 792,1125.0304 L802,1125.0304 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="104" x="802" y="1165.1663"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="812" y="1191.4063">多媒体子系统</text>
+    <path d="M752,1185.3023 L762,1185.3023 C777,1185.3023 777,1185.3023 792,1185.3023 L802,1185.3023 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="88" x="802" y="1225.4382"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="812" y="1251.6782">DFX子系统</text>
+    <path d="M752,1185.3023 L762,1185.3023 C777,1185.3023 777,1245.5742 792,1245.5742 L802,1245.5742 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="128" x="802" y="1285.7101"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="812" y="1311.9501">MSDP&amp;DV子系统</text>
+    <path d="M752,1185.3023 L762,1185.3023 C777,1185.3023 777,1305.8461 792,1305.8461 L802,1305.8461 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M542,1094.8944 L552,1094.8944 C567,1094.8944 567,1185.3023 582,1185.3023 L592,1185.3023 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="160" x="592" y="1406.254"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="602" y="1432.4939">增强软件服务子系统集</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="160" x="802" y="1345.9821"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="812" y="1372.222">智慧屏专有业务子系统</text>
+    <path d="M752,1426.3899 L762,1426.3899 C777,1426.3899 777,1366.118 792,1366.118 L802,1366.118 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="146" x="802" y="1406.254"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="812" y="1432.4939">穿戴专有业务子系统</text>
+    <path d="M752,1426.3899 L762,1426.3899 C777,1426.3899 777,1426.3899 792,1426.3899 L802,1426.3899 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="140" x="802" y="1466.5259"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="812" y="1492.7658">IOT专有业务子系统</text>
+    <path d="M752,1426.3899 L762,1426.3899 C777,1426.3899 777,1486.6618 792,1486.6618 L802,1486.6618 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M542,1094.8944 L552,1094.8944 C567,1094.8944 567,1426.3899 582,1426.3899 L592,1426.3899 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="132" x="592" y="1617.2057"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="602" y="1643.4456">硬件服务子系统集</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="118" x="774" y="1526.7978"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="784" y="1553.0377">位置服务子系统</text>
+    <path d="M724,1637.3416 L734,1637.3416 C749,1637.3416 749,1546.9337 764,1546.9337 L774,1546.9337 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="174" x="774" y="1587.0697"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="784" y="1613.3096">车机专有硬件服务子系统</text>
+    <path d="M724,1637.3416 L734,1637.3416 C749,1637.3416 749,1607.2057 764,1607.2057 L774,1607.2057 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="174" x="774" y="1647.3416"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="784" y="1673.5815">穿戴专有硬件服务子系统</text>
+    <path d="M724,1637.3416 L734,1637.3416 C749,1637.3416 749,1667.4776 764,1667.4776 L774,1667.4776 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="168" x="774" y="1707.6135"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="784" y="1733.8535">IOT专有硬件服务子系统</text>
+    <path d="M724,1637.3416 L734,1637.3416 C749,1637.3416 749,1727.7495 764,1727.7495 L774,1727.7495 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M542,1094.8944 L552,1094.8944 C567,1094.8944 567,1637.3416 582,1637.3416 L592,1637.3416 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M374,1094.8944 L384,1094.8944 C399,1094.8944 399,1094.8944 414,1094.8944 L424,1094.8944 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M234,1245.5742 L244,1245.5742 C259,1245.5742 259,1094.8944 274,1094.8944 L284,1094.8944 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="62" x="284" y="1888.4293"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="294" y="1914.6692">框架层</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="104" x="396" y="1767.8854"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="406" y="1794.1254">用户程序框架</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="253" x="550" y="1767.8854"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233" x="560" y="1794.1254">Java,C,C++,JS编程语言用户程序框架</text>
+    <path d="M500,1788.0214 L510,1788.0214 C525,1788.0214 525,1788.0214 540,1788.0214 L550,1788.0214 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M346,1908.5652 L356,1908.5652 C371,1908.5652 371,1788.0214 386,1788.0214 L396,1788.0214 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="90" x="396" y="1828.1573"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="406" y="1854.3973">Ability框架</text>
+    <path d="M346,1908.5652 L356,1908.5652 C371,1908.5652 371,1848.2933 386,1848.2933 L396,1848.2933 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="62" x="396" y="1918.5652"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="406" y="1944.8051">UI框架</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="65" x="508" y="1888.4293"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="518" y="1914.6692">JavaUI</text>
+    <path d="M458,1938.7012 L468,1938.7012 C483,1938.7012 483,1908.5652 498,1908.5652 L508,1908.5652 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="103" x="508" y="1948.7012"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="518" y="1974.9411">JavaScriptUI</text>
+    <path d="M458,1938.7012 L468,1938.7012 C483,1938.7012 483,1968.8371 498,1968.8371 L508,1968.8371 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M346,1908.5652 L356,1908.5652 C371,1908.5652 371,1938.7012 386,1938.7012 L396,1938.7012 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="280" x="396" y="2008.9731"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="260" x="406" y="2035.213">各种软硬件服务对外开放的多语言框架API</text>
+    <path d="M346,1908.5652 L356,1908.5652 C371,1908.5652 371,2029.109 386,2029.109 L396,2029.109 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M234,1245.5742 L244,1245.5742 C259,1245.5742 259,1908.5652 274,1908.5652 L284,1908.5652 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="62" x="284" y="2219.9248"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="294" y="2246.1647">应用层</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="234" x="396" y="2069.245"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="406" y="2095.4849">系统应用:桌面,控制栏,设置,电话,...</text>
+    <path d="M346,2240.0607 L356,2240.0607 C371,2240.0607 371,2089.381 386,2089.381 L396,2089.381 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="76" x="396" y="2250.0607"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="406" y="2276.3007">三方应用</text>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="512" x="522" y="2129.5169"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="492" x="532" y="2155.7568">支持基于框架层实现业务逻辑的原子化开发,构建以FA/PA为基础组成单元的应用</text>
+    <path d="M472,2270.1967 L482,2270.1967 C497,2270.1967 497,2149.6529 512,2149.6529 L522,2149.6529 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="439" x="522" y="2189.7888"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="416" x="532" y="2216.0287">FA/PA是HarmonyOS应用组成的基本单元,能够实现特定的业务功能</text>
+    <path d="M472,2270.1967 L482,2270.1967 C497,2270.1967 497,2209.9248 512,2209.9248 L522,2209.9248 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="161" x="522" y="2250.0607"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="532" y="2276.3007">FA(有UI界面,Entry FA)</text>
+    <path d="M472,2270.1967 L482,2270.1967 C497,2270.1967 497,2270.1967 512,2270.1967 L522,2270.1967 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="104" x="522" y="2310.3326"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="532" y="2336.5726">PA(无UI界面)</text>
+    <path d="M472,2270.1967 L482,2270.1967 C497,2270.1967 497,2330.4686 512,2330.4686 L522,2330.4686 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <rect fill="#FEFECE" filter="url(#ffe1n7boy5g47)" height="40.2719" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="143" x="522" y="2370.6046"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="532" y="2396.8445">FA,PA可按需要下载</text>
+    <path d="M472,2270.1967 L482,2270.1967 C497,2270.1967 497,2390.7405 512,2390.7405 L522,2390.7405 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M346,2240.0607 L356,2240.0607 C371,2240.0607 371,2270.1967 386,2270.1967 L396,2270.1967 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M234,1245.5742 L244,1245.5742 C259,1245.5742 259,2240.0607 274,2240.0607 L284,2240.0607 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <path d="M108,1215.4382 L118,1215.4382 C133,1215.4382 133,1245.5742 148,1245.5742 L158,1245.5742 " fill="none" style="stroke:#A80036;stroke-width:1.0;"/>
+    <!--MD5=[da346ba2fe98d28e2aba7d91c5c720f1]
+@startmindmap
+
+* HarmonyOS
+
+** 系统功能
+
+*** (系统,子系统,功能/模块)逐级展开,在多设备部署场景下支持根据实际需求裁剪某些非必要的子系统或功能模块
+
+** 分层架构
+
+*** 内核层
+
+**** 内核子系统
+
+***** 采用多内核设计,支持针对不同资源受限设备,选用合适的OS内核,为上层提供基础操作系统能力.
+
+***** 内核抽象层(KAL,Kernel Abstract Layer)
+
+***** Linux Kernel
+
+***** LiteOS
+
+***** 其他内核
+
+**** 驱动子系统
+
+***** 硬件驱动框架(HDF,Hardware Driver Framework)
+
+****** 硬件生态开放的基础:提供统一外设访问能力和驱动开发管理框架
+
+*** 系统服务层
+
+**** 系统基础服务层
+
+***** HarmonyOS的核心能力集合:包括面向各类设备的基础能力以及面向特定设备的专有能力,根据不同设备形态的部署环境,基础软件/增强软件/硬件服务子系统集内部,可按子系统粒度裁剪,子系统内部支持按功能粒度裁剪
+
+***** 系统基本能力子系统集
+
+****** 方舟多语言运行时子系统
+
+****** 分布式软总线
+
+****** 分布式数据管理
+
+****** 分布式任务调度
+
+****** 公共基础库子系统
+
+****** 多模输入子系统 
+
+****** 图形子系统
+
+****** 安全子系统
+
+****** AI子系统
+
+***** 基础软件服务子系统集
+
+****** 事件通知子系统
+
+****** 电话子系统
+
+****** 多媒体子系统
+
+****** DFX子系统
+
+****** MSDP&DV子系统
+
+***** 增强软件服务子系统集
+
+****** 智慧屏专有业务子系统
+
+****** 穿戴专有业务子系统
+
+****** IOT专有业务子系统
+
+***** 硬件服务子系统集
+
+****** 位置服务子系统
+
+****** 车机专有硬件服务子系统
+
+****** 穿戴专有硬件服务子系统
+
+****** IOT专有硬件服务子系统
+
+*** 框架层
+
+**** 用户程序框架
+
+***** Java,C,C++,JS编程语言用户程序框架
+
+**** Ability框架
+
+**** UI框架
+
+***** JavaUI
+
+***** JavaScriptUI
+
+**** 各种软硬件服务对外开放的多语言框架API
+
+*** 应用层
+
+**** 系统应用:桌面,控制栏,设置,电话,...
+
+**** 三方应用
+
+***** 支持基于框架层实现业务逻辑的原子化开发,构建以FA/PA为基础组成单元的应用
+
+***** FA/PA是HarmonyOS应用组成的基本单元,能够实现特定的业务功能 
+
+***** FA(有UI界面,Entry FA)
+
+***** PA(无UI界面)
+
+***** FA,PA可按需要下载
+
+@endmindmap
+
+PlantUML version 1.2021.9(Sun Jul 25 18:13:56 CST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: zh
+Country: CN
+-->
+  </g>
+</svg>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tanqidong1992.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="进程内存说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="进程内存">
+<meta property="og:url" content="http://tanqidong1992.github.io/2020/12/21/2020/12/21/process-momory/index.html">
+<meta property="og:site_name" content="芷兰旧梦">
+<meta property="og:description" content="进程内存说明">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-12-20T23:20:17.000Z">
+<meta property="article:modified_time" content="2021-08-18T05:06:12.911Z">
+<meta property="article:author" content="QidongTan">
+<meta property="article:tag" content="进程内存">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://tanqidong1992.github.io/2020/12/21/2020/12/21/process-momory/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>进程内存 | 芷兰旧梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="芷兰旧梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">芷兰旧梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">偶尔记一些东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/tanqidong1992" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2020/12/21/2020/12/21/process-momory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          进程内存
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-21 07:20:17" itemprop="dateCreated datePublished" datetime="2020-12-21T07:20:17+08:00">2020-12-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 13:06:12" itemprop="dateModified" datetime="2021-08-18T13:06:12+08:00">2021-08-18</time>
+              </span>
+
+          
+            <div class="post-description">进程内存说明</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="进程内存"><a href="#进程内存" class="headerlink" title="进程内存"></a>进程内存</h1><h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><p>进程内存占用主要由以下几部分组成:</p>
+<ul>
+<li>自身代码</li>
+<li>共享库代码</li>
+<li>运行过程中分配的堆和栈</li>
+<li><del>通过mmap映射的磁盘文件内容</del></li>
+</ul>
+<h2 id="虚拟内存与物理内存"><a href="#虚拟内存与物理内存" class="headerlink" title="虚拟内存与物理内存"></a>虚拟内存与物理内存</h2><p>物理内存对于进程来说是透明的,进程直接操作的是虚拟内存.进程向操作系统申请内存的时候,分配的是虚拟内存(地址空间),只有当进程使用这部分内存时,操作系统才会将相应的物理内存与相应的虚拟内存关联(缺页中断).</p>
+<h2 id="共享内存"><a href="#共享内存" class="headerlink" title="共享内存"></a>共享内存</h2><p>从进程来看,虚拟内存是进程独立的,所有内存都是私有的,包括自身代码,共享库,堆栈等.但实际在物理层面很多东西是可以共享的,比如共享库,自身代码,甚至是自身私有的堆栈.</p>
+<h3 id="共享库"><a href="#共享库" class="headerlink" title="共享库"></a>共享库</h3><p>同一个共享库的代码在物理内存中只存在一份,这块内存会映射到不同进程的虚拟内存中,对进程而言是自己的私有内存,对于操作系统而言,则是节省了内存的资源.</p>
+<h3 id="进程的自身代码"><a href="#进程的自身代码" class="headerlink" title="进程的自身代码"></a>进程的自身代码</h3><p>当同一个程序运行多个进程时,其自身代码也被共享</p>
+<h3 id="进程的私有内存"><a href="#进程的私有内存" class="headerlink" title="进程的私有内存"></a>进程的私有内存</h3><p>当从一个进程fork出一个子进程时,那么父进程的私有内存则会与子进程共享,但会被标记为copy-on-write.</p>
+<h2 id="进程内存大小的度量方法"><a href="#进程内存大小的度量方法" class="headerlink" title="进程内存大小的度量方法"></a>进程内存大小的度量方法</h2><h3 id="VSZ-Virtual-Memory-Size"><a href="#VSZ-Virtual-Memory-Size" class="headerlink" title="VSZ(Virtual Memory Size)"></a>VSZ(Virtual Memory Size)</h3><p>虚拟内存大小,进程运行理论上需要内存的大小,形容进程运行时所需要的总内存大小,包括哪些还没有被加载到实际内存中的代码和数据.</p>
+<h3 id="RSS-Resident-Set-Size"><a href="#RSS-Resident-Set-Size" class="headerlink" title="RSS(Resident Set Size)"></a>RSS(Resident Set Size)</h3><p>常驻内存大小(工作集),表示实际使用物理内存的大小,包含了共享库占用的内存,(不包括已经被置换到磁盘的内存)</p>
+<h3 id="PSS-Proportional-Set-Size"><a href="#PSS-Proportional-Set-Size" class="headerlink" title="PSS(Proportional Set Size)"></a>PSS(Proportional Set Size)</h3><p>实际使用物理内存大小,比例分配共享库占用的内存,比如用到的某个100K共享库共有2个程序用到,那么被计算为100k/2=50k</p>
+<h3 id="USS-Unique-Set-Size"><a href="#USS-Unique-Set-Size" class="headerlink" title="USS(Unique Set Size)"></a>USS(Unique Set Size)</h3><p>进程独占物理内存大小,不包含共享库.</p>
+<h2 id="计算示例"><a href="#计算示例" class="headerlink" title="计算示例"></a>计算示例</h2><p>假如要度量进程占用的内存大小，较好的选择是使用PSS，用RSS也行，不过要注意有些内存是和别的进程共享的。</p>
+<p>再举个例子总结一下前面三个概念，比方一个进程有500K的代码并且链接了2500K的共享库，而后有200K的堆栈分配。其中有400K自身的代码、1000K的共享库以100K的堆栈内存被加载在实际内存（RAM）中，并且系统中一共有两个进程用了同样的共享库。那么：</p>
+<p>VSZ：500K + 2500K + 200K = 3200K</p>
+<p>RSS：400K + 1000K + 100K = 1500K</p>
+<p>PSS：400K + (1000K / 2) + 100K = 1000K</p>
+<p>USS: 400K + 100K = 500K</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%BF%9B%E7%A8%8B%E5%86%85%E5%AD%98/" rel="tag"># 进程内存</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/12/2020/12/Shell%E5%8F%98%E9%87%8F/" rel="prev" title="Shell变量">
+      <i class="fa fa-chevron-left"></i> Shell变量
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/04/2021/01/04/base-of-rust/" rel="next" title="Rust基础">
+      Rust基础 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%86%85%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text">进程内存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E6%88%90"><span class="nav-number">1.1.</span> <span class="nav-text">组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E4%B8%8E%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98"><span class="nav-number">1.2.</span> <span class="nav-text">虚拟内存与物理内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98"><span class="nav-number">1.3.</span> <span class="nav-text">共享内存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E5%BA%93"><span class="nav-number">1.3.1.</span> <span class="nav-text">共享库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%87%AA%E8%BA%AB%E4%BB%A3%E7%A0%81"><span class="nav-number">1.3.2.</span> <span class="nav-text">进程的自身代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%A7%81%E6%9C%89%E5%86%85%E5%AD%98"><span class="nav-number">1.3.3.</span> <span class="nav-text">进程的私有内存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%BA%A6%E9%87%8F%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">进程内存大小的度量方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VSZ-Virtual-Memory-Size"><span class="nav-number">1.4.1.</span> <span class="nav-text">VSZ(Virtual Memory Size)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSS-Resident-Set-Size"><span class="nav-number">1.4.2.</span> <span class="nav-text">RSS(Resident Set Size)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PSS-Proportional-Set-Size"><span class="nav-number">1.4.3.</span> <span class="nav-text">PSS(Proportional Set Size)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#USS-Unique-Set-Size"><span class="nav-number">1.4.4.</span> <span class="nav-text">USS(Unique Set Size)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.5.</span> <span class="nav-text">计算示例</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">QidongTan</p>
+  <div class="site-description" itemprop="description">只是为了好玩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://forrestsu.github.io/" title="https:&#x2F;&#x2F;forrestsu.github.io&#x2F;" rel="noopener" target="_blank">程序员的冷浪漫</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">QidongTan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

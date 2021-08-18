@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tanqidong1992.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="垃圾收集算法.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="垃圾收集算法">
+<meta property="og:url" content="http://tanqidong1992.github.io/2021/06/15/2021/06/15/algorithms-of-garbage-collector/index.html">
+<meta property="og:site_name" content="芷兰旧梦">
+<meta property="og:description" content="垃圾收集算法.">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-06-14T16:23:12.000Z">
+<meta property="article:modified_time" content="2021-08-18T15:55:05.394Z">
+<meta property="article:author" content="QidongTan">
+<meta property="article:tag" content="读书笔记">
+<meta property="article:tag" content="JVM调优">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://tanqidong1992.github.io/2021/06/15/2021/06/15/algorithms-of-garbage-collector/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>垃圾收集算法 | 芷兰旧梦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="芷兰旧梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">芷兰旧梦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">偶尔记一些东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/tanqidong1992" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/06/15/2021/06/15/algorithms-of-garbage-collector/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="QidongTan">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          垃圾收集算法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-15 00:23:12" itemprop="dateCreated datePublished" datetime="2021-06-15T00:23:12+08:00">2021-06-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-18 23:55:05" itemprop="dateModified" datetime="2021-08-18T23:55:05+08:00">2021-08-18</time>
+              </span>
+
+          
+            <div class="post-description">垃圾收集算法.</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h1><h2 id="Throughput收集器"><a href="#Throughput收集器" class="headerlink" title="Throughput收集器"></a>Throughput收集器</h2><p>Throughput收集器有两个基本的操作:</p>
+<ul>
+<li>回收新生代的垃圾</li>
+<li>回收老年代的垃圾</li>
+</ul>
+<h3 id="新生代垃圾回收"><a href="#新生代垃圾回收" class="headerlink" title="新生代垃圾回收"></a>新生代垃圾回收</h3><p>通常新生代垃圾回收发生在Eden空间快用尽的时候,新生代垃圾收集会把Eden空间的所有对象挪走,一部分会被移动到Survivor空间,其他的会被移动到老年代.</p>
+<h3 id="老年代垃圾回收"><a href="#老年代垃圾回收" class="headerlink" title="老年代垃圾回收"></a>老年代垃圾回收</h3><p>老年代垃圾收集会回收新生代中所有对象(包括Survivor空间中的对象),只有那些活跃引用的对象,或者已经经过压缩整理的对象会在老年代中继续保留,其余对象都会被回收.<br><strong>备注:永久代中的对象不会被Full GC回收,除非永久代的空间被耗尽,JVM会发起Full GC回收<br>永久代中的对象.</strong></p>
+<p>小结:Throughput收集器会进行两种操作,分别是Full GC和Minor GC;通过GC日志中的时间输出,我们可以迅速地判断出Throughput收集器的GC操作对应用程序总体性能影响.</p>
+<h3 id="堆大小的自适应调整和静态调整"><a href="#堆大小的自适应调整和静态调整" class="headerlink" title="堆大小的自适应调整和静态调整"></a>堆大小的自适应调整和静态调整</h3><p>Throughput收集器的调优几乎是围绕停顿时间进行,寻求堆的总大小,新生代的大小以及老年代大小之间的平衡.</p>
+<p>调优时有两种取舍:一是编程技术上时间与空间的取舍,二是与完成垃圾回收所需的时长相关,增大堆可以减少GC停顿发生的频率,但GC的时长会变长,平均响应时间也会变长;同理给新生代分配更多的空间可以缩短Full GC的时长,不过会增加Full GC的频率.</p>
+<p>为了达到停顿时间的指标,Throughput收集器的自适应调整会重新分配堆(以及代)的大小,自适应调优标志如下:</p>
+<ul>
+<li>-XX:MaxGCPauseMillis=N 最大停顿时长</li>
+<li>-XX:GCTimeRatio=N 设置应用程序在垃圾回收上花费的多少时间,计算公式如下:</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ThroughputGoal = 1 - 1/(1+GCTimeRatio)</span><br></pre></td></tr></table></figure>
+
+<p>GCTimeRatio初始值为99,计算出ThroughputGoal的值为0.99,意味着99%的时间用于应用程序,1%的时间用于垃圾回收.</p>
+<p>JVM使用这两个标志在堆的初始值(-Xms)和最大值(-Xmx)之间设置堆大小.MaxGCPauseMillis的优先级最高,如果设置了,新生代和老年代会随之进行调整,直到满足对应的停顿目标,一旦目标达成,堆的总容量就开始逐渐增大,直到运行时间的比率达到设定值.这两个目标达成后,JVM会尝试缩小堆的大小,尽可能以最小的堆大小来满足这两个目标.</p>
+<p>由于默认情况下不设置停顿时间目标,通常自动调整的效果是堆的大小会持续增大,直到满足设置的GCTimeRatio目标.不过,在实际操作中,该标志的默认值已经相当优化了.</p>
+<p>一般应用程序在垃圾回收的消耗为总时间的3%-6%效果是相当不错的.不过在内存受限的环境下,这些应用程序一般会在垃圾回收上消耗总时间10%-15%的时间,垃圾回收对这些应用程序的性能影响巨大,不过整体性能目标还是能够达到的.根据应用程序的性能目标,最佳配置也有所不同.</p>
+<p><strong>小结:采用动态调整是进行堆调优极好的入手点,对很多应用程序而言,采用动态调整已经足够,动态调整的配置能够有效地减少JVM的内存使用;静态地设置堆的大小也可能获得最优的性能.设置合理的性能目标,让JVM根据设置确定堆的大小是学习这种调优很好的入门.</strong></p>
+<h2 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h2><p>CMS收集器有三种基本操作:</p>
+<ul>
+<li>对新生代进行垃圾回收.</li>
+<li>并发回收(启动一个并发线程对老年代空间的垃圾进行回收).</li>
+<li>如有必要,发起Full GC.</li>
+</ul>
+<h3 id="对新生代进行垃圾回收"><a href="#对新生代进行垃圾回收" class="headerlink" title="对新生代进行垃圾回收"></a>对新生代进行垃圾回收</h3><p>CMS收集器的新生代垃圾回收与Throughput收集器的新生代垃圾回收非常相似:存活对象从Eden空间移动到Survivor空间,或者移动到老年代空间.</p>
+<h3 id="并发回收"><a href="#并发回收" class="headerlink" title="并发回收"></a>并发回收</h3><p>CMS会根据堆的使用情况启动并发回收.当堆的占用达到某一个程度时,JVM启动后台线程扫描堆,回收不用的对象.<br><strong>注意:并发回收,并不会对老年代的空间进行压缩整理.</strong><br>并发回收的阶段</p>
+<ol>
+<li>初始标记阶段: 找到堆中所有垃圾回收根节点对象.应用程序线程被暂停</li>
+<li>并发标记阶段: 应用程序继续运行,不会被中断.</li>
+<li>并发预清理阶段 .</li>
+<li>可中断预清理阶段</li>
+<li>重新标记阶段. 应用程序线程被暂停</li>
+<li>并发清除阶段.</li>
+<li>并发重置阶段.</li>
+</ol>
+<p><strong>备注:重新标记阶段需要暂停应用线程,如果新生代收集刚刚结束,紧接着就是一个交际阶段的话,应用线程会遭遇两次连续停顿,CMS为了避免这种情况,因此引入可中断预清理阶段,目的就是缩短停顿的长度,避免连续的停顿.因此,可中断预清理阶段会等到新生代占到50%左右才开始,给了CMS收集器最好的机会避免发生连续停顿.</strong></p>
+<h3 id="CMS-Full-GC"><a href="#CMS-Full-GC" class="headerlink" title="CMS Full GC"></a>CMS Full GC</h3><p>触发Full GC的原因</p>
+<ul>
+<li>并发模式失败: 当新生代垃圾回收完成,同时老年代没有足够的空间容纳晋升的对象.</li>
+<li>晋升失败: 当新生代垃圾回收完成,老年代有足够的空间容纳晋升的对象,但是由于空闲空间碎片化,导致晋升失败.</li>
+<li>永久代(元空间)用尽,</li>
+</ul>
+<p>并发模式导致的Full GC,仅需要回收堆内的无用对象,而晋升失败导致的Full GC需要对整个老年代空间进行整理和压缩,时间远远大于前者,压缩整理后就像Throughput收集器昨晚Full GC后,新生代完全空闲,老年代空间也已经整理过.</p>
+<p><strong>备注:默认情况下,CMS收集器不会对永久代(元空间)进行收集,但是它一旦用尽,那就需要进行Full GC.</strong></p>
+<p><strong>小结:CMS垃圾回收有多个操作,但是最期望发生的是Minor GC和并发回收;CMS收集过程中的并发模式失效以及晋升失败的代价都非常大,我们需要调优以避免这种情况;默认情况下,CMS不会对老年代(元空间)进行回收.</strong></p>
+<h3 id="对并发模式失败的调优"><a href="#对并发模式失败的调优" class="headerlink" title="对并发模式失败的调优"></a>对并发模式失败的调优</h3><p>调优CMS收集器最重要的工作是避免发生并发模式失效以及晋升失败.<br>并发模式失效往往是由于CMS不能足够快的清理老年代空间,新生代需要垃圾回收时,CMS收集器计算发现老年代没有足够的空闲空间可以容纳这些晋升对象,不得不先对老年代进行垃圾回收.</p>
+<p>初始时老年代空间的对象时一个接一个整齐有序排列的.当老年代的占用带到某个程度(默认70%)时,并发回收开始.一个CMS后台线程开始回收老年代空间,寻找无用的垃圾对象时,竞争就开始了:CMS必须在老年代剩余的空间(30%)用尽之前,完成老年代空间的扫描以及回收工作.如果并发回收在这场速度竞争中失败,CMS收集器就会发生并发模式失效.</p>
+<p>以下途径可以避免发生这种失效:</p>
+<ul>
+<li>增大老年代空间,要么只移动部分新生代对象到老年代,要么增加堆空间.</li>
+<li>以更高的频率运行后台回收线程.</li>
+<li>使用更多的后台线程.</li>
+</ul>
+<p>如果有足够多的内存,更好的方案是增加堆的大小,否则尝试调整后台线程来解决这个问题.</p>
+<h4 id="给后台线程更多的运行机会"><a href="#给后台线程更多的运行机会" class="headerlink" title="给后台线程更多的运行机会"></a>给后台线程更多的运行机会</h4><p>更早的启动并发周期,设置两个参数:-XX:CMSInitiatingOccupancyFraction=N和-XX:+UseCMSInitiatingOccupancyOnly,同时设置这两个标志,CMS就只根据设置的老年代空间占比率来决定何时启动后台线程.默认情况下UseCMSInitiatingOccupancyOnly标志为假,CMS会根据复杂算法判断何时启动并行收集线程.如有必要提前启动后台线程,推荐使用最简单的方法,将UseCMSInitiatingOccupancyOnly标志为真</p>
+<p>CMSInitiatingOccupancyFraction参数的值的调整可能需要多次迭代才能确定.如果开启UseCMSInitiatingOccupancyOnly标志,CMSInitiatingOccupancyFraction的默认值就被置为70,即CMS收集器在老年代空间占用比达到70%时,启动并发收集周期.</p>
+<p>这里有一个取舍,给后台线程更多的运行机会,意味着,需要更多的CPU周期,导致更多的CMS并发周期中的停顿.</p>
+<h4 id="调整CMS后台线程"><a href="#调整CMS后台线程" class="headerlink" title="调整CMS后台线程"></a>调整CMS后台线程</h4><p>每一个CMS后台线程都会100%的占用机器上的一颗CPU,如果应用程序发生并发模式失效,同时有额外的CPU可用,可以设置-XX:ConcGCThreads=N标志,增加后台线程数,默认情况下,ConcGCThreads是根据ParallelGCThreads标志的值计算得到的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConcGCThreads=(3+ParallelGCThreads)/4</span><br></pre></td></tr></table></figure>
+
+<p>调整这一标志的要点在于判断是否有可用的CPU周期,如果ConcGCThreads的值设置的偏大,垃圾收集会占用本来能用于运行应用线程的CPU周期,最终导致应用程序略微的停顿.此外,在一个配备了大量CPU的系统上,ConcGCThreads参数的默认值会偏大.如果没有并发模式失效,可以考虑较少后台线程数,释放这部分CPU周期用于一个应用线程运行.</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><ol>
+<li>避免并发模式失效是提升CMS收集器处理能力,获得高性能的关键.</li>
+<li>避免并发模式失效最简单的方式是增大最大堆的容量.</li>
+<li>否则,我们只能通过调整CMSInitiatingOccupancyFraction参数,尽早启动并发后台线程的运行.</li>
+<li>另外.调整后台线程数目对解决这个问题也有帮助.</li>
+</ol>
+<h3 id="CMS收集器的永久代的调优"><a href="#CMS收集器的永久代的调优" class="headerlink" title="CMS收集器的永久代的调优"></a>CMS收集器的永久代的调优</h3><p>如果永久代需要进行垃圾回收就会触发Full GC.Java 7默认情况下,CMS垃圾收集线程不会处理永久代中的垃圾.如果永久代的空间用尽,CMS会发起Full GC来回收其中的垃圾对象,此外,可以通过启用标志</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:+CMSPermGenSweepingEnabled</span><br></pre></td></tr></table></figure>
+
+<p>开启后,永久代的垃圾使用与老年代一样的方式进行垃圾回收:通过一组后台线程并发地回收永久代中的垃圾.触发永久代垃圾回收的标志与老年代垃圾回收的标志相互独立为</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:CMSInitiatingPermOccupancyFraction=N</span><br></pre></td></tr></table></figure>
+
+<p>这个参数指定了CMS收集器在永久代空间占比达到设定值时启动永久代垃圾回收线程,默认值为80%.</p>
+<p>为了真正释放不再引用的类,我们还需要启用标志</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:+CMSClassUnloadingEnabled</span><br></pre></td></tr></table></figure>
+
+<p>否则,即使启用了永久代垃圾回收也只能释放少量的无效对象,类的元数据并不会被释放.由于永久代中大量的数据都是类的元数据,因此开启CMS永久代垃圾回收时,这个标志也应该开启.</p>
+<p>Java 8中,CMS收集器默认就会收集元空间中不再载入的类,如果处于某些原因,你希望关闭次功能,你可以通过</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:-CMSClassUnloadingEnabled</span><br></pre></td></tr></table></figure>
+
+<p>进行关闭,默认情况下这个标志是开启的.</p>
+<h3 id="增量式CMS垃圾收集"><a href="#增量式CMS垃圾收集" class="headerlink" title="增量式CMS垃圾收集"></a>增量式CMS垃圾收集</h3><p>如果只有一个单CPU的机器,或者你有多个非常忙碌的CPU,但是希望使用低延迟的垃圾收集器.这种情况下,使用CMS收集器进行增量式的垃圾收集,即只要有后台线程运行,垃圾收集器就不会对整个堆进行回收.这个后台线程间断性地暂停,有助于整个系统吞吐量的提高.</p>
+<p>启动标志</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:+CMSIncrementalMode</span><br></pre></td></tr></table></figure>
+
+<p>开启增量式CMS垃圾收集,通过改变标志</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-XX:CMSIncrementalSafetyFactory=N</span><br><span class="line">-XX:CMSIncrementalDutyCycleMin=N</span><br><span class="line">-XX:CMSIncrementalPacing=N</span><br></pre></td></tr></table></figure>
+
+<p>可以控制垃圾收集线程为应用程序让出多少CPU.</p>
+<p>增量式CMS垃圾收集依据责任周期(duty cycle)原则进行工作.这个原则决定了CMS垃圾收集器的后台线程在释放CPU周期给应用线程前,每隔多长时间扫描一次堆.换言之,这些标志实际控制着主动暂停运行,释放资源给应用线程运行之前,后台线程持续运行的时间.</p>
+<p>责任周期的时长是以新生代相邻两次垃圾收集之间的时间长度计算得出的;默认情况下增量式CMS垃圾收集持续的时间是该时长的20%左右(初始时是这个值,CMS会不断调整该值以适应不断晋升到老年代的对象数目).如果这个时间不够长,就会发生并发模式失效.我们的目的就是通过调整增量式CMS垃圾收集,避免发生这个GC.</p>
+<p>我们可以从调整CMSIncrementalSafetyFactory参数入手,这个参数可以增大到默认责任周期的时间百分比.责任周期的默认值为10%.默认情况下,安全因子的值是在增加10%(默认责任周期所占用的时间百分比变为20%),可以让后台线程有更多的运行时间.</p>
+<p>此外,如果参数CMSIncrementalDutyCycleMin设置得比默认值(10)更大也可以调整责任周期的长度.不过这个参数值会受JCM自动调节机制影响,因为JVM的自动调整机制会监控由新生代晋升到老年代的对象数并进行相应的调节.即使增大这个值,JVM可能还是根据自身的判断,如果增量式垃圾收集不需要运行得过于频繁,从而减少这个值.如果应用程序运行时操作有爆发式的波峰,通过自动调节机制计算出的结果通常不正确,你需要显式地设置责任周期,同时调整CMSIncrementalDutyCycle标志关闭自动参数调节(CMSIncrementalDutyCycle的值默认为真,即开启).</p>
+<p><strong>小结:应用在CPU资源受限的机器上运行,同时要求较小的停顿,这时使用增量式CMS收集器是一个不错的选择;通过责任周期可以调整增量式CMS收集器,增加责任周期的运行时间可以避免CMS收集器发生并发模式失效.</strong></p>
+<p>备注:</p>
+<ol>
+<li>增量式CMS收集在Java 8中已经不推荐使用,在Java 9中已经被移除.</li>
+<li>随着多核技术的发展,使得iCMS存在的意义变得不那么重要了.</li>
+<li>如果系统确实只配备了极其有限的CPU,作为替代方案,可以考虑使用G1收集器.G1收集器的后台线程在垃圾收集过程中也会周期性地暂停,客观上减少了与应用线程竞争CPU资源的情况.</li>
+</ol>
+<h3 id="自适应调优和CMS垃圾收集"><a href="#自适应调优和CMS垃圾收集" class="headerlink" title="自适应调优和CMS垃圾收集"></a>自适应调优和CMS垃圾收集</h3><p>CMS收集器使用两个配置MaxGCPauseMllis=N和GCTimeRatio=N来确定使用多大的堆和多大的代空间.</p>
+<p>CMS收集器与其他的垃圾收集方法一个显著不同的地方在于除非发生Full GC否则CMS的新生代不会做调整,由于CMS的目标是尽量避免发生Full GC,因此使用精细调优的CMS收集器的应用程序永远不会调整它的新生代大小.</p>
+<p>程序启动时可能频发并发模式失效,因为CMS收集器需要调整堆和永久代的大小,使用CMS收集器,初始时,采用一个比较大的堆(以及一个更大的永久代或元空间)是一个很好的主意,这是一个特例,增大堆的大小而帮助避免那些失效.</p>
+<h2 id="G1垃圾收集器"><a href="#G1垃圾收集器" class="headerlink" title="G1垃圾收集器"></a>G1垃圾收集器</h2><p>G1收集器是一种工作在堆内不同分区上的并发收集器.分区既可以属于老年代也可以属于新生代(默认分区数为2048),同一个代的分区不需要保持连续.<br>老年代分区设计初衷:发现后台线程在回收老年代的垃圾时:有的分区垃圾对象比较多,另一些分区垃圾比较少.</p>
+<p>虽然分区的垃圾收集工作仍然会暂定应用线程,但G1收集器专注于收集垃圾最多的分区,最终的效果是花费较少的时间就能回收这些分区垃圾.</p>
+<p>这种只专注于垃圾最多的分区的方式就是G1垃圾收集器名称的由来,即首先收集垃圾最多的分区.</p>
+<p>这种算法不适用与新生代.新新代也采用分区设计的原因是:采用预定义的分区能够便于代的大小调整.</p>
+<p>G1收集器的收集活动主要包括四种操作:</p>
+<ul>
+<li>新生代垃圾收集.</li>
+<li>并发垃圾回收(后台收集,并发周期).</li>
+<li>混合式垃圾收集.</li>
+<li>必要时的Full GC.</li>
+</ul>
+<h3 id="G1新生代垃圾回收"><a href="#G1新生代垃圾回收" class="headerlink" title="G1新生代垃圾回收"></a>G1新生代垃圾回收</h3><p>Eden空间耗尽时,触发G1新生代垃圾回收.新生代收集之后不会有一个分区马上分配到Eden空间(因为这时Eden为空),不过至少会有一个分区分配到Survivor空间,一部分数据会移动到老年代.</p>
+<h3 id="G1并发垃圾收集"><a href="#G1并发垃圾收集" class="headerlink" title="G1并发垃圾收集"></a>G1并发垃圾收集</h3><ul>
+<li>初始标记阶段(initial-mark),暂停应用线程.</li>
+<li>扫描根分区(concurrent-root-region-scan-start),并发执行.</li>
+<li>并发标记阶段(concurrent-mark-start)–&gt;(concurrent-mark-end),可以中断,可能发生新生代垃圾回收.</li>
+<li>重新标记阶段(remark),暂停应用线程.</li>
+<li>清理阶段(cleanup)(concurrent-cleanup-start –&gt; concurent-cleanup-end),暂停应用线程.<br>  到此,G1的周期就结束了,清理阶段真正回收的内存数量很少,G1到这个点为止真正做的事就是定位出那些老的分区可回收垃圾最多.</li>
+</ul>
+<h3 id="G1混合式垃圾回收"><a href="#G1混合式垃圾回收" class="headerlink" title="G1混合式垃圾回收"></a>G1混合式垃圾回收</h3><p>G1并发周期结束后,G1会进行一系列的混合式垃圾回收,不仅进行正常的新生代垃圾回收,同时也回收部分后台扫描线程标记的分区.</p>
+<p>同新生代垃圾收集行为一样,G1收集器清空Eden空间,同时调整Survivor空间的大小.此外<strong>部分</strong>标记的分区也被回收,绝大部分空间被释放,剩余的对象被移动到其他分区.这也是为什么G1收集器最终出现碎片化堆的频率比CMS收集器要小得多的原因,G1垃圾回收以这种方式移动对象,实际伴随着压缩.</p>
+<p>混合式垃圾回收周期会持续到(几乎)所有的标记分区被回收.之后,G1收集器会恢复常规的新生代垃圾回收机制.最终G1收集器会启动再一次的并发周期</p>
+<h3 id="G1-Full-GC"><a href="#G1-Full-GC" class="headerlink" title="G1 Full GC"></a>G1 Full GC</h3><p>触发G1进行Full GC有以下四种情况</p>
+<ul>
+<li>并发模式失效:G1垃圾收集启动标记周期,但老年代在周期完成之前被填满(concurrent-mark-start –&gt; concurrent-mark-abort).</li>
+<li>晋升失败:G1收集器完成标记阶段,开始启动混合式垃圾回收,清理老年代的分区,老年代在释放出足够的内存之前就被耗尽( pause(mixed) –&gt; Allocation Failure).</li>
+<li>疏散失败:进行新生代垃圾收集时,Survivor空间和老年代中没有足够的空间容纳所有的幸存对象.( pause young (to-space overflow)),此时堆已经被耗尽或者碎片化了.</li>
+<li>巨型对象分配失败:分配非常大的对象时,可能会遭遇另一种Full GC.</li>
+</ul>
+<p><strong>小结:G1垃圾收集包含多个周期(以及并发周期内的阶段),调优良好的JVM运行G1收集器时应该只经历新生代周期,混合式周期和并发周期;G1并发阶段会产生少量的停顿;恰当的时候,我们需要对G1进行调优,才能避免Full GC周期发生;</strong><br><strong>备注:如果进行根分区扫描时,新生代空间刚好用尽,新生代垃圾回收必须等待根扫描结束才能完成.</strong></p>
+<h3 id="G1垃圾收集器调优"><a href="#G1垃圾收集器调优" class="headerlink" title="G1垃圾收集器调优"></a>G1垃圾收集器调优</h3><p>G1垃圾收集器调优的主要目的:避免发生并发模式失败或者疏散失败,一旦发生这些失败会导致Full GC.<br>备注: 避免发生Full GC的方法也适用于频繁发生的新生代垃圾收集.<br>以下方法可以避免发生Full GC:</p>
+<ul>
+<li>增加堆空间的大小或者调整老年代,新生代之间的比例来增加老年代的大小.</li>
+<li>增加后台线程的数目(如果有足够多的CPU资源).</li>
+<li>以更高的频率进行G1的后台垃圾收集活动.</li>
+<li>在混合式垃圾回收周期中完成更多的垃圾收集工作</li>
+</ul>
+<h3 id="调整最大停顿时间"><a href="#调整最大停顿时间" class="headerlink" title="调整最大停顿时间"></a>调整最大停顿时间</h3><p>G1收集器最主要通过调整</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:MaxGCPauseMillis=N</span><br></pre></td></tr></table></figure>
+
+<p>标志,来达到性能目标.如果G1收集器发生时空停顿(stop-the-world)的时长超过该值,G1收集器就会尝试各种方式进行弥补:</p>
+<ul>
+<li>调整新生代与老年代的比例.</li>
+<li>调整堆大小.</li>
+<li>调整更早地启动后台线程.</li>
+<li>改变晋升阀值.</li>
+<li>在混合垃圾收集周期中处理更多或更少的老年代分区.<br>这里需要权衡的是: 减少参数值,为了达到停顿目标,新生代的大小会相应的减少,不过新生代垃圾收集的频率会更加频繁.此外,为了达到停顿目标,混合式GC收集的老年代分区数也会减少,而这会增大并发模式失败发生的机会.</li>
+</ul>
+<p>如果设置停顿时间无法避免Full GC,我们可以进一步针对不同方面逐一调优.</p>
+<h3 id="调整G1垃圾收集的后台线程数"><a href="#调整G1垃圾收集的后台线程数" class="headerlink" title="调整G1垃圾收集的后台线程数"></a>调整G1垃圾收集的后台线程数</h3><p>如果有足够的空闲CPU,可以增加后台标记线程数目.</p>
+<ul>
+<li>对于应用程序暂停运行的周期,可以通过ParallelGCThreads标志设置运行的线程数;</li>
+<li>对于并发运行阶段,可以使用ConcGCThreads标志设置运行线程数.<br>备注: ConcGCThreads标志的默认值为</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConcGCThreads = (ParallelGCThreads + 2) /4</span><br></pre></td></tr></table></figure>
+
+<h3 id="调整垃圾收集器运行的频率"><a href="#调整垃圾收集器运行的频率" class="headerlink" title="调整垃圾收集器运行的频率"></a>调整垃圾收集器运行的频率</h3><p>如果G1收集器更早的启动垃圾收集,有助于避免并发模式失效.G1垃圾收集周期通常在堆的占用达到参数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:InitiatingHeapOccupancyPercent=N</span><br></pre></td></tr></table></figure>
+
+<p>设置的比率时启动,默认情况下该值为45.<br>备注:该值是指整个堆的占用率,而不是单指老年代.</p>
+<p>InitiatingHeapOccupancyPercent是一个常数,G1收集器自身不会为了达到停顿时间而修改整个值.</p>
+<ul>
+<li>如果设置的过高,应用程序会陷入Full GC的泥潭,因为并发阶段没有足够的时间在剩下的堆空间被填满之前完成垃圾收集.</li>
+<li>如果设置的过低,应用程序又会以超过实际需要的节奏进行大量的后台处理.这会导致非常严重的结果,因为并发阶段会出现越来越多的短暂应用线程的停顿.</li>
+</ul>
+<p>因此,使用G1收集器时要避免频繁地进行后台清理,并发周期结束后,检查堆的大小,确保InitiatingHeapOccupancyPercent的值大于此时堆的大小.</p>
+<h3 id="调整G1收集器的混合式垃圾收集器周期"><a href="#调整G1收集器的混合式垃圾收集器周期" class="headerlink" title="调整G1收集器的混合式垃圾收集器周期"></a>调整G1收集器的混合式垃圾收集器周期</h3><p>并发周期后,老年代标记分区回收完成前,G1收集器无法启动新的并发周期,因此,让G1收集器更早的启动标记周期的另一方法是:混合式垃圾回收周期尽量处理更多分区,进而减少混合式GC周期数.<br>混合式垃圾收集要处理的工作量取决于三个因素:</p>
+<ol>
+<li>有多少分区被发现大部分是垃圾对象.目前没有标志能够直接调节这个因素.混合垃圾收集中,如果分区的垃圾占比达到35%,那么这个分区被标记为可以进行垃圾回收.</li>
+<li>G1垃圾收集器回收分区时的最大混合式GC周期数,通过参数</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-XX:G1MixedGCCounttarget=N</span><br></pre></td></tr></table></figure>
+
+<p>进行调节,默认值为8,减少该参数有助于解决晋升失败的问题,代价是混合式GC周期的停顿时间会更长.另一方面,如果混合式GC的时间过长,可以增大这个参数的值,减少每次混合式GC周期的工作量,不过需要确保调整最大值后不会对下一次GC并发周期带来太大的延迟,否则会导致并发模式失败.<br>3. GC停顿可忍受最大时长(通过MaxGCPauseMillis参数设定),MaxGCPauseMillis标志设定的混合式周期是向上规整的,如果实际停顿时间在停顿最大时长以内,G1收集器能够收集超过八分之一标记的老年代分区.增大MaxGCPauseMillis能在每次混合式GC中收集更多的老年代分区,而这反过来又能帮助G1收集器在更早的时候启动并发周期.</p>
+<h3 id="G1垃圾调优小结"><a href="#G1垃圾调优小结" class="headerlink" title="G1垃圾调优小结"></a>G1垃圾调优小结</h3><ol>
+<li>作为G1收集器调优的第一步,首先是设定一个合理的停顿时间作为目标.</li>
+<li>如果使用这个设置后,还是频繁发生Full GC,并且堆的大小没有扩大的可能,这时候需要针对特定的失败,采用特定的方法进行调优.</li>
+</ol>
+<ul>
+<li>通过InitiatingHeadpOccupancyPercent标志可以调整G1收集器,更频繁地启动后台垃圾收集线程.</li>
+<li>如果有足够的CPU资源,可以考虑调整ConcGCThreads标志,增加垃圾收集线程数.</li>
+<li>减少G1MixedGCCountTarget参数可以避免晋升失败.</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://blogs.oracle.com/poonam/understanding-cms-gc-logs">understanding-cms-gc-logs</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+              <a href="/tags/JVM%E8%B0%83%E4%BC%98/" rel="tag"># JVM调优</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/12/2021/06/12/base-of-gc-tuning/" rel="prev" title="GC调优基础">
+      <i class="fa fa-chevron-left"></i> GC调优基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/02/2021/07/02/introduction-of-ffmpeg/" rel="next" title="FFmpeg入门学习">
+      FFmpeg入门学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">垃圾收集算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Throughput%E6%94%B6%E9%9B%86%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text">Throughput收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E7%94%9F%E4%BB%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-number">1.1.1.</span> <span class="nav-text">新生代垃圾回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%81%E5%B9%B4%E4%BB%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">老年代垃圾回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A0%86%E5%A4%A7%E5%B0%8F%E7%9A%84%E8%87%AA%E9%80%82%E5%BA%94%E8%B0%83%E6%95%B4%E5%92%8C%E9%9D%99%E6%80%81%E8%B0%83%E6%95%B4"><span class="nav-number">1.1.3.</span> <span class="nav-text">堆大小的自适应调整和静态调整</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMS%E6%94%B6%E9%9B%86%E5%99%A8"><span class="nav-number">1.2.</span> <span class="nav-text">CMS收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%96%B0%E7%94%9F%E4%BB%A3%E8%BF%9B%E8%A1%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">对新生代进行垃圾回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E5%9B%9E%E6%94%B6"><span class="nav-number">1.2.2.</span> <span class="nav-text">并发回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMS-Full-GC"><span class="nav-number">1.2.3.</span> <span class="nav-text">CMS Full GC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%BC%8F%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%B0%83%E4%BC%98"><span class="nav-number">1.2.4.</span> <span class="nav-text">对并发模式失败的调优</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%99%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%A4%9A%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E4%BC%9A"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">给后台线程更多的运行机会</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E6%95%B4CMS%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">调整CMS后台线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMS%E6%94%B6%E9%9B%86%E5%99%A8%E7%9A%84%E6%B0%B8%E4%B9%85%E4%BB%A3%E7%9A%84%E8%B0%83%E4%BC%98"><span class="nav-number">1.2.5.</span> <span class="nav-text">CMS收集器的永久代的调优</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E9%87%8F%E5%BC%8FCMS%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86"><span class="nav-number">1.2.6.</span> <span class="nav-text">增量式CMS垃圾收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E8%B0%83%E4%BC%98%E5%92%8CCMS%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86"><span class="nav-number">1.2.7.</span> <span class="nav-text">自适应调优和CMS垃圾收集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G1%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8"><span class="nav-number">1.3.</span> <span class="nav-text">G1垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#G1%E6%96%B0%E7%94%9F%E4%BB%A3%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">G1新生代垃圾回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1%E5%B9%B6%E5%8F%91%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86"><span class="nav-number">1.3.2.</span> <span class="nav-text">G1并发垃圾收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1%E6%B7%B7%E5%90%88%E5%BC%8F%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">G1混合式垃圾回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1-Full-GC"><span class="nav-number">1.3.4.</span> <span class="nav-text">G1 Full GC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E8%B0%83%E4%BC%98"><span class="nav-number">1.3.5.</span> <span class="nav-text">G1垃圾收集器调优</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E6%9C%80%E5%A4%A7%E5%81%9C%E9%A1%BF%E6%97%B6%E9%97%B4"><span class="nav-number">1.3.6.</span> <span class="nav-text">调整最大停顿时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4G1%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%9A%84%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B%E6%95%B0"><span class="nav-number">1.3.7.</span> <span class="nav-text">调整G1垃圾收集的后台线程数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E8%BF%90%E8%A1%8C%E7%9A%84%E9%A2%91%E7%8E%87"><span class="nav-number">1.3.8.</span> <span class="nav-text">调整垃圾收集器运行的频率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4G1%E6%94%B6%E9%9B%86%E5%99%A8%E7%9A%84%E6%B7%B7%E5%90%88%E5%BC%8F%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8%E5%91%A8%E6%9C%9F"><span class="nav-number">1.3.9.</span> <span class="nav-text">调整G1收集器的混合式垃圾收集器周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G1%E5%9E%83%E5%9C%BE%E8%B0%83%E4%BC%98%E5%B0%8F%E7%BB%93"><span class="nav-number">1.3.10.</span> <span class="nav-text">G1垃圾调优小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">QidongTan</p>
+  <div class="site-description" itemprop="description">只是为了好玩</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://forrestsu.github.io/" title="https:&#x2F;&#x2F;forrestsu.github.io&#x2F;" rel="noopener" target="_blank">程序员的冷浪漫</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">QidongTan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
