@@ -28,10 +28,10 @@
 <meta property="og:description" content="关于Java泛型Bounded-Type-Parameters的理解">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-11-12T12:11:52.000Z">
-<meta property="article:modified_time" content="2021-08-18T15:34:13.169Z">
+<meta property="article:modified_time" content="2021-09-02T17:25:04.304Z">
 <meta property="article:author" content="QidongTan">
-<meta property="article:tag" content="简书">
 <meta property="article:tag" content="Java">
+<meta property="article:tag" content="简书">
 <meta property="article:tag" content="泛型">
 <meta name="twitter:card" content="summary">
 
@@ -202,7 +202,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-18 23:34:13" itemprop="dateModified" datetime="2021-08-18T23:34:13+08:00">2021-08-18</time>
+                <time title="修改时间：2021-09-03 01:25:04" itemprop="dateModified" datetime="2021-09-03T01:25:04+08:00">2021-09-03</time>
               </span>
 
           
@@ -222,9 +222,9 @@
 
 <p>这里的？ extends Number限定的是泛化类List的类型参数必须是 Number或者Number的子类,List&lt;? extends Number&gt;可以是:</p>
 <ul>
-<li>List<Integer></Integer></li>
-<li>List<Float></Float></li>
-<li>List<Double><br>中的一种，所以集合中元素的类型我们是不知道的，假定我们调用List&lt;? extends Number&gt;类型的add方法</Double></li>
+<li>List<Integer></li>
+<li>List<Float></li>
+<li>List<Double><br>中的一种，所以集合中元素的类型我们是不知道的，假定我们调用List&lt;? extends Number&gt;类型的add方法</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;? extends Number&gt; numbers=new ArrayList&lt;&gt;();</span><br><span class="line">Integer a=1;</span><br><span class="line">numbers.add(a);//如果此时numbers的实际类型是List&lt;Float&gt;,那么就会报错，因为Integer类型不能强制转化为Float类型</span><br></pre></td></tr></table></figure>
 
@@ -233,8 +233,8 @@
 
 <p>这里的 ？ super Number 限定的是泛化类List的类型参数必须是Number或者Number的父类.List&lt;? super Number&gt;可以是</p>
 <ul>
-<li>List<Number></Number></li>
-<li>List<Object><br>中的一种，假定我们调用List&lt;? super Number&gt;类型的add方法</Object></li>
+<li>List<Number></li>
+<li>List<Object><br>中的一种，假定我们调用List&lt;? super Number&gt;类型的add方法</li>
 </ul>
 <pre><code class="java">List&lt;? super Number&gt; numbers=new ArrayList&lt;&gt;();
 Integer a=1;
@@ -252,8 +252,8 @@ numbers1.add(c);//假定此时numbers的类型为List&lt;Number&gt;,那么就会
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%AE%80%E4%B9%A6/" rel="tag"># 简书</a>
               <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/%E7%AE%80%E4%B9%A6/" rel="tag"># 简书</a>
               <a href="/tags/%E6%B3%9B%E5%9E%8B/" rel="tag"># 泛型</a>
           </div>
 
@@ -341,14 +341,14 @@ numbers1.add(c);//假定此时numbers的类型为List&lt;Number&gt;,那么就会
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-count">70</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
