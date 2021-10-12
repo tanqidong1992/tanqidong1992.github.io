@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://tanqidong1992.github.io/2021/09/02/2021/09/02/modbus/7d0c7f513bb19748d4874f4a7a22fabf1ef654a1bde7957a7e650c1911f655df.png">
 <meta property="og:image" content="http://tanqidong1992.github.io/2021/09/02/2021/09/02/modbus/public-function-codes.png">
 <meta property="article:published_time" content="2021-09-02T13:51:33.000Z">
-<meta property="article:modified_time" content="2021-09-09T08:04:17.868Z">
+<meta property="article:modified_time" content="2021-10-12T07:44:15.584Z">
 <meta property="article:author" content="QidongTan">
 <meta property="article:tag" content="Modbus">
 <meta property="article:tag" content="IOT">
@@ -212,7 +212,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-09 16:04:17" itemprop="dateModified" datetime="2021-09-09T16:04:17+08:00">2021-09-09</time>
+                <time title="修改时间：2021-10-12 15:44:15" itemprop="dateModified" datetime="2021-10-12T15:44:15+08:00">2021-10-12</time>
               </span>
 
           
@@ -236,10 +236,10 @@
 <li>Asynchronized serial transmission over a variety of media(EIA/TIA-232-E(RS-232),EIA-422,EIA/TIA-485-A(RS-485),光纤,无线广播等).</li>
 <li>Modbus PLUS,高速令牌传递网络.<br>  备注: Modbus在TCP/IP协议栈上的保留端口为502.</li>
 </ul>
-<h2 id="Modbus通信协议栈"><a href="#Modbus通信协议栈" class="headerlink" title="Modbus通信协议栈"></a>Modbus通信协议栈</h2><p><img src="13c1589682ee03c3f75e7d1bad2d648814404ea831a04a5b79844e3083235421.png"></p>
-<h2 id="Modbus网络架构"><a href="#Modbus网络架构" class="headerlink" title="Modbus网络架构"></a>Modbus网络架构</h2><p><img src="16f17ef21174125f87a87742bdc0505306493e192057aa0662ad440dc5f87fd8.png"></p>
+<h2 id="Modbus通信协议栈"><a href="#Modbus通信协议栈" class="headerlink" title="Modbus通信协议栈"></a>Modbus通信协议栈</h2><p><img src="/2021/09/02/2021/09/02/modbus/13c1589682ee03c3f75e7d1bad2d648814404ea831a04a5b79844e3083235421.png"></p>
+<h2 id="Modbus网络架构"><a href="#Modbus网络架构" class="headerlink" title="Modbus网络架构"></a>Modbus网络架构</h2><p><img src="/2021/09/02/2021/09/02/modbus/16f17ef21174125f87a87742bdc0505306493e192057aa0662ad440dc5f87fd8.png"></p>
 <h2 id="协议描述"><a href="#协议描述" class="headerlink" title="协议描述"></a>协议描述</h2><h3 id="协议组成"><a href="#协议组成" class="headerlink" title="协议组成"></a>协议组成</h3><p>Modbus定义了一个简单,独立于通信层的协议数据单元(PDU).Modbus协议在特定总线或者网络上的实现,可以在应用数据单元(ADU)中引入额外的字段.一般的Modbus数据帧如下图所示:</p>
-<p><img src="50c74b7c1aff238ec130f2da8fe1ddb6ca022847605320ebaf0aff3015c855d2.png"></p>
+<p><img src="/2021/09/02/2021/09/02/modbus/50c74b7c1aff238ec130f2da8fe1ddb6ca022847605320ebaf0aff3015c855d2.png"></p>
 <h4 id="PDU"><a href="#PDU" class="headerlink" title="PDU"></a>PDU</h4><p>PDU由功能码(Function Code)，数据组成：</p>
 <ul>
 <li>功能码指明了服务器应该执行何种操作.它被编码为1个字节,取值范围为[1,255]的整数(其中128-255被保留,作为异常码使用),<strong>在一些功能码中添加子功能码(子功能代码位于数据字段内),可以为一个功能码定义多个操作.</strong></li>
@@ -263,7 +263,7 @@
 <h5 id="Modbus-Exception-Response-PDU"><a href="#Modbus-Exception-Response-PDU" class="headerlink" title="Modbus Exception Response PDU"></a>Modbus Exception Response PDU</h5><p>由异常功能码 + 请求数据组成:<br>异常代码: 1个字节,是功能代码+0x80.</p>
 <h4 id="ADU"><a href="#ADU" class="headerlink" title="ADU"></a>ADU</h4><h5 id="ADU-Modbus-Frame-with-Serial-Transmission"><a href="#ADU-Modbus-Frame-with-Serial-Transmission" class="headerlink" title="ADU(Modbus Frame with Serial Transmission)"></a>ADU(Modbus Frame with Serial Transmission)</h5><p>基于串口通信的ADU由设备地址(1 bytes),PDU(253 bytes),错误校验组成(2 bytes).</p>
 <h5 id="ADU-Modbus-Frame-With-TCP-IP-Transmission"><a href="#ADU-Modbus-Frame-With-TCP-IP-Transmission" class="headerlink" title="ADU(Modbus Frame With TCP/IP Transmission)"></a>ADU(Modbus Frame With TCP/IP Transmission)</h5><p>基于TCP/IP实现的ADU由MBAP(7 bytes),PDU(253 bytes)组成.<br>MBAP由事务标识符,协议标识符,长度,单位标识符组成,如下图所示:</p>
-<p><img src="9455a09929f72233e465759915ee7948627087c5b82795e7dab873f2ebb7bd7e.png">- 事务标识符,用于事务匹配,服务器在响应中复制客户端请求中的值.如果客户端在每次查询时生成唯一的表示符,则可以为此查询分配唯一的响应.</p>
+<p><img src="/2021/09/02/2021/09/02/modbus/9455a09929f72233e465759915ee7948627087c5b82795e7dab873f2ebb7bd7e.png">- 事务标识符,用于事务匹配,服务器在响应中复制客户端请求中的值.如果客户端在每次查询时生成唯一的表示符,则可以为此查询分配唯一的响应.</p>
 <ul>
 <li>协议标识符,由于使用Modbus协议,因此此字段始终为0.</li>
 <li>长度,数据长度,包括单位标识符(1 byte),函数代码(1 byte)和数据.</li>
@@ -277,19 +277,19 @@
 <ol>
 <li>示例1,含有四个独立块的设备</li>
 </ol>
-<p><img src="0b8463c4bd849a2e69007ade2c98e3c1cf04cb30e193321e5fbc8c6908212be0.png">2. 示例2,含有单个独立块的设备</p>
-<p><img src="92551356980e4ac382c52bb769f792f81cd0e260df5d253c68164ae7d2764ba9.png"></p>
+<p><img src="/2021/09/02/2021/09/02/modbus/0b8463c4bd849a2e69007ade2c98e3c1cf04cb30e193321e5fbc8c6908212be0.png">2. 示例2,含有单个独立块的设备</p>
+<p><img src="/2021/09/02/2021/09/02/modbus/92551356980e4ac382c52bb769f792f81cd0e260df5d253c68164ae7d2764ba9.png"></p>
 <h3 id="Modbus寻址模型"><a href="#Modbus寻址模型" class="headerlink" title="Modbus寻址模型"></a>Modbus寻址模型</h3><p>Modbus应用协议精确地定义了PDU寻址规则.<br>在Modbu PDU中,从0<del>65535寻址每一个数据.<br>Modbus应用协议明确地规定了由四个块构成的Modbus数据模型,每个块由几个编号为1</del>n的元素构成.<br>在Modbus数据模型中,从1~n来编号每一个元素.<br>Modbus数据模型和设备应用之间的映射完全与特定设备无关.</p>
-<p><img src="8f0ab1d31267153dff431af3b82d1274448c3343bc6e50118a028780600e80d0.png"></p>
+<p><img src="/2021/09/02/2021/09/02/modbus/8f0ab1d31267153dff431af3b82d1274448c3343bc6e50118a028780600e80d0.png"></p>
 <h3 id="Modbus事务定义"><a href="#Modbus事务定义" class="headerlink" title="Modbus事务定义"></a>Modbus事务定义</h3><p>如图所示描述了在服务侧Modbus事务处理的一般处理流程</p>
-<p><img src="efc2e1c2b08517a33cf1269b58fa432e46d19f4e848dc734779f438f4936fe2d.png"></p>
+<p><img src="/2021/09/02/2021/09/02/modbus/efc2e1c2b08517a33cf1269b58fa432e46d19f4e848dc734779f438f4936fe2d.png"></p>
 <p>一旦服务器处理请求,就必须使用相应的Modbus服务器事务处理生成Modbus响应.<br>根据处理结果,可以建立两种类型响应:</p>
 <ol>
 <li>一个正常的Modbus响应:响应功能码=请求功能码</li>
 <li>一个异常的Modbus响应:异常功能码=请求功能码 + 0x80<br>用来为客户机提供处理过程中与所发现的差错相关的信息,提供异常码来表示发生差错的原因.</li>
 </ol>
 <h2 id="功能码类别"><a href="#功能码类别" class="headerlink" title="功能码类别"></a>功能码类别</h2><p>共有三类Modbus功能码,分为为:公共功能码,用户自定义功能码,保留功能码.它们的分布如下:</p>
-<p><img src="7d0c7f513bb19748d4874f4a7a22fabf1ef654a1bde7957a7e650c1911f655df.png"></p>
+<p><img src="/2021/09/02/2021/09/02/modbus/7d0c7f513bb19748d4874f4a7a22fabf1ef654a1bde7957a7e650c1911f655df.png"></p>
 <h3 id="公共功能码"><a href="#公共功能码" class="headerlink" title="公共功能码"></a>公共功能码</h3><ol>
 <li>被确切定义的功能码.</li>
 <li>保证是唯一的.</li>
@@ -305,7 +305,7 @@
 <li>如果用户希望将某种功能设置为一个公共功能码,那么用户必须启动RFC,以便将这种变更引入公共分类中,并且指配一个新的公共功能码.</li>
 </ol>
 <h3 id="保留功能码"><a href="#保留功能码" class="headerlink" title="保留功能码"></a>保留功能码</h3><p>某些公司在传统产品上先行使用的功能码,不作为公共使用.</p>
-<h2 id="公共功能码定义"><a href="#公共功能码定义" class="headerlink" title="公共功能码定义"></a>公共功能码定义</h2><p><img src="public-function-codes.png"></p>
+<h2 id="公共功能码定义"><a href="#公共功能码定义" class="headerlink" title="公共功能码定义"></a>公共功能码定义</h2><p><img src="/2021/09/02/2021/09/02/modbus/public-function-codes.png"></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf">Modbus_Application_Protocol_V1_1b3</a></li>
 <li><a target="_blank" rel="noopener" href="http://www.ad.siemens.com.cn/productportal/Prods/published/Comm/Comm_9.1/Comm_9.1.html">Modbus TCP通信概述</a></li>
@@ -406,14 +406,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

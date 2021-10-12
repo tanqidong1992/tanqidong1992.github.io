@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://tanqidong1992.github.io/2017/05/04/2017/05/04/zuul-and-subservice-design/zuul_struct.png">
 <meta property="og:image" content="http://tanqidong1992.github.io/2017/05/04/2017/05/04/zuul-and-subservice-design/sub_service_struct.jpg">
 <meta property="article:published_time" content="2017-05-04T07:38:43.000Z">
-<meta property="article:modified_time" content="2021-09-02T17:25:04.354Z">
+<meta property="article:modified_time" content="2021-10-12T07:34:24.597Z">
 <meta property="article:author" content="QidongTan">
 <meta property="article:tag" content="微服务">
 <meta property="article:tag" content="Zuul">
@@ -206,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-03 01:25:04" itemprop="dateModified" datetime="2021-09-03T01:25:04+08:00">2021-09-03</time>
+                <time title="修改时间：2021-10-12 15:34:24" itemprop="dateModified" datetime="2021-10-12T15:34:24+08:00">2021-10-12</time>
               </span>
 
           
@@ -227,21 +227,21 @@
 <li>Eureka 服务注册与发现,Eureka服务器是一个子服务注册服务器,Eureka的客户端封装了与Eureka服务器的交互操作(包括注册,心跳,注销等)</li>
 <li>ribbon 提供客户侧的软件负载均衡算法</li>
 </ol>
-<h3 id="系统结构"><a href="#系统结构" class="headerlink" title="系统结构"></a>系统结构</h3><p><img src="struct.jpg"><br>整个系统主要以三个部分组成,API网关,注册与发现服务,子服务(授权,认证服务也属于子服务),</p>
+<h3 id="系统结构"><a href="#系统结构" class="headerlink" title="系统结构"></a>系统结构</h3><p><img src="/2017/05/04/2017/05/04/zuul-and-subservice-design/struct.jpg"><br>整个系统主要以三个部分组成,API网关,注册与发现服务,子服务(授权,认证服务也属于子服务),</p>
 <ol>
 <li>API网关:接收来自客户端的服务请求,</li>
 <li>授权,认证服务:验证请求是否具有访问相应服务的权限</li>
 <li>服务注册与发现:为个子服务提供注册,服务信息,状态查询.</li>
 <li>子服务:系统的具体业务逻辑实现.</li>
 </ol>
-<h3 id="API网关结构"><a href="#API网关结构" class="headerlink" title="API网关结构"></a>API网关结构</h3><p><img src="apigateway_struct.jpg"><br>API网关使用Zuul框架构建,Zuul框架提供了一种过滤器机制来处理Http请求,如下图所示<br><img src="zuul_struct.png" alt="图片来自互联网"><br>服务请求过滤器分为四个阶段,服务调用前(pre),服务调用中(route),服务调用后(post),出错阶段(error)</p>
+<h3 id="API网关结构"><a href="#API网关结构" class="headerlink" title="API网关结构"></a>API网关结构</h3><p><img src="/2017/05/04/2017/05/04/zuul-and-subservice-design/apigateway_struct.jpg"><br>API网关使用Zuul框架构建,Zuul框架提供了一种过滤器机制来处理Http请求,如下图所示<br><img src="/2017/05/04/2017/05/04/zuul-and-subservice-design/zuul_struct.png" alt="图片来自互联网"><br>服务请求过滤器分为四个阶段,服务调用前(pre),服务调用中(route),服务调用后(post),出错阶段(error)</p>
 <ol>
 <li>pre: 在请求到达子服务之前执行此类型过滤器.</li>
 <li>route: 在此类型过滤器中把用户请求发送给子服务,并收集服务执行结果.</li>
 <li>post:  在用户请求从子服务返回后执行,可以对处理结果做一定处理,然后将结果返回到客户端.</li>
 <li>error: 在其他阶段发生错误时执行此类型过滤器.<br>API网关在pre过滤器调用阶段对用户请求进行了授权验证(调用授权与认证子服务,对用户请求进行验证),对于验证不通过的用户请求,将抛出异常,进入error过滤器调用阶段,不再调用子服务,对于验证通过的用户请求,进入route过滤器调用阶段,将用户请求发送至相应的子服务,收到子服务的处理结果后,进入post过滤器调用阶段,最后将请求处理结果发送至用户.</li>
 </ol>
-<h3 id="子服务设计"><a href="#子服务设计" class="headerlink" title="子服务设计"></a>子服务设计</h3><p><img src="sub_service_struct.jpg" alt="子服务设计"><br>子服务沿用了现有系统的主要结构.采用Mybatis+SpringMVC作为主要框架实现.</p>
+<h3 id="子服务设计"><a href="#子服务设计" class="headerlink" title="子服务设计"></a>子服务设计</h3><p><img src="/2017/05/04/2017/05/04/zuul-and-subservice-design/sub_service_struct.jpg" alt="子服务设计"><br>子服务沿用了现有系统的主要结构.采用Mybatis+SpringMVC作为主要框架实现.</p>
 <ol>
 <li>数据库访问层，是数据库中数据读取，写入的抽象接口.</li>
 <li>业务逻辑层实现了系统业务逻辑.</li>
@@ -279,7 +279,7 @@
       <i class="fa fa-chevron-left"></i> opensuse42.2安装nexus服务
     </a></div>
       <div class="post-nav-item">
-    <a href="/2018/02/15/2018/02/2018-02-15/" rel="next" title="同妹静山夜话">
+    <a href="/2018/02/15/2018/02/15/2018-02-15/" rel="next" title="同妹静山夜话">
       同妹静山夜话 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -354,14 +354,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
