@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tanqidong1992.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Fedora下RPM包制作.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fedora下RPM包制作">
+<meta property="og:url" content="http://tanqidong1992.github.io/2021/12/28/2021/12/28/rpm/index.html">
+<meta property="og:site_name" content="芷兰旧梦">
+<meta property="og:description" content="Fedora下RPM包制作.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-28T15:14:33.000Z">
+<meta property="article:modified_time" content="2022-03-23T15:31:34.765Z">
+<meta property="article:author" content="芷兰旧梦">
+<meta property="article:tag" content="Fedora">
+<meta property="article:tag" content="RPM">
+<meta property="article:tag" content="Package">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://tanqidong1992.github.io/2021/12/28/2021/12/28/rpm/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://tanqidong1992.github.io/2021/12/28/2021/12/28/rpm/","path":"2021/12/28/2021/12/28/rpm/","title":"Fedora下RPM包制作"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Fedora下RPM包制作 | 芷兰旧梦</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="芷兰旧梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">芷兰旧梦</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">偶尔记一些东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fedora%E4%B8%8BRPM%E5%8C%85%E5%88%B6%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">Fedora下RPM包制作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RPM%E6%9C%AF%E8%AF%AD"><span class="nav-number">1.1.</span> <span class="nav-text">RPM术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RPM"><span class="nav-number">1.1.1.</span> <span class="nav-text">RPM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E6%A0%BC%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.2.</span> <span class="nav-text">规格文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE"><span class="nav-number">1.1.3.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82"><span class="nav-number">1.1.4.</span> <span class="nav-text">节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E5%A4%B4"><span class="nav-number">1.1.5.</span> <span class="nav-text">节头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8F"><span class="nav-number">1.1.6.</span> <span class="nav-text">宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F"><span class="nav-number">1.1.7.</span> <span class="nav-text">模拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#koji"><span class="nav-number">1.1.8.</span> <span class="nav-text">koji</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E4%BD%A0%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8CRPM%E5%8C%85%E5%88%9B%E5%BB%BA"><span class="nav-number">1.2.</span> <span class="nav-text">准备你的系统进行RPM包创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E7%9A%84%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7"><span class="nav-number">1.2.1.</span> <span class="nav-text">安装必要的构建工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="nav-number">1.2.2.</span> <span class="nav-text">准备模拟环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">1.2.3.</span> <span class="nav-text">准备源代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E8%A7%84%E6%A0%BC%E6%96%87%E4%BB%B6hello-spec"><span class="nav-number">1.2.4.</span> <span class="nav-text">准备规格文件hello.spec</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA"><span class="nav-number">1.3.</span> <span class="nav-text">构建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%9E%84%E5%BB%BA%E7%9A%84RPM%E5%8C%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">检查构建的RPM包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E4%BE%9D%E8%B5%96%E5%88%97%E8%A1%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">查看依赖列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BE%9B%E5%88%97%E8%A1%A8"><span class="nav-number">1.3.3.</span> <span class="nav-text">查看提供列表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8C"><span class="nav-number">1.4.</span> <span class="nav-text">安装运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E6%A0%BC%E6%96%87%E4%BB%B6%E6%A6%82%E8%BF%B0-%E9%83%A8%E5%88%86"><span class="nav-number">1.5.</span> <span class="nav-text">规格文件概述(部分)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.6.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">芷兰旧梦</p>
+  <div class="site-description" itemprop="description">只是为了好玩</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">83</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/tanqidong1992" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tanqidong1992" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://forrestsu.github.io/" title="https:&#x2F;&#x2F;forrestsu.github.io&#x2F;" rel="noopener" target="_blank">程序员的冷浪漫</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2021/12/28/2021/12/28/rpm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Fedora下RPM包制作 | 芷兰旧梦">
+      <meta itemprop="description" content="Fedora下RPM包制作.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Fedora下RPM包制作
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-28 23:14:33" itemprop="dateCreated datePublished" datetime="2021-12-28T23:14:33+08:00">2021-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-23 23:31:34" itemprop="dateModified" datetime="2022-03-23T23:31:34+08:00">2022-03-23</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">Fedora下RPM包制作.</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Fedora下RPM包制作"><a href="#Fedora下RPM包制作" class="headerlink" title="Fedora下RPM包制作"></a>Fedora下RPM包制作</h1><h2 id="RPM术语"><a href="#RPM术语" class="headerlink" title="RPM术语"></a>RPM术语</h2><h3 id="RPM"><a href="#RPM" class="headerlink" title="RPM"></a>RPM</h3><p>RPM包管理器被Fedora,Red Hat Enterprise Linux,Mageia,OpenSUSE以及其他Linux发行版本使用.最初RPM代表”Red Hat Package Manager”,<br>然而现在它是一个递归的缩写”RPM Package Manager”.</p>
+<h3 id="规格文件"><a href="#规格文件" class="headerlink" title="规格文件"></a>规格文件</h3><p>一个纯文本文件,包含了包的信息以及RPM用来编译包中软件的指令.使用包的名字+后缀”.spec”作为这个文件的名字.</p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>一个字符串,通常大写,后接一个冒号,位于规格文件的顶部,用来提供一些有关RPM包的重要数据,例如Name:,Version:,Summary:.</p>
+<h3 id="节"><a href="#节" class="headerlink" title="节"></a>节</h3><p>规格文件中的一段,告诉RPM如何执行包构造过程的某些部分.绝大部分节包含只传递给Shell的代码,虽然这一方面RPM极具灵活性,但超出本文的范围,不多阐述.</p>
+<h3 id="节头"><a href="#节头" class="headerlink" title="节头"></a>节头</h3><p>一个短字符串,在行首以%开头,用于引入节.例如:%description,%prep,%files.</p>
+<h3 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h3><p>一个短字符串,以’%’作为前缀,,通常以花括号包”{}”围起来,RPM将其转化为一个不同的,通常更长的字符串.有些宏可以接受参数,有些参数非常复杂.有些宏由RPM提供,有些是redhat-rpm-config以及fedora-rpm-macros包的一部分,其他的包也提供宏.你可以使用rpm –showrc 来查看当前系统中所有可用的宏,但是你不需要去运行绝不大部分你看到的宏.</p>
+<h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><p>用于在自己的Fedora安装中本地构建RPM的系统,这就避免需要在你的操作系统中安装构建所需的所有依赖,同时也允许你为不同版本的Fedora构建包.</p>
+<h3 id="koji"><a href="#koji" class="headerlink" title="koji"></a>koji</h3><p>主要的Fedora构建系统.</p>
+<h2 id="准备你的系统进行RPM包创建"><a href="#准备你的系统进行RPM包创建" class="headerlink" title="准备你的系统进行RPM包创建"></a>准备你的系统进行RPM包创建</h2><h3 id="安装必要的构建工具"><a href="#安装必要的构建工具" class="headerlink" title="安装必要的构建工具"></a>安装必要的构建工具</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install fedora-packager fedora-review</span><br></pre></td></tr></table></figure>
+
+<h3 id="准备模拟环境"><a href="#准备模拟环境" class="headerlink" title="准备模拟环境"></a>准备模拟环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd packager</span><br><span class="line">sudo usermod -a -G mock packager</span><br><span class="line">su packager</span><br></pre></td></tr></table></figure>
+
+<h3 id="准备源代码"><a href="#准备源代码" class="headerlink" title="准备源代码"></a>准备源代码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/workspaces/hello</span><br><span class="line">cd ~/workspaces/hello</span><br><span class="line">cat &lt;&lt; EOF &gt; hello.sh</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">printf &quot;Hello!\n&quot;</span><br><span class="line">EOF</span><br><span class="line">chmod 644 hello.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="准备规格文件hello-spec"><a href="#准备规格文件hello-spec" class="headerlink" title="准备规格文件hello.spec"></a>准备规格文件hello.spec</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Name: hello</span><br><span class="line">Version: 1</span><br><span class="line">Release: 1%&#123;?dist&#125;</span><br><span class="line">Summary: Say Hello, Texas style</span><br><span class="line"></span><br><span class="line">License: Public Domain</span><br><span class="line">Source0: hello.sh</span><br><span class="line">BuildArch: noarch</span><br><span class="line"></span><br><span class="line">%description</span><br><span class="line">A simple program to greet the user Texas style</span><br><span class="line"></span><br><span class="line">%install</span><br><span class="line">mkdir -p %&#123;buildroot&#125;%&#123;_bindir&#125;</span><br><span class="line">install -p -m 755 %&#123;SOURCE0&#125; %&#123;buildroot&#125;%&#123;_bindir&#125;</span><br><span class="line"></span><br><span class="line">%files</span><br><span class="line">%&#123;_bindir&#125;/hello.sh</span><br><span class="line"></span><br><span class="line">%changelog</span><br></pre></td></tr></table></figure>
+
+<h2 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fedpkg --release f35 local</span><br></pre></td></tr></table></figure>
+
+<h3 id="检查构建的RPM包"><a href="#检查构建的RPM包" class="headerlink" title="检查构建的RPM包"></a>检查构建的RPM包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fedpkg --release f35 lint</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看依赖列表"><a href="#查看依赖列表" class="headerlink" title="查看依赖列表"></a>查看依赖列表</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rpm -qp --requires noarch/hello-1-1.fc35.noarch.rpm </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">/usr/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">rpmlib(CompressedFileNames) &lt;= 3.0.4-1</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">rpmlib(FileDigests) &lt;= 4.6.0-1</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">rpmlib(PayloadFilesHavePrefix) &lt;= 4.0-1</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">rpmlib(PayloadIsZstd) &lt;= 5.4.18-1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查看提供列表"><a href="#查看提供列表" class="headerlink" title="查看提供列表"></a>查看提供列表</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[packager@fedora hello]$ rpm -qp --provides noarch/hello-1-1.fc35.noarch.rpm </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">hello = 1-1.fc35</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装运行"><a href="#安装运行" class="headerlink" title="安装运行"></a>安装运行</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo rmp -i x86_64/hello-1-1.fc35.x86_64.rpm</span><br><span class="line">hello.sh</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">Hello!</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="规格文件概述-部分"><a href="#规格文件概述-部分" class="headerlink" title="规格文件概述(部分)"></a>规格文件概述(部分)</h2><ul>
+<li>Name<br>  包的名称,必须与规格文件保持一直,遵从包命名指南,使用小写字符命名文件.</li>
+<li>Version<br>  上游版本号,如果版本中包含非数字字符,那么Release标签中也可能需要添加非数字字符.</li>
+<li>Release<br>  版本发布,初始值设置为1%{?dist},增加其中的数字,当有同一个版本的新包发布时.当版本改变后,重置发布数字为1.参考版本指南.</li>
+<li>Summary<br>  输入一行软件包的简短单行摘要,<del>使用美式英语</del>,不要以句号结束.</li>
+<li>Group<br>  这个标签自Fedora 17被标记为抛弃,参考<a target="_blank" rel="noopener" href="https://docs-old.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/Packagers_Guide/chap-Packagers_Guide-Spec_File_Reference-Preamble.html">Spec File Reference Preamble</a></li>
+<li>License<br>  开源软件许可证</li>
+<li>URL<br>  有关此程序的详细信息,请参阅此URL.</li>
+<li>Source0<br>  原始代码压缩归档文件的全路径,这个全路径的基本名称,将会被用于在SOURCES目录中搜索,如果有更多的源码,请使用Source1,Source2…</li>
+<li>Patch0<br>  补丁文件路径</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://docs.fedoraproject.org/jp/quick-docs/creating-rpm-packages/">Creating RPM packages</a></li>
+<li><a target="_blank" rel="noopener" href="https://fedoraproject.org/wiki/How_to_create_a_GNU_Hello_RPM_package/zh-cn">How to create a GNU Hello RPM package</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.fedoraproject.org/en-US/packaging-guidelines/Naming/">Package Naming Guidelines</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.fedoraproject.org/en-US/packaging-guidelines/Versioning/">Versioning Guide</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Fedora/" rel="tag"># Fedora</a>
+              <a href="/tags/RPM/" rel="tag"># RPM</a>
+              <a href="/tags/Package/" rel="tag"># Package</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/09/02/2021/09/02/modbus/" rel="prev" title="Modbus">
+                  <i class="fa fa-chevron-left"></i> Modbus
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">芷兰旧梦</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
