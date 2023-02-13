@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="442px" preserveAspectRatio="none" style="width:863px;height:442px;background:#FFFFFF;" version="1.1" viewBox="0 0 863 442" width="863px" zoomAndPan="magnify"><defs/><g><g id="elem_指定运行环境最终配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="154" x="399" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="406" y="23.5332">指定运行环境最终配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="400" x2="552" y1="28.6094" y2="28.6094"/></g><g id="elem_服务指定运行环境配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="154" x="7" y="105"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="14" y="121.5332">服务指定运行环境配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="160" y1="126.6094" y2="126.6094"/></g><g id="elem_公共指定运行环境配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="154" x="7" y="203"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="14" y="219.5332">公共指定运行环境配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="160" y1="224.6094" y2="224.6094"/></g><g id="elem_服务配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="70" x="49" y="301"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="56" y="317.5332">服务配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="50" x2="118" y1="322.6094" y2="322.6094"/></g><g id="elem_公共配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="70" x="49" y="399"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="56" y="415.5332">公共配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="50" x2="118" y1="420.6094" y2="420.6094"/></g><g id="elem_数据库配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="84" x="196" y="105"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="203" y="121.5332">数据库配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="197" x2="279" y1="126.6094" y2="126.6094"/></g><g id="elem_Eureka配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="87" x="315.5" y="105"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="322.5" y="121.5332">Eureka配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="316.5" x2="401.5" y1="126.6094" y2="126.6094"/></g><g id="elem_Druid配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="76" x="438" y="105"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="445" y="121.5332">Druid配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="439" x2="513" y1="126.6094" y2="126.6094"/></g><g id="elem_Kafka配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="78" x="549" y="105"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="556" y="121.5332">Kafka配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="550" x2="626" y1="126.6094" y2="126.6094"/></g><g id="elem_Redis配置"><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="78" x="662" y="105"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="669" y="121.5332">Redis配置</text><line style="stroke:#181818;stroke-width:0.5;" x1="663" x2="739" y1="126.6094" y2="126.6094"/></g><g id="elem_其他配置..."><rect fill="#F1F1F1" height="37.6094" style="stroke:#181818;stroke-width:0.5;" width="82" x="775" y="105"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="782" y="121.5332">其他配置...</text><line style="stroke:#181818;stroke-width:0.5;" x1="776" x2="856" y1="126.6094" y2="126.6094"/></g><!--MD5=[0dd0cba93e48648dea4d561fd4b15e19]
+reverse link 指定运行环境最终配置 to 服务指定运行环境配置--><g id="link_指定运行环境最终配置_服务指定运行环境配置"><path codeLine="24" d="M382.62,49.87 C313.78,66.73 221.42,89.35 157.73,104.94 " fill="none" id="指定运行环境最终配置-backto-服务指定运行环境配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="381.18,43.02,402.27,45.06,384.51,56.61,381.18,43.02" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[4bb2b12d0808c9a60245c6db1535bc01]
+reverse link 服务指定运行环境配置 to 公共指定运行环境配置--><g id="link_服务指定运行环境配置_公共指定运行环境配置"><path codeLine="26" d="M84,163.43 C84,176.98 84,191.59 84,202.7 " fill="none" id="服务指定运行环境配置-backto-公共指定运行环境配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="77,163.06,84,143.06,91,163.06,77,163.06" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[4adea9cc0f80637f526c82315ce2ea71]
+reverse link 公共指定运行环境配置 to 服务配置--><g id="link_公共指定运行环境配置_服务配置"><path codeLine="28" d="M84,261.43 C84,274.98 84,289.59 84,300.7 " fill="none" id="公共指定运行环境配置-backto-服务配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="77,261.06,84,241.06,91,261.06,77,261.06" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[830aa512c6b24293df9551ed87508a5b]
+reverse link 服务配置 to 公共配置--><g id="link_服务配置_公共配置"><path codeLine="30" d="M84,359.43 C84,372.98 84,387.59 84,398.7 " fill="none" id="服务配置-backto-公共配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="77,359.06,84,339.06,91,359.06,77,359.06" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[aafd7e775a13ef4848f52a510177bcc0]
+reverse link 指定运行环境最终配置 to 数据库配置--><g id="link_指定运行环境最终配置_数据库配置"><path codeLine="32" d="M412.62,52.56 C370.7,69.47 316.9,91.17 280.17,105.99 " fill="none" id="指定运行环境最终配置-backto-数据库配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="410.07,46.05,431.23,45.06,415.3,59.03,410.07,46.05" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7fdfc9e0c667bd2d41ff4ba2ffcf8e10]
+reverse link 指定运行环境最终配置 to Eureka配置--><g id="link_指定运行环境最终配置_Eureka配置"><path codeLine="34" d="M438.53,57.75 C419.67,73.22 397.46,91.45 381.31,104.7 " fill="none" id="指定运行环境最终配置-backto-Eureka配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="434.09,52.33,453.99,45.06,442.97,63.15,434.09,52.33" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[bb88c99e1ebc70d0ab312d8ac40b80f8]
+reverse link 指定运行环境最终配置 to Druid配置--><g id="link_指定运行环境最终配置_Druid配置"><path codeLine="36" d="M476,65.43 C476,78.98 476,93.59 476,104.7 " fill="none" id="指定运行环境最终配置-backto-Druid配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="469,65.06,476,45.06,483,65.06,469,65.06" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[20d111d808c537c3c87af0b625aa7e45]
+reverse link 指定运行环境最终配置 to Kafka配置--><g id="link_指定运行环境最终配置_Kafka配置"><path codeLine="38" d="M512.42,58.22 C530.35,73.59 551.34,91.58 566.65,104.7 " fill="none" id="指定运行环境最终配置-backto-Kafka配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="507.7,63.39,497.07,45.06,516.81,52.76,507.7,63.39" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[6bca142b4b474c32854d6c14ef6f4b52]
+reverse link 指定运行环境最终配置 to Redis配置--><g id="link_指定运行环境最终配置_Redis配置"><path codeLine="40" d="M536.84,52.96 C576.62,69.93 627.41,91.6 661.88,106.31 " fill="none" id="指定运行环境最终配置-backto-Redis配置" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="533.97,59.34,518.32,45.06,539.46,46.47,533.97,59.34" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5aa9f0914fa669d6f8619c180aeab413]
+reverse link 指定运行环境最终配置 to 其他配置...--><g id="link_指定运行环境最终配置_其他配置..."><path codeLine="42" d="M562.73,50.24 C618.61,65.4 692.74,85.85 758,105 C763.46,106.6 769.2,108.33 774.86,110.06 " fill="none" id="指定运行环境最终配置-backto-其他配置..." style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="560.88,56.99,543.4,45.01,564.54,43.48,560.88,56.99" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[46e67b45cc05f81728757b2e9c68ea09]
+@startuml
+
+object 指定运行环境最终配置
+
+object 服务指定运行环境配置
+
+object 公共指定运行环境配置
+
+object 服务配置
+
+object 公共配置
+
+object 数据库配置
+
+object Eureka配置
+
+object Druid配置
+
+object Kafka配置
+
+object Redis配置
+
+object 其他配置...
+
+指定运行环境最终配置 <|- - 服务指定运行环境配置
+
+服务指定运行环境配置 <|- - 公共指定运行环境配置
+
+公共指定运行环境配置 <|- - 服务配置
+
+服务配置 <|- - 公共配置
+
+指定运行环境最终配置 <|- - 数据库配置
+
+指定运行环境最终配置 <|- - Eureka配置
+
+指定运行环境最终配置 <|- - Druid配置
+
+指定运行环境最终配置 <|- - Kafka配置
+
+指定运行环境最终配置 <|- - Redis配置
+
+指定运行环境最终配置 <|- - "其他配置..."
+
+@enduml
+
+PlantUML version 1.2022.2(Sun Mar 06 00:30:19 CST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: zh
+Country: CN
+--></g></svg>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tanqidong1992.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="CAS单点登录测试环境配置.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CAS单点登录测试环境配置">
+<meta property="og:url" content="http://tanqidong1992.github.io/2022/06/09/2022/06/09/CAS%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="芷兰旧梦">
+<meta property="og:description" content="CAS单点登录测试环境配置.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-09T07:15:33.000Z">
+<meta property="article:modified_time" content="2023-02-13T13:30:14.200Z">
+<meta property="article:author" content="芷兰旧梦">
+<meta property="article:tag" content="CAS">
+<meta property="article:tag" content="测试">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://tanqidong1992.github.io/2022/06/09/2022/06/09/CAS%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://tanqidong1992.github.io/2022/06/09/2022/06/09/CAS%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/","path":"2022/06/09/2022/06/09/CAS单点登录测试环境配置/","title":"CAS单点登录测试环境配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CAS单点登录测试环境配置 | 芷兰旧梦</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="芷兰旧梦" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">芷兰旧梦</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">偶尔记一些东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CAS%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">CAS单点登录测试环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%9C%8D%E5%8A%A1%E7%AB%AFSSL%E8%AF%81%E4%B9%A6"><span class="nav-number">1.1.</span> <span class="nav-text">生成服务端SSL证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AECAS"><span class="nav-number">1.2.</span> <span class="nav-text">配置CAS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1Json%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">注册服务Json配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8CAS%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.4.</span> <span class="nav-text">启动CAS服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%B5%8B%E8%AF%95"><span class="nav-number">1.5.</span> <span class="nav-text">登录测试</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">芷兰旧梦</p>
+  <div class="site-description" itemprop="description">只是为了好玩</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/tanqidong1992" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tanqidong1992" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://forrestsu.github.io/" title="https:&#x2F;&#x2F;forrestsu.github.io&#x2F;" rel="noopener" target="_blank">程序员的冷浪漫</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanqidong1992.github.io/2022/06/09/2022/06/09/CAS%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="芷兰旧梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="芷兰旧梦">
+      <meta itemprop="description" content="只是为了好玩">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CAS单点登录测试环境配置 | 芷兰旧梦">
+      <meta itemprop="description" content="CAS单点登录测试环境配置.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CAS单点登录测试环境配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-06-09 15:15:33" itemprop="dateCreated datePublished" datetime="2022-06-09T15:15:33+08:00">2022-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-13 21:30:14" itemprop="dateModified" datetime="2023-02-13T21:30:14+08:00">2023-02-13</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">CAS单点登录测试环境配置.</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="CAS单点登录测试环境配置"><a href="#CAS单点登录测试环境配置" class="headerlink" title="CAS单点登录测试环境配置"></a>CAS单点登录测试环境配置</h1><h2 id="生成服务端SSL证书"><a href="#生成服务端SSL证书" class="headerlink" title="生成服务端SSL证书"></a>生成服务端SSL证书</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey -keyalg RSA -keystore ./keystore.jks -storetype jks</span><br></pre></td></tr></table></figure>
+
+<p>备注: 秘钥库密码为changeit,common name为localhost</p>
+<h2 id="配置CAS"><a href="#配置CAS" class="headerlink" title="配置CAS"></a>配置CAS</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">vim cas.properties</span></span><br><span class="line">cas.serviceRegistry.json.location=file:/etc/cas/services</span><br><span class="line">cas.serviceRegistry.core.initFromJson=true</span><br><span class="line">cas.ticket.st.timeToKillInSeconds=1800</span><br></pre></td></tr></table></figure>
+
+<h2 id="注册服务Json配置文件"><a href="#注册服务Json配置文件" class="headerlink" title="注册服务Json配置文件"></a>注册服务Json配置文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">vim Pointservice-10000002.json</span></span><br><span class="line">&#123;</span><br><span class="line">&quot;@class&quot;: &quot;org.apereo.cas.services.RegexRegisteredService&quot;,</span><br><span class="line">&quot;serviceId&quot;: &quot;^(https|imaps|http)://.*&quot;,</span><br><span class="line">&quot;name&quot;: &quot;测试服务&quot;,</span><br><span class="line">&quot;id&quot;: 10000002,</span><br><span class="line">&quot;description&quot;: &quot;测试服务&quot;,</span><br><span class="line">&quot;evaluationOrder&quot;: 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动CAS服务"><a href="#启动CAS服务" class="headerlink" title="启动CAS服务"></a>启动CAS服务</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -ti --rm --name=cas \</span><br><span class="line">-p 8443:8443 \</span><br><span class="line">-v $(pwd)/keystore.jks:/etc/cas/thekeystore \</span><br><span class="line">-v $(pwd)/Pointservice-10000002.json:/etc/cas/services/Pointservice-10000002.json \</span><br><span class="line">-v $(pwd)/cas.properties:/etc/cas/config/cas.properties \</span><br><span class="line">-e TZ=Asia/Shanghai \</span><br><span class="line">apereo/cas:6.5.5</span><br></pre></td></tr></table></figure>
+
+<h2 id="登录测试"><a href="#登录测试" class="headerlink" title="登录测试"></a>登录测试</h2><p>访问 <a target="_blank" rel="noopener" href="https://localhost:8443/cas/login?service=https://localhost:8080">https://localhost:8443/cas/login?service=https://localhost:8080</a><br>输入</p>
+<ul>
+<li>用户名: casuser</li>
+<li>密码: Mellon</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CAS/" rel="tag"># CAS</a>
+              <a href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag"># 测试</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/17/2022/08/spring-config-server/" rel="prev" title="Spring Cloud配置服务">
+                  <i class="fa fa-chevron-left"></i> Spring Cloud配置服务
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/06/09/2022/08/docker-install-centos-offline/" rel="next" title="离线安装Docker">
+                  离线安装Docker <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">芷兰旧梦</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
